@@ -1,37 +1,48 @@
-## Welcome to GitHub Pages
+## YAMTL 
 
-You can use the [editor on GitHub](https://github.com/yamtl/yamtl.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+**YAMTL** (*Yet Another Model Transformation Language*) is a model-to-model transformation engine whose transformations are defined with an internal DSL of Xtend (also called YAMTL).
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Getting started
 
-### Markdown
+YAMTL uses Gradle as build automation tool and relies on:
+* EMF 2.12
+* Xtend 2.13.0
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+This means that YAMTL works on **Java 8** only at the moment.
 
-```markdown
-Syntax highlighted code block
+### Configuring a Gradle build script to use YAMTL
 
-# Header 1
-## Header 2
-### Header 3
+Add the following repository:
 
-- Bulleted
-- List
+	repositories {
+		maven {
+			url "https://github.com/yamtl/yamtl.github.io/raw/mvn-repo/mvn-repo/snapshot-repo"
+		}
+		jcenter()
+	}
 
-1. Numbered
-2. List
+Declare the following dependencies:
 
-**Bold** and _Italic_ and `Code` text
+	dependencies {
+		compile "org.eclipse.xtend:org.eclipse.xtend.lib:$xtendVersion"
+		compile "yamtl:yamtl:0.0.1-SNAPSHOT"
+	}
 
-[Link](url) and ![Image](src)
-```
+### Example
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+A fully working example is available in [this project](https://github.com/yamtl/examples/tree/master/yamtl.examples.mapping.batch.cps2dep).
 
-### Jekyll Themes
+### Release notes
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/yamtl/yamtl.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+#### 0.0.1-SNAPSHOT
 
-### Support or Contact
+* Support for batch declarative m2m transformations (`mapping` semantics)
+  * n-m m2m rules
+  * pattern matching with local search with facilities for encoding search plans
+  * filters and actions written using Xtend expressions
+  * `fetch` operator and `allInstances`
+* Rules with multiple inheritance
+* Experimental support for `rewriting` semantics
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+***
+&copy; Artur Boronat, 2018
