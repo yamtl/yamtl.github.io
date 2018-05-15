@@ -36,13 +36,13 @@ A fully working example is available in [this project](https://github.com/yamtl/
 
 #### 0.0.1-SNAPSHOT
 
-* Support for batch declarative m2m transformations (`mapping` semantics)
-  * n-m m2m rules
-  * local-search pattern matching with facilities for encoding search plans
-  * filters and actions written using Xtend expressions
-  * `fetch` operator and `allInstances`
-* Rules with multiple inheritance
-* Experimental support for `rewriting` semantics
+* Support for batch declarative m2m transformations (`mapping` semantics):
+  * n-m m2m rules;
+  * local-search pattern matching with facilities for encoding search plans;
+  * filters and actions written using Xtend expressions;
+  * operations `fetch` and `allInstances`.
+* Rules with multiple inheritance.
+* Experimental support for `rewriting` semantics.
 
 ***
 &copy; [Artur Boronat](arturboronat.info), 2018
