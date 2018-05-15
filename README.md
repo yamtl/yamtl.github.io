@@ -1,6 +1,6 @@
 ## YAMTL 
 
-**YAMTL** is an EMF-based model-to-model transformation engine whose transformations are defined with an internal DSL of Xtend (*Yet Another Model Transformation Language*).
+**YAMTL** is an EMF-based model-to-model transformation engine whose transformations are defined with an internal DSL of [Xtend](http://www.eclipse.org/xtend/) (*Yet Another Model Transformation Language*).
 
 ### Getting started
 
