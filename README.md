@@ -45,4 +45,4 @@ A fully working example is available in [this project](https://github.com/yamtl/
 * Experimental support for `rewriting` semantics
 
 ***
-&copy; Artur Boronat, 2018
+&copy; [Artur Boronat](arturboronat.info), 2018
