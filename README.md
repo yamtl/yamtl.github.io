@@ -25,14 +25,18 @@ Declare the following dependencies:
 
 	dependencies {
 		compile "org.eclipse.xtend:org.eclipse.xtend.lib:$xtendVersion"
-		compile "yamtl:yamtl:0.0.1-SNAPSHOT"
+		compile "yamtl:yamtl:0.0.2-SNAPSHOT"
 	}
 
-### Example
+### Examples
 
-A fully working example is available in [this project](https://github.com/yamtl/examples/tree/master/yamtl.examples.mapping.batch.cps2dep).
+Several examples are available in [this repository](https://github.com/yamtl/examples).
 
 ### Release notes
+
+#### 0.0.2-SNAPSHOT
+
+* Support for incremental declarative m2m transformations (`mapping` semantics).
 
 #### 0.0.1-SNAPSHOT
 
@@ -40,7 +44,8 @@ A fully working example is available in [this project](https://github.com/yamtl/
   * n-m m2m rules;
   * local-search pattern matching with facilities for encoding search plans;
   * filters and actions written using Xtend expressions;
-  * operations `fetch` and `allInstances`.
+  * operations `fetch` and `allInstances`;
+  * matched/lazy/unique lazy rules.
 * Rules with multiple inheritance.
 * Experimental support for `rewriting` semantics.
 
