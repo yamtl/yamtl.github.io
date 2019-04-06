@@ -4,11 +4,8 @@
 
 ### Getting started
 
-YAMTL uses Gradle as build automation tool and relies on:
-* EMF 2.12
-* Xtend 2.13.0
+YAMTL uses Gradle as build automation tool and can be executed from Java 11.
 
-This means that YAMTL works on **Java 8** only at the moment.
 
 ### Configuring a Gradle build script to use YAMTL
 
@@ -25,7 +22,7 @@ Declare the following dependencies:
 
 	dependencies {
 		compile "org.eclipse.xtend:org.eclipse.xtend.lib:$xtendVersion"
-		compile "yamtl:yamtl:0.0.2-SNAPSHOT"
+		compile "yamtl:yamtl:0.0.3-SNAPSHOT"
 	}
 
 ### Examples
@@ -33,6 +30,10 @@ Declare the following dependencies:
 Several examples are available in [this repository](https://github.com/yamtl/examples).
 
 ### Release notes
+
+#### 0.0.3-SNAPSHOT
+
+* Upgrade to Java 11, Gradle 5, Xtend 2.17.1
 
 #### 0.0.2-SNAPSHOT
 
