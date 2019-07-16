@@ -22,7 +22,7 @@ Declare the following dependencies:
 
 	dependencies {
 		compile "org.eclipse.xtend:org.eclipse.xtend.lib:$xtendVersion"
-		compile "yamtl:yamtl:0.0.3-SNAPSHOT"
+		compile "yamtl:yamtl:0.0.4-SNAPSHOT"
 	}
 
 ### Examples
@@ -30,6 +30,10 @@ Declare the following dependencies:
 Several examples are available in [this repository](https://github.com/yamtl/examples).
 
 ### Release notes
+
+#### 0.0.4-SNAPSHOT
+
+* Initialization of locations can be disabled during loading. This change breaks previous versions that were relying on this feature. To solve this problems, set the following configuration option in the runner: `YAMTLModule::initLocationsWhenLoading = true` 
 
 #### 0.0.3-SNAPSHOT
 
