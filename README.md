@@ -22,7 +22,7 @@ Declare the following dependencies:
 
 	dependencies {
 		compile "org.eclipse.xtend:org.eclipse.xtend.lib:$xtendVersion"
-		compile "yamtl:yamtl:0.0.4-SNAPSHOT"
+		compile "yamtl:yamtl:0.0.6-SNAPSHOT"
 	}
 
 ### Examples
@@ -30,6 +30,27 @@ Declare the following dependencies:
 Several examples are available in [this repository](https://github.com/yamtl/examples).
 
 ### Release notes
+
+#### 0.0.6-SNAPSHOT
+
+* Compatibility with Java 8
+* Static type checking of the transformation declaration now happens when the transformation module is instantiated.
+* The method `YAMTLModule.reset()` also deletes the `typeExtent` when locations initialized using the aspect `InitLocations`. When locations are initialized from the model registry in `YAMTLModule.execute()`, reset does not clear the `typeExtent`. 
+
+
+#### 0.0.5-SNAPSHOT
+
+* FIX: static helpers (in the helper store of a transformation) can now be used in rule filters.
+* Support for delta analysis on target models
+* More fine grained analysis of deltas
+* Support for inconsistency specifications, with visual reporting using PlantUML
+* FIX solve diamond bugs: 
+  * bottom rule can only be matched when all of its superrules can match
+  * bottom rule only executes actions once: when analysing the transformation statically, the bottom rule could get duplicate out elements by importing the same top outElements from different parents
+* FIX matching bug when matching with class inheritance: an object can be a match either for a type in an inElement or for ANY of its supertypes
+* FIX: dependencies only need to be tracked in incremental/propagation modes: normal mode was doing some unnecessary work in insertTupleMatch for feature calls/helpers
+* Added flag `YAMTLModule::warnings-on` (by default set to `true`), which can be used to error warning messages in the output stream
+* Added flag `YAMTLModule::initialSizeFactor` to indicate the initial size of the matchPool (10000 by default)
 
 #### 0.0.4-SNAPSHOT
 
