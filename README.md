@@ -31,6 +31,15 @@ Several examples are available in [this repository](https://github.com/yamtl/exa
 
 ### Release notes
 
+## 0.0.8-SNAPSHOT
+
+* FIX: Derived features were unset when re-executing transformation steps in propagation mode. This is no longer the case.
+  * Found thanks to update case in AADL2AADL trafo provided by Hana Mkaouar, Télécom Paris.
+
+## 0.0.7-SNAPSHOT
+
+* FIX: Fetching elements with lazy rules that had more than one input element failed. An assertion now checks whether the arguments correspond to inElement patterns.
+
 #### 0.0.6-SNAPSHOT
 
 * Compatibility with Java 8
