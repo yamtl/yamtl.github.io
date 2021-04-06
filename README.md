@@ -36,7 +36,8 @@ Several examples are available in [this repository](https://github.com/yamtl/exa
 * FIX: During impact analysis of deltas, objects are added to the typeExtend when processing dirty objects only  and not when processing dirty features.
 * OPTIMIZATION: Actions of out elements initialized to null by default.
 * OPTIMIZATION: When undoing trafo steps, out elements are traversed when they have undo actions only.
-* NEW FEATURE: When matching, to identify which trafoSteps are affected by featureCalls, YAMTL understands the plural of featureNames, in case the name of the getter is different from the name of the feature.
+* NEW FEATURE: When matching, to identify which trafoSteps are affected by featureCalls, YAMTL understands the plural of feature names, in case the name of the getter is different from the name of the feature.
+  * An example of such a metamodel is [OSATE AADL](https://osate.org/), where one can find many-bounded features with name `componentInstance` whereas the corresponding getter is `getComponentInstances()`. Feature requested for AADL2AADL trafo provided by Hana Mkaouar, Télécom Paris.
 
 #### 0.0.8-SNAPSHOT
 
