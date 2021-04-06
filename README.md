@@ -33,10 +33,10 @@ Several examples are available in [this repository](https://github.com/yamtl/exa
 
 #### 0.0.9-SNAPSHOT
 
-* During impact analysis of deltas, objects are added to the typeExtend when processing dirty objects and not when processing dirty features.
-* Actions of out elements initialized to null by default.
-* When undoing trafo steps, out elements are traversed when they have undo actions only.
-* In MatcherUtil: to identify which trafoSteps are affected by featureCalls, YAMTL understands the plural of featureNames, in case the name of the getter is different from the name of the feature.
+* FIX: During impact analysis of deltas, objects are added to the typeExtend when processing dirty objects only  and not when processing dirty features.
+* OPTIMIZATION: Actions of out elements initialized to null by default.
+* OPTIMIZATION: When undoing trafo steps, out elements are traversed when they have undo actions only.
+* NEW FEATURE: When matching, to identify which trafoSteps are affected by featureCalls, YAMTL understands the plural of featureNames, in case the name of the getter is different from the name of the feature.
 
 #### 0.0.8-SNAPSHOT
 
