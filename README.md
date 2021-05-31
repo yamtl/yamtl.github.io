@@ -31,6 +31,62 @@ Several examples are available in [this repository](https://github.com/yamtl/exa
 
 ### Release notes
 
+
+## 0.2.1
+
+* Renamed propagation methods
+  * `propagateDelta` is now called `applyAndPropagateDelta` explicitly indicating that it applies the change to the input model and then propagates it to the output model
+  * the new `propagateDelta` only propagates changes to the output model
+
+## 0.2.0
+
+* Parallel pattern matching with coarse granularity (experimental feature)
+
+
+## 0.1.5
+
+* YAMTL can use change notifications to detect changes. The input model that can be subject to changes needs to be adapted with `YAMTLModule::adaptInputModel()`.
+  
+## 0.1.2
+
+* Indexing engine (experimental feature)
+* Internal optimizations
+
+## 0.1.1
+
+* allInstances is not a callable element
+* bug fixes
+* refactored ChangeDescription analysis
+
+## 0.1.0
+
+Incremental evaluation of callable elements (experimental feature):
+* allInstances, 
+* staticAttribute, 
+* contextualOperation,
+* localInputFilter,
+* localOutputAction,
+* trafoStep
+
+Incremental evaluation at element level excludes: derivedWith, globalFilter, using, undoAction, endWith. These elements of a transformation rule need can be evaluated incrementally at the level of transformation step. Backward compatibility with TrafoStep incrementality.
+
+New features of the language:
+* HelperCall: staticAttribute, contextualOperation. The body of helpers must be purely functional.
+* DSL with polished syntax for rules and helpers: no more .build()
+* impactAnalysis and evaluateAndPropagate at element level
+* Lazy initialization of static attribute helpers
+* Standalone helpers
+
+## 0.0.11-SNAPSHOT
+
+* AspectJ configuration is now delegated to client code: aop.xml and aspects.
+* Some initialization (deltaMatchPool) is partially reused between propagation of deltas.
+* loadDelta() returns the delta where it is stored.
+
+## 0.0.10-SNAPSHOT
+
+Binaries compiled with Java 11.
+
 #### 0.0.9-SNAPSHOT
 
 * FIX: During impact analysis of deltas, objects are added to the typeExtend when processing dirty objects only  and not when processing dirty features.
