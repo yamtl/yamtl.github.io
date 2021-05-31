@@ -32,33 +32,33 @@ Several examples are available in [this repository](https://github.com/yamtl/exa
 ### Release notes
 
 
-### 0.2.1
+#### 0.2.1
 
 * Renamed propagation methods
   * `propagateDelta` is now called `applyAndPropagateDelta` explicitly indicating that it applies the change to the input model and then propagates it to the output model
   * the new `propagateDelta` only propagates changes to the output model
 
-### 0.2.0
+#### 0.2.0
 
 * Parallel pattern matching with coarse granularity (experimental feature)
 
 
-### 0.1.5
+#### 0.1.5
 
 * YAMTL can use change notifications to detect changes. The input model that can be subject to changes needs to be adapted with `YAMTLModule::adaptInputModel()`.
   
-### 0.1.2
+#### 0.1.2
 
 * Indexing engine (experimental feature)
 * Internal optimizations
 
-### 0.1.1
+#### 0.1.1
 
 * allInstances is not a callable element
 * bug fixes
 * refactored ChangeDescription analysis
 
-### 0.1.0
+#### 0.1.0
 
 Incremental evaluation of callable elements (experimental feature):
 * allInstances, 
@@ -77,13 +77,13 @@ New features of the language:
 * Lazy initialization of static attribute helpers
 * Standalone helpers
 
-### 0.0.11-SNAPSHOT
+#### 0.0.11-SNAPSHOT
 
 * AspectJ configuration is now delegated to client code: aop.xml and aspects.
 * Some initialization (deltaMatchPool) is partially reused between propagation of deltas.
 * loadDelta() returns the delta where it is stored.
 
-### 0.0.10-SNAPSHOT
+#### 0.0.10-SNAPSHOT
 
 Binaries compiled with Java 11.
 
