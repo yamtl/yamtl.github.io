@@ -22,7 +22,7 @@ Declare the following dependencies:
 
 	dependencies {
 		compile "org.eclipse.xtend:org.eclipse.xtend.lib:$xtendVersion"
-		compile "yamtl:yamtl:0.0.X-SNAPSHOT" // replace X with the corresponding patch number
+		compile "yamtl:yamtl:X" // replace X with the corresponding version
 	}
 
 ### Examples
