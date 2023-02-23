@@ -32,6 +32,90 @@ Several examples are available in [this repository](https://github.com/yamtl/exa
 ### Release notes
 
 
+#### 0.3.0
+
+* The `RuntimeModel` has been renamed to `UntypedModel`. YAMTL can import/export untyped models from/to: CSV, XML, JSON. It can import untyped models from EMF. 
+* Improved invocation of static operation helpers. When the argument list of the operation is immutable, the call will be indexed.
+* Improved storing models: all root objects are stored, independently of where they are created. Previously only root notedes mapped to input objects by trafo steps could be stored.
+
+#### 0.2.9
+
+* EMF models can be loaded as runtime models using `YAMTLModule::loadAsRuntimeModel`.
+
+#### 0.2.8
+
+* The containment hierarchy of an EMF model (including attribute values) can be serialised to JSON/CSV via the runtime model.
+* Support for setting feature values of a `dynamicEObject` with `set` in a YAMTL transformation.
+* Upgrade to Xtext 2.29.0 to support target compatibility with Java 17.
+
+#### 0.2.7
+
+* Support for parsing CSV, JSON as runtime models
+* Support for storing output runtime models as CSV, JSON
+
+#### 0.2.6
+
+* YAMTL transformations without metamodel via the RuntimeModel
+* Basic inference of feature types from unstructured data sources (CSV at the moment)
+
+
+#### 0.2.5
+
+* Upgrade to Java17, AspectJ 1.9.9.1, Gradle 7.5.1, Xtext 2.28.28, EMF change model 2.14.0, Ecore 2.17.0
+
+#### 0.2.4
+
+* Rules `toMany` need to declare the termination condition in the expression `toManyCap`, which returns an integer representing the number of occurrences of the match.
+  * `toManyCap` expressions are not inherited and all concrete rules `toMany` need to have an expression `toManyCap`.
+  * `matchCount` is an internal variable available at execution time but not at matching time (it cannot be used in filter expressions).
+
+#### 0.2.3
+
+* Boilerplate code generation using `YAMTLModule::generateBoilerplateCode`
+  * Adds explicit typing to rules and there is no need to fetch variables from store. In addition, the IDE code completion can be used to write the body of a filter/output action.
+  * Built-in helpers are generated too with the right return type. Built-in helpers are generated depending on the configuration parameters of the transformation. For example:
+  	* `matchCount` is enabled when there are rules that are `toMany`
+  	* `dirtyObjects` and `dirtyFeatures` are generated when `enableExplicitIncrementality`
+
+#### 0.2.2
+
+* YAMTLModule configuration parameters:
+  * `fromRoots = true` indicates that an input model can be transformed from root objects following containment references explicitly in transformation rules. By default, this parameter is now set to false.
+  * `enableCorrectnessCheck = true` indicates whether the mapping semantics check is enabled or disabled. By default it is true, which is useful for developing model transformations. 
+* NEW FEATURE (experimental): matched rules `toMany` are used to enable several rule applications for the same input match, as defined by the filter of the rule. The consequences are that:
+  1. An input match can be mapped to a list of output matches. Output actions must be independent of the rule filters as the rule as filters are processed during the matching phase and output actions are executed during the execution phase.
+  2. An input match of a rule `toMany` may be related to several output matches, depending on the occurrence of the rule application. `fetch` for an input match will return the first occurrence (`0`) by default. Other occurrences can be retrieved by appending a natural number `occurrence` to the list of arguments of `fetch`. 
+  3. The rule filter needs to define a termination condition for the repetition of matches with respect to `fetch('matchCount')`. `fetch('matchCount')` returns the number of times that a rule has been matched already and it can be used in any filter condition during the matching phase.
+  4. To use multiple inheritance with `toMany` rules, the superrule needs to be `toMany`, and it should include a termination condition in the filter. To allow `toMany` rule to inherit from injective rules, the scheduler needs to apply repeated matching once a concrete match is found. This is not done yet.
+  5. When rules with multiple input elements are used, the termination condition must be defined in the filter of the last matched element in order to increase the match counter when a full match is found.
+* FIX issue when matching with multiple inheritance: backtracking was disabled when a non-leaf match failed  
+* ChangeSpecification renamed as NotificationSpecification: specification of admissible notification. `YAMTLContentAdapter` filters notifications using this specification.
+* The new ChangeSpecification defines the language of admissible changes that are to be propagated. The rest of changes are ignored. The specification is of the form `Map<EClass,Map<String,Map<String,Pair<YAMTLChangeType,(EObject,Object)=>boolean>>>>` indicating `Type |-> (Description |-> (featureName |-> <change,condition>))`. For example:
+
+```
+#{
+	DocBook.section -> #{ ’paras’ -> #{
+		’Swapping paragraph’ -> (YAMTLChangeType.MOVE -> TRIVIAL_CHECK),
+		’Deleting paragraph’ -> (YAMTLChangeType.REMOVE -> TRIVIAL_CHECK) }
+	},
+	DocBook.article -> #{
+		’sections_1’ -> #{
+			’Deleting sections’ -> (YAMTLChangeType.REMOVE -> TRIVIAL_CHECK)
+		} 
+	},
+	DocBook.sect1 -> #{ ’sections_2’ -> #{
+		’Deleting sections’ -> (YAMTLChangeType.REMOVE -> TRIVIAL_CHECK) },
+		’paras’ -> #{
+			’Adding an existing paragraph to Sect1’ -> (YAMTLChangeType.ADD -> [ EObject eObj, Object value |
+				val sect1 = eObj as Sect1
+				val para = value as Para 
+				sect1.paras.exists[it.content.startsWith(para.content)] as (EObject , Object)=>boolean)			
+			]
+		} 
+	}
+} 
+```
+
 #### 0.2.1
 
 * Renamed propagation methods
