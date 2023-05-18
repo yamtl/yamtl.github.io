@@ -1,0 +1,104 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "yamtl",
+    "module": "untyped-models",
+    "version": "0.0.25",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.5.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "untyped-models-0.0.25.jar",
+          "url": "untyped-models-0.0.25.jar",
+          "size": 49323,
+          "sha512": "d85fc80c7e12213570d98a5fc6daed6b536cd979712d5ed670ce0bbd8c0187b20ce18ce68813087fbebd1a3cb54b76efc45a481eb5e0af933d38a2236902040e",
+          "sha256": "590d2c80f5cde78a2fa4b11562cd602ea46150634a2f4c8a5ee51793dfa63d24",
+          "sha1": "3681ad2d4c82f0d2106f1de60bce191a4f771228",
+          "md5": "8c6e9661b57c81c6448e67361dccd30e"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.eclipse.emf",
+          "module": "org.eclipse.emf.common",
+          "version": {
+            "requires": "2.28.0"
+          }
+        },
+        {
+          "group": "org.eclipse.emf",
+          "module": "org.eclipse.emf.ecore",
+          "version": {
+            "requires": "2.33.0"
+          }
+        },
+        {
+          "group": "org.eclipse.emf",
+          "module": "org.eclipse.emf.ecore.xmi",
+          "version": {
+            "requires": "2.18.0"
+          }
+        },
+        {
+          "group": "org.eclipse.emf",
+          "module": "org.eclipse.emf.edit",
+          "version": {
+            "requires": "2.18.0"
+          }
+        },
+        {
+          "group": "org.eclipse.emf",
+          "module": "org.eclipse.emf.ecore.change",
+          "version": {
+            "requires": "2.15.0"
+          }
+        },
+        {
+          "group": "org.eclipse.platform",
+          "module": "org.eclipse.core.runtime",
+          "version": {
+            "requires": "3.26.100"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "untyped-models-0.0.25.jar",
+          "url": "untyped-models-0.0.25.jar",
+          "size": 49323,
+          "sha512": "d85fc80c7e12213570d98a5fc6daed6b536cd979712d5ed670ce0bbd8c0187b20ce18ce68813087fbebd1a3cb54b76efc45a481eb5e0af933d38a2236902040e",
+          "sha256": "590d2c80f5cde78a2fa4b11562cd602ea46150634a2f4c8a5ee51793dfa63d24",
+          "sha1": "3681ad2d4c82f0d2106f1de60bce191a4f771228",
+          "md5": "8c6e9661b57c81c6448e67361dccd30e"
+        }
+      ]
+    }
+  ]
+}
