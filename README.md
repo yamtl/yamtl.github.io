@@ -32,6 +32,109 @@ Several examples are available in [this repository](https://github.com/yamtl/exa
 ### Release notes
 
 
+#### 0.4.7
+
+The YAMTL jar includes the dependencies: untyped-model, and classes used for EMFatic parsing. This allows client apps to use these classes within YAMTL without having to import the dependencies explicitly.
+
+#### 0.4.6
+
+Metamodels can be given in EMFatic notation.
+
+#### 0.4.5
+
+Groovy extension for executing static operations.
+
+FIX call to lazy rules in ELEMENT semantics.
+
+#### 0.4.4
+
+Added typing information when mapping EMF models to untyped models.
+
+#### 0.4.3
+
+YAMTLGroovyExtensions_dynamicEMF now supports expressions of the type `pk.Classifier`.
+
+#### 0.4.2
+
+Added EMFComparator for testing.
+
+#### 0.4.1
+
+Remove YAMTLException.
+
+Issues with incremental AADL refinement.
+
+#### 0.3.9-0.4.0
+
+* Added: getInDomains(), getOutDomains(), getInOutDomains() to know the signature of the transformations programmatically.
+* GroovyExtensions are now shipped with YAMTL.
+
+#### 0.3.8
+
+Support for dynamic EMF in Groovy:
+
+* Groovy extensions add syntactic sugar for getter/setter. When working with collections, use .add()/.addAll() instead of +=
+* Constructor receives metamodels as parameters
+* The static method YAMTLModule::loadMetamodel(filePath) returns an EPackage if the file is .ecore
+
+#### 0.3.7
+
+Support for Spring AOP JDK proxies:
+
+* This allows us to execute tests without having to configure AspectJ. The proxy based mechanism slows down the runtime performance.
+* We can still configure AspectJ via Spring AOP. That is, we can use AspectJ weaving through Spring AOP but we don't need to configure the AspectJ gradle tasks, which simplifies.
+
+JDK proxies are required to work with EMF generated code.
+
+Limitations: only getters that start with **get** are intercepted. Boolean attribute getters that start with is are not.
+
+#### 0.3.6
+
+Improved rule inheritance.
+
+When using rule inheritance, children rules need not have the same input element patterns as their parent rules. Input element calls in partial matches are extended, overriden or completed by the YAMTL matcher. This allows the rules to be specified in a much more concise way:
+
+* Parent rules do not need to anticipate the input element patterns that will be used in the children rules.
+* Children rules do not need to declare parent input element patterns if they don't use them.
+
+The following static checks guarantee that abstract rules are specialized by concrete rules.
+
+* Abstract rules must be specialized by other rules.
+* Concrete rules cannot be specialized by abstract rules but can have other specialised concrete rules.
+
+In addition, we have the following constraints:
+
+* The order of input elements in a rule must be preserved throughout the hierarchy. **PENDING**
+
+Diamond problem is avoided as follows:
+
+* Input element pattern: an in element cannot be inherited from different parent rules. The matches now uses depth-first search of the match.
+* Output element pattern: the out element can be inherited from two separate rules and a top-down left-most evaluation strategy is used to apply the actions of the out elements along the rule hierarchy.
+
+#### 0.3.5
+
+* Explicit `with` dependencies between `in` elements in the input pattern to guide the matching is not needed anymore. By default, YAMTL takes into account the order in which `in` elements appear in each rule. 
+* With inheritance:
+  * Parent rules can have `in` domains that need not be specified in a child rule. In this case, the domain is inherited in the child rule. In addition, a child rule may override the domain, in which case the filters of the domain in the parent classes is ignored.
+  * Child rules can have `in` domains that need not be specified in a parent rule. In this case, the pattern is extended and internally YAMTL lifts the domain (without filters) to the parent rules so that the match of parent rules is complete, w.r.t. the most concrete rules.
+
+#### 0.3.4
+
+Rules with priorities:
+* **PROBLEM**: priorities were taken into account during matching but not for executing each transformation step
+* **SOLUTION**: priorities are also taken into account for the execution phase. The logic has updated in propagation mode as well so that priorities are considering when executing transformation rules in incremental mode. More testing is desirable.
+
+#### 0.3.3
+
+* Polyglot YAMTL via functional interfaces: Xtend, Groovy, Java, Kotlin
+  * UntypedModel support for Groovy dialect of YAMTL, using Groovy as host language
+  * UntypedModel support for Xtend, via a YAMTLModule extension
+ 
+
+#### 0.3.2
+
+*  Lazy transformation rules can be executed with a list of arguments. This feature enables the caller rule to pass context to the lazy transformation step. Arguments are available within the execution context and can be retrieved with `fetch`.
+
 #### 0.3.0
 
 * The `RuntimeModel` has been renamed to `UntypedModel`. YAMTL can import/export untyped models from/to: CSV, XML, JSON. It can import untyped models from EMF. 
