@@ -178,19 +178,19 @@ Rules with priorities:
 
 ```
 #{
-	DocBook.section -> #{ ’paras’ -> #{
-		’Swapping paragraph’ -> (YAMTLChangeType.MOVE -> TRIVIAL_CHECK),
-		’Deleting paragraph’ -> (YAMTLChangeType.REMOVE -> TRIVIAL_CHECK) }
+	DocBook.section -> #{ "paras" -> #{
+		"Swapping paragraph" -> (YAMTLChangeType.MOVE -> TRIVIAL_CHECK),
+		"Deleting paragraph" -> (YAMTLChangeType.REMOVE -> TRIVIAL_CHECK) }
 	},
 	DocBook.article -> #{
-		’sections_1’ -> #{
-			’Deleting sections’ -> (YAMTLChangeType.REMOVE -> TRIVIAL_CHECK)
+		"sections_1" -> #{
+			"Deleting sections" -> (YAMTLChangeType.REMOVE -> TRIVIAL_CHECK)
 		} 
 	},
-	DocBook.sect1 -> #{ ’sections_2’ -> #{
-		’Deleting sections’ -> (YAMTLChangeType.REMOVE -> TRIVIAL_CHECK) },
-		’paras’ -> #{
-			’Adding an existing paragraph to Sect1’ -> (YAMTLChangeType.ADD -> [ EObject eObj, Object value |
+	DocBook.sect1 -> #{ "sections_2" -> #{
+		"Deleting sections" -> (YAMTLChangeType.REMOVE -> TRIVIAL_CHECK) },
+		"paras" -> #{
+			"Adding an existing paragraph to Sect1" -> (YAMTLChangeType.ADD -> [ EObject eObj, Object value |
 				val sect1 = eObj as Sect1
 				val para = value as Para 
 				sect1.paras.exists[it.content.startsWith(para.content)] as (EObject , Object)=>boolean)			
