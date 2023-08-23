@@ -4,7 +4,7 @@
 
 ### Getting started
 
-YAMTL uses Gradle as build automation tool and can be executed from Java 8.
+YAMTL uses Gradle as build automation tool and can be executed from Java 17.
 
 
 ### Configuring a Gradle build script to use YAMTL
@@ -22,7 +22,7 @@ Declare the following dependencies:
 
 	dependencies {
 		compile "org.eclipse.xtend:org.eclipse.xtend.lib:$xtendVersion"
-		compile "yamtl:yamtl:X" // replace X with the corresponding version
+		compile "yamtl:yamtl:${X.Y.Z}" // replace ${X.Y.Z} with the corresponding version
 	}
 
 ### Examples
