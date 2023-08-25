@@ -12,6 +12,14 @@ Several examples are available in [this repository](https://github.com/yamtl/exa
 
 ### Release notes
 
+
+#### 0.4.10, 0.4.11
+
+Reorganised methods in 
+
+* `YAMTLGroovyExtensions`: support for calling helpers and lazy rules. This needs to be executed after the module has been loaded.
+* `YAMTLGroovyExtensions_dynamicEMF`: support for parsing the transformation while loading the YAMTL module. It contains support for fetch, and for accessors/mutators since EMF code is not available.
+
 #### 0.4.9
 
 FIX how Groovy calls contextual operations. It was confusing contextual operations with lazy rules.
