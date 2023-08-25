@@ -12,6 +12,10 @@ Several examples are available in [this repository](https://github.com/yamtl/exa
 
 ### Release notes
 
+#### 0.4.9
+
+FIX how Groovy calls contextual operations. It was confusing contextual operations with lazy rules.
+
 #### 0.4.8
 
 * FIX: endWith can be used after an out element.
