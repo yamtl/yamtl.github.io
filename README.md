@@ -12,6 +12,10 @@ Several examples are available in [this repository](https://github.com/yamtl/exa
 
 ### Release notes
 
+#### 0.4.8
+
+* FIX: endWith can be used after an out element.
+* FIX: removing `with` dependencies in change in 0.3.5 affects model sensitivity. The pattern matcher may reorder the matching of input elements in a way that creates conflicts when evaluating filter expressions. A new flag `YAMTLModule::setEnabledMatchingInputElementOrderBySize` has been added to enable this implicit order that makes pattern matching aware of the model contents. By default, it is disabled. It can be enabled when it does not affect the evaluation of filters. See documentation for further information.
 
 #### 0.4.7
 
