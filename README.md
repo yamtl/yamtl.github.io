@@ -13,6 +13,14 @@ Several examples are available in [this repository](https://github.com/yamtl/exa
 ### Release notes
 
 
+#### 0.4.13
+
+Support for UML2 models in the YAMTL registry. UML2 models can now be loaded without having to register the metamodel.
+
+#### 0.4.12
+
+FIX in YAMTLGroovyExtensions: a getter method was not invoked correctly.
+
 #### 0.4.10, 0.4.11
 
 Reorganised methods in 
