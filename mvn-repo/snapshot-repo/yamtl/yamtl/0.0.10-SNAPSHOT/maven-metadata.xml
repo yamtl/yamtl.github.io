@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>yamtl</groupId>
+  <artifactId>yamtl</artifactId>
+  <version>0.0.10-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <timestamp>20210407.170614</timestamp>
+      <buildNumber>1</buildNumber>
+    </snapshot>
+    <lastUpdated>20210407170614</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>jar</extension>
+        <value>0.0.10-20210407.170614-1</value>
+        <updated>20210407170614</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>0.0.10-20210407.170614-1</value>
+        <updated>20210407170614</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>

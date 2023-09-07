@@ -1,0 +1,163 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "yamtl",
+    "module": "yamtl",
+    "version": "0.1.2",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.3",
+      "buildId": "tcb5thb4nfgezmn6tizmm2yvjy"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "org.eclipse.xtend",
+          "module": "org.eclipse.xtend.core",
+          "version": {
+            "requires": "2.20.0"
+          }
+        },
+        {
+          "group": "org.eclipse.emf",
+          "module": "org.eclipse.emf.ecore.xmi",
+          "version": {
+            "requires": "2.15.0"
+          }
+        },
+        {
+          "group": "org.eclipse.emf",
+          "module": "org.eclipse.emf.ecore.change",
+          "version": {
+            "requires": "2.11.0"
+          }
+        },
+        {
+          "group": "commons-io",
+          "module": "commons-io",
+          "version": {
+            "requires": "2.6"
+          }
+        },
+        {
+          "group": "net.sourceforge.plantuml",
+          "module": "plantuml",
+          "version": {
+            "requires": "8059"
+          }
+        },
+        {
+          "group": "org.aspectj",
+          "module": "aspectjrt",
+          "version": {
+            "requires": "1.9.6"
+          }
+        },
+        {
+          "group": "org.aspectj",
+          "module": "aspectjweaver",
+          "version": {
+            "requires": "1.9.6"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "yamtl-0.1.2.jar",
+          "url": "yamtl-0.1.2.jar",
+          "size": 368784,
+          "sha512": "a03458b6abf0836bdd1775749f25743b01d6e1962e2ca83918aff8fa8ea0ded1dc4fe841b1ff478b1d716d2d47c8e6bd773f176722313f666f1d94cbf5b97b1c",
+          "sha256": "d5420fc40e877a13168fad9e24cafc7b86c0f208480747ac06e5704dda9ba012",
+          "sha1": "10f30ee0143bc92e1affa6e53fa17cf57a849562",
+          "md5": "2e68b01a7230a0e0f276dc99e2e1d445"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.eclipse.xtend",
+          "module": "org.eclipse.xtend.core",
+          "version": {
+            "requires": "2.20.0"
+          }
+        },
+        {
+          "group": "org.eclipse.emf",
+          "module": "org.eclipse.emf.ecore.xmi",
+          "version": {
+            "requires": "2.15.0"
+          }
+        },
+        {
+          "group": "org.eclipse.emf",
+          "module": "org.eclipse.emf.ecore.change",
+          "version": {
+            "requires": "2.11.0"
+          }
+        },
+        {
+          "group": "commons-io",
+          "module": "commons-io",
+          "version": {
+            "requires": "2.6"
+          }
+        },
+        {
+          "group": "net.sourceforge.plantuml",
+          "module": "plantuml",
+          "version": {
+            "requires": "8059"
+          }
+        },
+        {
+          "group": "org.aspectj",
+          "module": "aspectjrt",
+          "version": {
+            "requires": "1.9.6"
+          }
+        },
+        {
+          "group": "org.aspectj",
+          "module": "aspectjweaver",
+          "version": {
+            "requires": "1.9.6"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "yamtl-0.1.2.jar",
+          "url": "yamtl-0.1.2.jar",
+          "size": 368784,
+          "sha512": "a03458b6abf0836bdd1775749f25743b01d6e1962e2ca83918aff8fa8ea0ded1dc4fe841b1ff478b1d716d2d47c8e6bd773f176722313f666f1d94cbf5b97b1c",
+          "sha256": "d5420fc40e877a13168fad9e24cafc7b86c0f208480747ac06e5704dda9ba012",
+          "sha1": "10f30ee0143bc92e1affa6e53fa17cf57a849562",
+          "md5": "2e68b01a7230a0e0f276dc99e2e1d445"
+        }
+      ]
+    }
+  ]
+}

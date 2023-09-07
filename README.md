@@ -334,3 +334,4 @@ Binaries compiled with Java 11.
 
 ***
 &copy; [Artur Boronat](arturboronat.info), 2018
+
