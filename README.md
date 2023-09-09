@@ -13,6 +13,16 @@ Several examples are available in [this repository](https://github.com/yamtl/exa
 ### Release notes
 
 
+
+#### 0.4.14
+
+* Renamed the static method `YAMTLModule::loadMetamodel(fileName)` to `YAMTLModule:preloadMetamodel(fileName)` and this now returns a resource instead of a package.
+* Simplified `YAMTLModule::loadMetamodel(fileName, standalone)`, which enabled the registration of metamodels in the global EMF registry, in favour of `YAMTLModule:loadMetamodel(fileName)`, which only registers the metamodel in the EMF registry associated with the specific transformation module instance.
+* Added the YAMTLModule::loadMetamodelResource(Resource) method, which allows for loading a metamodel via its resource. This capability facilitates:
+  * Static Preloading: You can preload a metamodel and later load that same metamodel for a specific YAMTLModule instance. This aids in loading models consistently.
+  * Dynamic EMF Model Transformations: One application of this configuration arises when there's a need to preload metamodels for transformations dealing with EMF models dynamically (leveraging the EMF reflective API). This results in the generation of output models based on the preloaded output metamodel.
+  * Testing: Subsequently, for testing purposes, there might be a need to load the expected output models. It's essential these models use the exact same output metamodel for consistency.
+
 #### 0.4.13
 
 Support for UML2 models in the YAMTL registry. UML2 models can now be loaded without having to register the metamodel.
