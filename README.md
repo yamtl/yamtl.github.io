@@ -12,7 +12,17 @@ Several examples are available in [this repository](https://github.com/yamtl/exa
 
 ### Release notes
 
+#### 0.4.15
 
+A resource factory can now be registered to the YAMTLModule registry allowing loading models using specific parsers. This allows YAMTL to load models from files with a given extension, which have a dedicated parser.
+
+UML2 dependencies have been removed. To work with UML2, its resource factory implementation needs to be registered before loading models:
+
+```
+def xform = new ClassExtendingYAMTLModule()
+xform.registerResourceFactory("uml", new UMLResourceFactoryImpl())
+xform.loadInputModels(["in":"./path/to/model.uml"])
+```
 
 #### 0.4.14
 
