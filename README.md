@@ -12,6 +12,11 @@ Several examples are available in [this repository](https://github.com/yamtl/exa
 
 ### Release notes
 
+#### 0.4.17
+
+Renamed `.cap()` to `.toManyCap()` in `toMany()` rules.
+
+
 #### 0.4.16
 
 FIX error message when matches are not unique for matched rules. This was only checked in incremental mode.
