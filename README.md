@@ -12,6 +12,10 @@ Several examples are available in [this repository](https://github.com/yamtl/exa
 
 ### Release notes
 
+#### 0.4.16
+
+FIX error message when matches are not unique for matched rules. This was only checked in incremental mode.
+
 #### 0.4.15
 
 A resource factory can now be registered to the YAMTLModule registry allowing loading models using specific parsers. This allows YAMTL to load models from files with a given extension, which have a dedicated parser.
