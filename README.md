@@ -12,6 +12,13 @@ Several examples are available in [this repository](https://github.com/yamtl/exa
 
 ### Release notes
 
+#### 0.4.18
+
+Support for in-place transformations:
+* FIX initialization of in-place transformations. Rename `isSpec` to `isInplace`.
+* Rule variables (`using`) can be initialized before `globalFilter`.
+* FIX save inOut model
+
 #### 0.4.17
 
 Renamed `.cap()` to `.toManyCap()` in `toMany()` rules.
