@@ -12,6 +12,10 @@ Several examples are available in [this repository](https://github.com/yamtl/exa
 
 ### Release notes
 
+#### 0.4.19
+
+FIX `allInstances()`: it needs to return proxies to objects when using SpringAOP.
+
 #### 0.4.18
 
 Support for in-place transformations:
