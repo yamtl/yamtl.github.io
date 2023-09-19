@@ -12,6 +12,10 @@ Several examples are available in [this repository](https://github.com/yamtl/exa
 
 ### Release notes
 
+#### 0.4.21
+
+FIX allInstances due to a bug inserted with SpringAOP proxies
+
 #### 0.4.20
 
 FIX analysis of on-the-fly changes: moving objects was not handled correctly.
