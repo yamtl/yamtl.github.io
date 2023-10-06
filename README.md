@@ -12,6 +12,10 @@ Several examples are available in [this repository](https://github.com/yamtl/exa
 
 ### Release notes
 
+#### 0.4.22
+
+FIX null exception when importing EMF model into untyped model, when applied to UML models.
+
 #### 0.4.21
 
 FIX allInstances due to a bug inserted with SpringAOP proxies
