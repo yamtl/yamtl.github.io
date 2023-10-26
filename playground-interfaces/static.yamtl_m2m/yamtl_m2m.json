@@ -1,0 +1,39 @@
+{
+"tool": 
+    {
+        "id": "yamtl",
+        "name": "YAMTL",
+        "functions": [
+            {
+                "id": "function-yamtl-m2m",
+                "name": "YAMTL M2M function",
+                "parameters": [ {"name":"trafoGroovy", "type":"groovy"}, 
+                                {"name":"inMetamodel", "type":"emfatic"},
+                                {"name":"inModel", "type":"xmi"},
+                                {"name":"outMetamodel", "type":"emfatic"},
+                                {"name": "language", "type":"string"}
+                ],
+                "returnType": "text",
+                "path": "https://microservices.yamtl.space/Prod/yamtl_m2m"
+            }
+        ],
+
+        "panelDefs": [
+            {
+                "id": "yamtl",
+                "name": "YAMTL M2M",
+                "panelclass": "ProgramPanel",
+                "icon": "yamtl",
+                "language": "groovy",
+                "buttons" : [ 
+                    { 
+                        "id": "action-button", 
+                        "icon": "run",
+                        "actionfunction": "function-yamtl-m2m",
+                        "hint": "Run the program (Ctrl/Cmd+S)" 
+                      }
+                ]
+            }
+        ]
+    }
+} 
