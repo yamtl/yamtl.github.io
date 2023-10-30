@@ -23,7 +23,7 @@
 
                 "returnType": "diagram",
 
-                "path": "https://"
+                "path": "http://"
 
             },
 
@@ -37,7 +37,7 @@
 
                 "returnType": "diagram",
 
-                "path": "https://"
+                "path": "http://"
 
             }
         ],
