@@ -12,7 +12,7 @@
                 "https://yamtl.github.io/playground-interfaces/static.yamtlgroovy/yamtl_m2m.json" ],
             "layout": {
                 "area": [
-                        ["panel-yamtl", "panel-smm", "panel-tmm"],
+                        ["panel-yamtl", "panel-smm", "panel-smm-diagram", "panel-tmm", "panel-tmm-diagram"],
                         ["panel-console", "panel-smodel", "panel-tmodel"]
                     ]
                 },
@@ -34,7 +34,7 @@
                     "parameters": {
                         "metamodel": "panel-smm"
                     },
-                    "output": "panel-smm"
+                    "output": "panel-smm-diagram"
                 },
                 {
                     "source": "panel-tmm",
@@ -42,7 +42,7 @@
                     "parameters": {
                         "metamodel": "panel-tmm"
                     },
-                    "output": "panel-tmm"
+                    "output": "panel-tmm-diagram"
                 }
             ],
 
@@ -62,10 +62,20 @@
                     "file": "sourceModel.xmi"
                 },
                 {
+                    "id": "panel-smodel-diagram",
+                    "name": "Source Model Diagram",
+                    "ref": "svg"
+                },
+                {
                     "id": "panel-smm",
                     "name": "Source Metamodel",
                     "ref": "emfatic",
                     "file": "CD.emf"
+                },
+                {
+                    "id": "panel-smm-diagram",
+                    "name": "Source Metamodel Diagram",
+                    "ref": "svg"
                 },
                 {
                     "id": "panel-tmm",
@@ -74,9 +84,19 @@
                     "file": "Relational.emf"
                 },
                 {
+                    "id": "panel-tmm-diagram",
+                    "name": "Target Metamodel Diagram",
+                    "ref": "svg"
+                },
+                {
                     "id": "panel-tmodel",
                     "name": "Target Model",
                     "ref": "xmi"
+                },
+                {
+                    "id": "panel-tmodel-diagram",
+                    "name": "Target Model Diagram",
+                    "ref": "svg"
                 },
                 {
                     "id": "panel-console",

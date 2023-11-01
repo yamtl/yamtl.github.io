@@ -98,6 +98,15 @@
                       "hint": "OMG - XML Metadata Interchange" 
                     }          
                 ]
+            },
+            
+            {
+
+                "id": "svg",
+                "name": "plantuml",
+                "panelclass": "OutputPanel",
+                "icon": "diagram"
+
             }
 
         ]
