@@ -1,0 +1,76 @@
+{
+    "activities": [
+        {
+            "id": "yamtl-cd2db-activity",
+            "title": "Model-to-Model CD2DB Example",
+            "icon": "yamtl",
+            "tools-local": [ 
+                        "http://127.0.0.1:8073/emf_tool.json", 
+                        "http://127.0.0.1:8500/yamtl_tool.json" ],
+            "tools": [ 
+                "https://yamtl.github.io/playground-interfaces/static.emf/emf_tool.json",
+                "https://yamtl.github.io/playground-interfaces/static.emfatic/emfatic_tool.json", 
+                "https://yamtl.github.io/playground-interfaces/static.yamtl_m2m/yamtl_m2m.json" ],
+            "layout": {
+                "area": [
+                        ["panel-yamtl", "panel-smm", "panel-tmm"],
+                        ["panel-console", "panel-smodel", "panel-tmodel"]
+                    ]
+                },
+            "actions": [
+                {
+                    "source": "panel-yamtl",
+                    "sourceButton": "action-button",
+                    "parameters": {
+                        "trafoGroovy": "panel-yamtl",
+                        "inModel": "panel-smodel",
+                        "inMetamodel": "panel-smm",
+                        "outMetamodel": "panel-tmm"
+                    },
+                    "output": "panel-tmodel"
+
+                }
+            ],
+
+
+
+            "panels": [
+                {
+                    "id": "panel-yamtl",
+                    "name": "Transformation(YAMTL)",
+                    "ref": "yamtl",
+                    "file": "CD2DB.groovy"
+                },
+                {
+                    "id": "panel-smodel",
+                    "name": "Source Model",
+                    "ref": "xmi",
+                    "file": "sourceModel.xmi"
+                },
+                {
+                    "id": "panel-smm",
+                    "name": "Source Metamodel",
+                    "ref": "emfatic",
+                    "file": "CD.emf"
+                },
+                {
+                    "id": "panel-tmm",
+                    "name": "Target Metamodel",
+                    "ref": "emfatic",
+                    "file": "Relational.emf"
+                },
+                {
+                    "id": "panel-tmodel",
+                    "name": "Target Model",
+                    "ref": "xmi"
+                },
+                {
+                    "id": "panel-console",
+                    "name": "Console",
+                    "ref": "console"
+                }
+            ]
+
+        }
+
+] } 
