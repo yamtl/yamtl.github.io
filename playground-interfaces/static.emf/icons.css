@@ -1,1 +1,6 @@
-#TODO
+.mif-emfatic::before {
+    content: url("./icons/emfatic.png");
+}
+.mif-diagram::before {
+    content: url("./icons/diagram.svg");
+}
