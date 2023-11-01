@@ -9,7 +9,7 @@
                         "http://127.0.0.1:8500/yamtl_tool.json" ],
             "tools": [ 
                 "https://yamtl.github.io/playground-interfaces/static.emf/emf_tool.json",
-                "https://yamtl.github.io/playground-interfaces/static.yamtl_groovy/yamtl_m2m.json" ],
+                "https://yamtl.github.io/playground-interfaces/static.yamtlgroovy/yamtl_m2m.json" ],
             "layout": {
                 "area": [
                         ["panel-yamtl", "panel-smm", "panel-tmm"],
