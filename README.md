@@ -12,6 +12,12 @@ Several examples are available in [this repository](https://github.com/yamtl/exa
 
 ### Release notes
 
+
+#### 0.4.23
+
+Graphical representation of metamodels and models using PlantUML in the class `prettyprinting.EMFPrettyPrinter`.
+
+
 #### 0.4.22
 
 FIX null exception when importing EMF model into untyped model, when applied to UML models.
