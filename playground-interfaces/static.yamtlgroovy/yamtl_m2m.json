@@ -28,7 +28,7 @@
                 "language": "groovy",
                 "buttons" : [ 
                     { 
-                        "id": "action-button", 
+                        "id": "run-trafo-button", 
                         "icon": "run",
                         "actionfunction": "function-yamtl-m2m",
                         "hint": "Run the program (Ctrl/Cmd+S)" 

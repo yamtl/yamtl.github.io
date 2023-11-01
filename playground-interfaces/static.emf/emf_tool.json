@@ -38,7 +38,7 @@
                 "language": "emfatic",
                 "buttons" : [ 
                       { 
-                        "id": "refresh-button", 
+                        "id": "emfatic2cd-button", 
                         "icon": "refresh",
                         "actionfunction": "function-ecore2cd",
                         "hint": "Render the metamodel class diagram" 
@@ -60,7 +60,7 @@
                 "language": "ecore",
                 "buttons" : [ 
                       { 
-                        "id": "refresh-button", 
+                        "id": "ecore2cd-button", 
                         "icon": "refresh",
                         "actionfunction": "function-ecore2cd",
                         "hint": "Render the metamodel class diagram" 
@@ -82,7 +82,7 @@
                 "language": "xmi",
                 "buttons" : [ 
                     { 
-                      "id": "refresh-button", 
+                      "id": "xmi2od-button", 
                       "icon": "refresh",
                       "actionfunction": "function-xmi2od",
                       "hint": "Render the model object diagram" 

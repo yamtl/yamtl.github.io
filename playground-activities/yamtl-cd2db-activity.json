@@ -19,7 +19,7 @@
             "actions": [
                 {
                     "source": "panel-yamtl",
-                    "sourceButton": "action-button",
+                    "sourceButton": "run-trafo-button",
                     "parameters": {
                         "trafoGroovy": "panel-yamtl",
                         "inModel": "panel-smodel",
@@ -27,7 +27,22 @@
                         "outMetamodel": "panel-tmm"
                     },
                     "output": "panel-tmodel"
-
+                },
+                {
+                    "source": "panel-smm",
+                    "sourceButton": "emfatic2cd-button",
+                    "parameters": {
+                        "metamodel": "panel-smm"
+                    },
+                    "output": "panel-smm"
+                },
+                {
+                    "source": "panel-tmm",
+                    "sourceButton": "emfatic2cd-button",
+                    "parameters": {
+                        "metamodel": "panel-tmm"
+                    },
+                    "output": "panel-tmm"
                 }
             ],
 
