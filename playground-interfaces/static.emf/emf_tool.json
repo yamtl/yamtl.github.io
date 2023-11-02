@@ -12,23 +12,23 @@
                 "id": "function-ecore2cd",
                 "name": "Conversion: Ecore to class diagram",
                 "parameters": [
-                  {"name":"language", "type":"emfatic"}, 
+                  {"name":"language", "type":"puml"}, 
                   {"name":"metamodel", "type":"emfatic"}
                 ],
-                "returnType": "diagram",
-                "path": "https://microservices.yamtl.space/Prod/ecore2cd"
+                "returnType": "puml",
+                "path": "https://microservices.yamtl.space/Prod/ecore2cd_puml"
             },
 
             {
                 "id": "function-xmi2od",
                 "name": "Conversion: Xmi model to augmented object diagram",
                 "parameters": [ 
-                  {"name":"language", "type":"xmi"},
+                    {"name":"language", "type":"puml"},
                     {"name":"metamodel", "type":"emfatic"},
                     {"name":"model", "type":"xmi", "instanceOf":"metamodel"}
                 ],
-                "returnType": "diagram",
-                "path": "https://microservices.yamtl.space/Prod/ecore2cd"
+                "returnType": "puml",
+                "path": "https://microservices.yamtl.space/Prod/ecore2cd_puml"
             }
         ],
 
@@ -102,8 +102,8 @@
             
             {
 
-                "id": "svg",
-                "name": "plantuml",
+                "id": "plantuml-panel",
+                "name": "plantuml-panel",
                 "panelclass": "OutputPanel",
                 "icon": "diagram"
 
