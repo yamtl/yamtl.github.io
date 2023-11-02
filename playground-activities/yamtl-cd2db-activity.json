@@ -64,7 +64,7 @@
                 {
                     "id": "panel-smodel-diagram",
                     "name": "Source Model Diagram",
-                    "ref": "svg"
+                    "ref": "plantuml-panel"
                 },
                 {
                     "id": "panel-smm",
@@ -75,7 +75,7 @@
                 {
                     "id": "panel-smm-diagram",
                     "name": "Source Metamodel Diagram",
-                    "ref": "svg"
+                    "ref": "plantuml-panel"
                 },
                 {
                     "id": "panel-tmm",
@@ -86,7 +86,7 @@
                 {
                     "id": "panel-tmm-diagram",
                     "name": "Target Metamodel Diagram",
-                    "ref": "svg"
+                    "ref": "plantuml-panel"
                 },
                 {
                     "id": "panel-tmodel",
@@ -96,7 +96,7 @@
                 {
                     "id": "panel-tmodel-diagram",
                     "name": "Target Model Diagram",
-                    "ref": "svg"
+                    "ref": "plantuml-panel"
                 },
                 {
                     "id": "panel-console",
