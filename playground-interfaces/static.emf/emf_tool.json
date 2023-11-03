@@ -23,7 +23,7 @@
                 "id": "function-xmi2od",
                 "name": "Conversion: Xmi model to augmented object diagram",
                 "parameters": [ 
-                    {"name":"language", "type":"emfatic"},
+                    {"name":"language", "type":"xmi"},
                     {"name":"metamodel", "type":"emfatic"},
                     {"name":"model", "type":"xmi", "instanceOf":"metamodel"}
                 ],
