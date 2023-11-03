@@ -51,7 +51,8 @@
                     "source": "panel-smodel",
                     "sourceButton": "xmi2od-button",
                     "parameters": {
-                        "metamodel": "panel-smodel"
+                        "metamodel": "panel-smm",
+                        "model": "panel-smodel"
                     },
                     "output": "panel-smodel-diagram",
                     "outputType": "puml"
@@ -60,7 +61,8 @@
                     "source": "panel-tmodel",
                     "sourceButton": "xmi2od-button",
                     "parameters": {
-                        "metamodel": "panel-tmodel"
+                        "metamodel": "panel-tmm",
+                        "model": "panel-tmodel"
                     },
                     "output": "panel-tmodel-diagram",
                     "outputType": "puml"
