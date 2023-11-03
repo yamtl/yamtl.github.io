@@ -49,7 +49,7 @@
                 },
                 {
                     "source": "panel-smodel",
-                    "sourceButton": "emfatic2cd-button",
+                    "sourceButton": "xmi2od-button",
                     "parameters": {
                         "metamodel": "panel-smodel"
                     },
@@ -58,7 +58,7 @@
                 },
                 {
                     "source": "panel-tmodel",
-                    "sourceButton": "emfatic2cd-button",
+                    "sourceButton": "xmi2od-button",
                     "parameters": {
                         "metamodel": "panel-tmodel"
                     },
