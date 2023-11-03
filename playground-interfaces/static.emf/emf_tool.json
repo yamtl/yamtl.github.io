@@ -101,11 +101,11 @@
             },
             {
 
-              "id": "plantuml-panel",
-              "name": "plantuml-panel",
+              "id": "plantuml",
+              "name": "PlantUML",
               "language": "puml",
               "panelclass": "OutputPanel",
-              "icon": "emfatic"
+              "icon": "diagram"
           }
 
         ]
