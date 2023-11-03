@@ -37,7 +37,7 @@
             {
                 "id": "emfatic",
                 "name": "EMFatic",
-                "panelclass": "ProgramPanel",
+                "panelclass": "ModelPanel",
                 "icon": "emfatic",
                 "language": "emfatic",
                 "buttons" : [ 
@@ -59,7 +59,7 @@
             {
                 "id": "ecore",
                 "name": "Ecore",
-                "panelclass": "ProgramPanel",
+                "panelclass": "ModelPanel",
                 "icon": "ecore",
                 "language": "ecore",
                 "buttons" : [ 
@@ -81,7 +81,7 @@
             {
                 "id": "xmi",
                 "name": "XMI",
-                "panelclass": "ProgramPanel",
+                "panelclass": "ModelPanel",
                 "icon": "xmi",
                 "language": "xmi",
                 "buttons" : [ 
@@ -98,16 +98,6 @@
                       "hint": "OMG - XML Metadata Interchange" 
                     }          
                 ]
-            },
-            
-            {
-
-                "id": "plantuml-panel",
-                "name": "plantuml-panel",
-                "language": "puml",
-                "panelclass": "OutputPanel",
-                "icon": "diagram"
-
             }
 
         ]
