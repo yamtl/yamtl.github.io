@@ -42,16 +42,16 @@
                     "source": "panel-tmm",
                     "sourceButton": "emfatic2cd-button",
                     "parameters": {
-                        "metamodel": "panel-tmm-diagram"
+                        "metamodel": "panel-tmm"
                     },
-                    "output": "panel-tmm",
+                    "output": "panel-tmm-diagram",
                     "outputType": "puml"
                 },
                 {
                     "source": "panel-smodel",
                     "sourceButton": "emfatic2cd-button",
                     "parameters": {
-                        "metamodel": "panel-smodel-diagram"
+                        "metamodel": "panel-smodel"
                     },
                     "output": "panel-smodel-diagram",
                     "outputType": "puml"
@@ -60,7 +60,7 @@
                     "source": "panel-tmodel",
                     "sourceButton": "emfatic2cd-button",
                     "parameters": {
-                        "metamodel": "panel-tmodel-diagram"
+                        "metamodel": "panel-tmodel"
                     },
                     "output": "panel-tmodel-diagram",
                     "outputType": "puml"
