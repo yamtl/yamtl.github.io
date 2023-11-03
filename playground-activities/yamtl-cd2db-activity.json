@@ -35,7 +35,7 @@
                     "parameters": {
                         "metamodel": "panel-smm"
                     },
-                    "output": "panel-smm-diagram",
+                    "output": "panel-smm",
                     "outputType": "puml"
                 },
                 {
@@ -44,7 +44,7 @@
                     "parameters": {
                         "metamodel": "panel-tmm"
                     },
-                    "output": "panel-tmm-diagram",
+                    "output": "panel-tmm",
                     "outputType": "puml"
                 }
             ],
@@ -65,20 +65,10 @@
                     "file": "sourceModel.xmi"
                 },
                 {
-                    "id": "panel-smodel-diagram",
-                    "name": "Source Model Diagram",
-                    "ref": "plantuml-panel"
-                },
-                {
                     "id": "panel-smm",
                     "name": "Source Metamodel",
                     "ref": "emfatic",
                     "file": "CD.emf"
-                },
-                {
-                    "id": "panel-smm-diagram",
-                    "name": "Source Metamodel Diagram",
-                    "ref": "plantuml-panel"
                 },
                 {
                     "id": "panel-tmm",
@@ -87,19 +77,9 @@
                     "file": "Relational.emf"
                 },
                 {
-                    "id": "panel-tmm-diagram",
-                    "name": "Target Metamodel Diagram",
-                    "ref": "plantuml-panel"
-                },
-                {
                     "id": "panel-tmodel",
                     "name": "Target Model",
                     "ref": "xmi"
-                },
-                {
-                    "id": "panel-tmodel-diagram",
-                    "name": "Target Model Diagram",
-                    "ref": "plantuml-panel"
                 },
                 {
                     "id": "panel-console",
