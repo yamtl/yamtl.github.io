@@ -12,8 +12,8 @@
                 "https://yamtl.github.io/playground-interfaces/static.yamtlgroovy/yamtl_m2m.json" ],
             "layout": {
                 "area": [
-                        ["panel-yamtl", "panel-smm", "panel-tmm"],
-                        ["panel-console", "panel-smodel", "panel-tmodel"]
+                        ["panel-yamtl", "panel-smm", "panel-smm-diagram", "panel-tmm", "panel-tmm-diagram"],
+                        ["panel-console", "panel-smodel", "panel-smodel-diagram", "panel-tmodel", "panel-tmodel-diagram"]
                     ]
                 },
             "actions": [
@@ -35,16 +35,34 @@
                     "parameters": {
                         "metamodel": "panel-smm"
                     },
-                    "output": "panel-smm",
+                    "output": "panel-smm-diagram",
                     "outputType": "puml"
                 },
                 {
                     "source": "panel-tmm",
                     "sourceButton": "emfatic2cd-button",
                     "parameters": {
-                        "metamodel": "panel-tmm"
+                        "metamodel": "panel-tmm-diagram"
                     },
                     "output": "panel-tmm",
+                    "outputType": "puml"
+                },
+                {
+                    "source": "panel-smodel",
+                    "sourceButton": "emfatic2cd-button",
+                    "parameters": {
+                        "metamodel": "panel-smodel-diagram"
+                    },
+                    "output": "panel-smodel-diagram",
+                    "outputType": "puml"
+                },
+                {
+                    "source": "panel-tmodel",
+                    "sourceButton": "emfatic2cd-button",
+                    "parameters": {
+                        "metamodel": "panel-tmodel-diagram"
+                    },
+                    "output": "panel-tmodel-diagram",
                     "outputType": "puml"
                 }
             ],
@@ -59,16 +77,15 @@
                     "file": "CD2DB.groovy"
                 },
                 {
-                    "id": "panel-smodel",
-                    "name": "Source Model",
-                    "ref": "xmi",
-                    "file": "sourceModel.xmi"
-                },
-                {
                     "id": "panel-smm",
                     "name": "Source Metamodel",
                     "ref": "emfatic",
                     "file": "CD.emf"
+                },
+                {
+                    "id": "panel-smm-diagram",
+                    "name": "Source Metamodel Diagram",
+                    "ref": "plantuml"
                 },
                 {
                     "id": "panel-tmm",
@@ -77,9 +94,30 @@
                     "file": "Relational.emf"
                 },
                 {
+                    "id": "panel-tmm-diagram",
+                    "name": "Target Metamodel Diagram",
+                    "ref": "plantuml"
+                },
+                {
+                    "id": "panel-smodel",
+                    "name": "Source Model",
+                    "ref": "xmi",
+                    "file": "sourceModel.xmi"
+                },
+                {
+                    "id": "panel-smodel-diagram",
+                    "name": "Source Model Diagram",
+                    "ref": "plantuml"
+                },
+                {
                     "id": "panel-tmodel",
                     "name": "Target Model",
                     "ref": "xmi"
+                },
+                {
+                    "id": "panel-tmodel-diagram",
+                    "name": "Target Model Diagram",
+                    "ref": "plantuml"
                 },
                 {
                     "id": "panel-console",

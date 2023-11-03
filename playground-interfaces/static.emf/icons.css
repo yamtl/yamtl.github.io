@@ -1,6 +1,12 @@
 .mif-emfatic::before {
     content: url("./icons/emfatic.png");
 }
+/* icons.css */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
+
 .mif-diagram::before {
-    content: url("./icons/diagram.svg");
+  content: '\f0e8'; /* This is the Unicode for "sitemap" icon in Font Awesome 5 */
+  /* Ensure you use the correct 'font-family' if you're importing a different version */
+  font-family: 'Font Awesome 5 Free'; 
+  font-weight: 900; /* Solid style needs a weight of 900 */
 }
