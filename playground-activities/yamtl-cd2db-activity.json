@@ -26,7 +26,8 @@
                         "inMetamodel": "panel-smm",
                         "outMetamodel": "panel-tmm"
                     },
-                    "output": "panel-tmodel"
+                    "output": "panel-tmodel",
+                    "outputType": "code"
                 },
                 {
                     "source": "panel-smm",
@@ -34,7 +35,8 @@
                     "parameters": {
                         "metamodel": "panel-smm"
                     },
-                    "output": "panel-smm-diagram"
+                    "output": "panel-smm-diagram",
+                    "outputType": "puml"
                 },
                 {
                     "source": "panel-tmm",
@@ -42,7 +44,8 @@
                     "parameters": {
                         "metamodel": "panel-tmm"
                     },
-                    "output": "panel-tmm-diagram"
+                    "output": "panel-tmm-diagram",
+                    "outputType": "puml"
                 }
             ],
 
