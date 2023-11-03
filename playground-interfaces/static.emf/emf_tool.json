@@ -28,7 +28,7 @@
                     {"name":"model", "type":"xmi", "instanceOf":"metamodel"}
                 ],
                 "returnType": "puml",
-                "path": "https://microservices.yamtl.space/Prod/ecore2cd_puml"
+                "path": "https://microservices.yamtl.space/Prod/xmi2od_puml"
             }
         ],
 
