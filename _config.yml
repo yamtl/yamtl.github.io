@@ -3,5 +3,4 @@ title: YAMTL
 description: Yet Another Model Transformation Language 
 logo: ./images/yaml-icon.png
 url: "https://yamtl.github.io" # the base hostname & protocol for your site
-baseurl: "/playground" # the subpath of your site, e.g. /blog
 google_analytics: UA-78418237-2
