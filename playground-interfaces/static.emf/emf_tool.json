@@ -104,7 +104,7 @@
               "id": "plantuml",
               "name": "PlantUML",
               "language": "puml",
-              "panelclass": "ConsolePanel",
+              "panelclass": "OutputPanel",
               "icon": "diagram"
           }
 
