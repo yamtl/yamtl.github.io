@@ -1,17 +1,4 @@
-## YAMTL 
-
-**YAMTL** is an EMF-based model-to-model transformation engine whose transformations are defined with an internal DSL of [Xtend](http://www.eclipse.org/xtend/) (*Yet Another Model Transformation Language*).
-
-### Getting started
-
-YAMTL uses Gradle as build automation tool and can be executed from Java 17.
-
-### Examples
-
-Several examples are available in [this repository](https://github.com/yamtl/examples).
-
-### Release notes
-
+# Release notes
 
 #### 0.4.23
 

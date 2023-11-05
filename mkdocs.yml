@@ -1,0 +1,83 @@
+site_name: YAMTL
+
+nav:
+  - Home: 'index.md'
+  - Getting Started: 'getting-started.md'
+  - Language Reference: 'yamtl-reference.md'
+  - Playground: https://yamtl.github.io/playground/?activities=https://yamtl.github.io/playground-activities/yamtl-cd2db-activity.json
+  - Choosing an IDE: 'yamtl-ide.md'
+  - Examples: 
+    - Examples Repository: 'examples/examples.md'
+    - Linked List Reversal: 'examples/linked-list-reversal-example.md'
+    - Flowchart to HTML: 'examples/flowchart-to-html-example.md'
+  - Exercises:
+    - Flowchart to HTML: 'exercises/flowchart-to-html-worksheet.md'
+  - Release Notes: 'release-notes.md'
+
+theme:
+  name: material
+  logo: assets/site-files/yamtl-white/favicon-32x32.png
+  favicon: assets/site-files/yamtl/favicon.ico
+  palette: 
+    - scheme: default
+      primary: pink # light blue
+      accent: amber
+      toggle:
+        icon: material/lightbulb-outline
+        name: Switch to dark mode
+    - scheme: slate
+      primary: pink # light blue
+      accent: amber
+      toggle:
+        icon: material/lightbulb
+        name: Switch to light mode
+  features:
+    - content.code.copy
+    - content.tabs.link
+
+extra_css:
+  - stylesheets/extra.scss
+
+plugins:
+  - git-revision-date-localized:
+      strict: false
+      fallback_to_build_date: true
+  - search:
+      lang: en
+
+use_directory_urls: false
+
+
+markdown_extensions: 
+  - attr_list
+  - md_in_html
+  - admonition
+  - pymdownx.details
+  - tables
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true 
+  - footnotes
+
+extra:
+  analytics:
+    provider: google
+    property: UA-78418237-2
+  consent:
+    title: Cookie consent
+    description: >- 
+      We use cookies to recognize your repeated visits and preferences, as well
+      as to measure the effectiveness of our documentation and whether users
+      find what they're searching for. With your consent, you're helping us to
+      make our documentation better.
