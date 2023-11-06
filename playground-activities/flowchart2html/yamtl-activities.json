@@ -1,0 +1,564 @@
+{
+    "activities": [
+        {
+            "id": "yamtl-base-activity",
+            "title": "Base Example",
+            "icon": "etl",
+            "tools": [ 
+                        "http://127.0.0.1:8070/epsilon_tool.json", 
+                       "http://127.0.0.1:8071/emfatic_tool.json",
+                       "http://127.0.0.1:8073/emf_tool.json", 
+                       "http://127.0.0.1:8500/yamtl_tool.json" ],
+            "layout": {
+                    "area": [
+                        ["panel-yamtl", "panel-smm", "panel-tmm"],
+                        ["panel-console", "panel-smodel", "panel-tmodel"]
+                    ]
+                },
+            "actions": [
+                {
+                    "source": "panel-yamtl",
+                    "sourceButton": "action-button",
+                    "parameters": {
+                        "trafoGroovy": "panel-yamtl",
+                        "inModel": "panel-smodel",
+                        "inMetamodel": "panel-smm",
+                        "outMetamodel": "panel-tmm"
+                    },
+                    "output": "panel-tmodel"
+
+                }
+            ],
+
+
+
+            "panels": [
+                {
+                    "id": "panel-yamtl",
+                    "name": "Base Example Transformation (YAMTL)",
+                    "ref": "yamtl",
+                    "file": "examples/Base.groovy"
+                },
+                {
+                    "id": "panel-smodel",
+                    "name": "Source Model",
+                    "ref": "xmi",
+                    "file": "FlowchartToHTML_models/wakeup.xmi"
+                },
+                {
+                    "id": "panel-smm",
+                    "name": "Source Metamodel",
+                    "ref": "emfatic",
+                    "file": "FlowchartToHTML_models/flowchart.emf"
+                },
+                {
+                    "id": "panel-tmm",
+                    "name": "Target Metamodel",
+                    "ref": "emfatic",
+                    "file": "FlowchartToHTML_models/html.emf"
+                },
+                {
+                    "id": "panel-tmodel",
+                    "name": "Target Model",
+                    "ref": "xmi"
+                },
+                {
+                    "id": "panel-console",
+                    "name": "Console",
+                    "ref": "console"
+                }
+            ]
+
+        },
+	    {
+            "id": "yamtl-priority-activity",
+            "title": "Priority Operation",
+            "icon": "etl",
+            "tools": [ 
+                        "http://127.0.0.1:8070/epsilon_tool.json", 
+                       "http://127.0.0.1:8071/emfatic_tool.json",
+                       "http://127.0.0.1:8073/emf_tool.json", 
+                       "http://127.0.0.1:8500/yamtl_tool.json" ],
+            "layout": {
+                    "area": [
+                        ["panel-yamtl", "panel-smm", "panel-tmm"],
+                        ["panel-console", "panel-smodel", "panel-tmodel"]
+                    ]
+                },
+            "actions": [
+                {
+                    "source": "panel-yamtl",
+                    "sourceButton": "action-button",
+                    "parameters": {
+                        "trafoGroovy": "panel-yamtl",
+                        "inModel": "panel-smodel",
+                        "inMetamodel": "panel-smm",
+                        "outMetamodel": "panel-tmm"
+                    },
+                    "output": "panel-tmodel"
+
+                }
+            ],
+
+
+
+            "panels": [
+                {
+                    "id": "panel-yamtl",
+                    "name": "Priority Operation Transformation (YAMTL)",
+                    "ref": "yamtl",
+                    "file": "examples/Priority.groovy"
+                },
+                {
+                    "id": "panel-smodel",
+                    "name": "Source Model",
+                    "ref": "xmi",
+                    "file": "FlowchartToHTML_models/wakeup.xmi"
+                },
+                {
+                    "id": "panel-smm",
+                    "name": "Source Metamodel",
+                    "ref": "emfatic",
+                    "file": "FlowchartToHTML_models/flowchart.emf"
+                },
+                {
+                    "id": "panel-tmm",
+                    "name": "Target Metamodel",
+                    "ref": "emfatic",
+                    "file": "FlowchartToHTML_models/html.emf"
+                },
+                {
+                    "id": "panel-tmodel",
+                    "name": "Target Model",
+                    "ref": "xmi"
+                },
+                {
+                    "id": "panel-console",
+                    "name": "Console",
+                    "ref": "console"
+                }
+            ]
+
+        },
+	    {
+            "id": "yamtl-filter-activity",
+            "title": "Filter Expression",
+            "icon": "etl",
+            "tools": [ 
+                        "http://127.0.0.1:8070/epsilon_tool.json", 
+                       "http://127.0.0.1:8071/emfatic_tool.json",
+                       "http://127.0.0.1:8073/emf_tool.json", 
+                       "http://127.0.0.1:8500/yamtl_tool.json" ],
+            "layout": {
+                    "area": [
+                        ["panel-yamtl", "panel-smm", "panel-tmm"],
+                        ["panel-console", "panel-smodel", "panel-tmodel"]
+                    ]
+                },
+            "actions": [
+                {
+                    "source": "panel-yamtl",
+                    "sourceButton": "action-button",
+                    "parameters": {
+                        "trafoGroovy": "panel-yamtl",
+                        "inModel": "panel-smodel",
+                        "inMetamodel": "panel-smm",
+                        "outMetamodel": "panel-tmm"
+                    },
+                    "output": "panel-tmodel"
+
+                }
+            ],
+
+
+
+            "panels": [
+                {
+                    "id": "panel-yamtl",
+                    "name": "Filter Expression Transformation (YAMTL)",
+                    "ref": "yamtl",
+                    "file": "examples/Filter.groovy"
+                },
+                {
+                    "id": "panel-smodel",
+                    "name": "Source Model",
+                    "ref": "xmi",
+                    "file": "FlowchartToHTML_models/wakeup.xmi"
+                },
+                {
+                    "id": "panel-smm",
+                    "name": "Source Metamodel",
+                    "ref": "emfatic",
+                    "file": "FlowchartToHTML_models/flowchart.emf"
+                },
+                {
+                    "id": "panel-tmm",
+                    "name": "Target Metamodel",
+                    "ref": "emfatic",
+                    "file": "FlowchartToHTML_models/html.emf"
+                },
+                {
+                    "id": "panel-tmodel",
+                    "name": "Target Model",
+                    "ref": "xmi"
+                },
+                {
+                    "id": "panel-console",
+                    "name": "Console",
+                    "ref": "console"
+                }
+            ]
+
+        },
+	    {
+            "id": "yamtl-inheritance-activity",
+            "title": "Inheritance Example",
+            "icon": "etl",
+            "tools": [ 
+                        "http://127.0.0.1:8070/epsilon_tool.json", 
+                       "http://127.0.0.1:8071/emfatic_tool.json",
+                       "http://127.0.0.1:8073/emf_tool.json", 
+                       "http://127.0.0.1:8500/yamtl_tool.json" ],
+            "layout": {
+                    "area": [
+                        ["panel-yamtl", "panel-smm", "panel-tmm"],
+                        ["panel-console", "panel-smodel", "panel-tmodel"]
+                    ]
+                },
+            "actions": [
+                {
+                    "source": "panel-yamtl",
+                    "sourceButton": "action-button",
+                    "parameters": {
+                        "trafoGroovy": "panel-yamtl",
+                        "inModel": "panel-smodel",
+                        "inMetamodel": "panel-smm",
+                        "outMetamodel": "panel-tmm"
+                    },
+                    "output": "panel-tmodel"
+
+                }
+            ],
+
+
+
+            "panels": [
+                {
+                    "id": "panel-yamtl",
+                    "name": "Inheritance Example Transformation (YAMTL)",
+                    "ref": "yamtl",
+                    "file": "examples/Inheritance.groovy"
+                },
+                {
+                    "id": "panel-smodel",
+                    "name": "Source Model",
+                    "ref": "xmi",
+                    "file": "FlowchartToHTML_models/wakeup_with_subflow.xmi"
+                },
+                {
+                    "id": "panel-smm",
+                    "name": "Source Metamodel",
+                    "ref": "emfatic",
+                    "file": "FlowchartToHTML_models/flowchart.emf"
+                },
+                {
+                    "id": "panel-tmm",
+                    "name": "Target Metamodel",
+                    "ref": "emfatic",
+                    "file": "FlowchartToHTML_models/html.emf"
+                },
+                {
+                    "id": "panel-tmodel",
+                    "name": "Target Model",
+                    "ref": "xmi"
+                },
+                {
+                    "id": "panel-console",
+                    "name": "Console",
+                    "ref": "console"
+                }
+            ]
+
+        },
+	    {
+            "id": "yamtl-endwith-activity",
+            "title": "End With Block",
+            "icon": "etl",
+            "tools": [ 
+                        "http://127.0.0.1:8070/epsilon_tool.json", 
+                       "http://127.0.0.1:8071/emfatic_tool.json",
+                       "http://127.0.0.1:8073/emf_tool.json", 
+                       "http://127.0.0.1:8500/yamtl_tool.json" ],
+            "layout": {
+                    "area": [
+                        ["panel-yamtl", "panel-smm", "panel-tmm"],
+                        ["panel-console", "panel-smodel", "panel-tmodel"]
+                    ]
+                },
+            "actions": [
+                {
+                    "source": "panel-yamtl",
+                    "sourceButton": "action-button",
+                    "parameters": {
+                        "trafoGroovy": "panel-yamtl",
+                        "inModel": "panel-smodel",
+                        "inMetamodel": "panel-smm",
+                        "outMetamodel": "panel-tmm"
+                    },
+                    "output": "panel-tmodel"
+
+                }
+            ],
+
+
+
+            "panels": [
+                {
+                    "id": "panel-yamtl",
+                    "name": "End With Block Transformation (YAMTL)",
+                    "ref": "yamtl",
+                    "file": "examples/EndWith.groovy"
+                },
+                {
+                    "id": "panel-smodel",
+                    "name": "Source Model",
+                    "ref": "xmi",
+                    "file": "FlowchartToHTML_models/wakeup.xmi"
+                },
+                {
+                    "id": "panel-smm",
+                    "name": "Source Metamodel",
+                    "ref": "emfatic",
+                    "file": "FlowchartToHTML_models/flowchart.emf"
+                },
+                {
+                    "id": "panel-tmm",
+                    "name": "Target Metamodel",
+                    "ref": "emfatic",
+                    "file": "FlowchartToHTML_models/html.emf"
+                },
+                {
+                    "id": "panel-tmodel",
+                    "name": "Target Model",
+                    "ref": "xmi"
+                },
+                {
+                    "id": "panel-console",
+                    "name": "Console",
+                    "ref": "console"
+                }
+            ]
+
+        },
+	    {
+            "id": "yamtl-multiple-sources-activity",
+            "title": "Multiple Source Objects",
+            "icon": "etl",
+            "tools": [ 
+                        "http://127.0.0.1:8070/epsilon_tool.json", 
+                       "http://127.0.0.1:8071/emfatic_tool.json",
+                       "http://127.0.0.1:8073/emf_tool.json", 
+                       "http://127.0.0.1:8500/yamtl_tool.json" ],
+            "layout": {
+                    "area": [
+                        ["panel-yamtl", "panel-smm", "panel-tmm"],
+                        ["panel-console", "panel-smodel", "panel-tmodel"]
+                    ]
+                },
+            "actions": [
+                {
+                    "source": "panel-yamtl",
+                    "sourceButton": "action-button",
+                    "parameters": {
+                        "trafoGroovy": "panel-yamtl",
+                        "inModel": "panel-smodel",
+                        "inMetamodel": "panel-smm",
+                        "outMetamodel": "panel-tmm"
+                    },
+                    "output": "panel-tmodel"
+
+                }
+            ],
+
+
+
+            "panels": [
+                {
+                    "id": "panel-yamtl",
+                    "name": "Multiple Sources Example Transformation (YAMTL)",
+                    "ref": "yamtl",
+                    "file": "examples/MultipleSources.groovy"
+                },
+                {
+                    "id": "panel-smodel",
+                    "name": "Source Model",
+                    "ref": "xmi",
+                    "file": "FlowchartToHTML_models/wakeup.xmi"
+                },
+                {
+                    "id": "panel-smm",
+                    "name": "Source Metamodel",
+                    "ref": "emfatic",
+                    "file": "FlowchartToHTML_models/flowchart.emf"
+                },
+                {
+                    "id": "panel-tmm",
+                    "name": "Target Metamodel",
+                    "ref": "emfatic",
+                    "file": "FlowchartToHTML_models/html.emf"
+                },
+                {
+                    "id": "panel-tmodel",
+                    "name": "Target Model",
+                    "ref": "xmi"
+                },
+                {
+                    "id": "panel-console",
+                    "name": "Console",
+                    "ref": "console"
+                }
+            ]
+
+        },
+	    {
+            "id": "yamtl-multiple-targets-activity",
+            "title": "Multiple Target Objects",
+            "icon": "etl",
+            "tools": [ 
+                        "http://127.0.0.1:8070/epsilon_tool.json", 
+                       "http://127.0.0.1:8071/emfatic_tool.json",
+                       "http://127.0.0.1:8073/emf_tool.json", 
+                       "http://127.0.0.1:8500/yamtl_tool.json" ],
+            "layout": {
+                    "area": [
+                        ["panel-yamtl", "panel-smm", "panel-tmm"],
+                        ["panel-console", "panel-smodel", "panel-tmodel"]
+                    ]
+                },
+            "actions": [
+                {
+                    "source": "panel-yamtl",
+                    "sourceButton": "action-button",
+                    "parameters": {
+                        "trafoGroovy": "panel-yamtl",
+                        "inModel": "panel-smodel",
+                        "inMetamodel": "panel-smm",
+                        "outMetamodel": "panel-tmm"
+                    },
+                    "output": "panel-tmodel"
+
+                }
+            ],
+
+
+
+            "panels": [
+                {
+                    "id": "panel-yamtl",
+                    "name": "Multiple Targets Example Transformation (YAMTL)",
+                    "ref": "yamtl",
+                    "file": "examples/MultipleTargets.groovy"
+                },
+                {
+                    "id": "panel-smodel",
+                    "name": "Source Model",
+                    "ref": "xmi",
+                    "file": "FlowchartToHTML_models/wakeup.xmi"
+                },
+                {
+                    "id": "panel-smm",
+                    "name": "Source Metamodel",
+                    "ref": "emfatic",
+                    "file": "FlowchartToHTML_models/flowchart.emf"
+                },
+                {
+                    "id": "panel-tmm",
+                    "name": "Target Metamodel",
+                    "ref": "emfatic",
+                    "file": "FlowchartToHTML_models/html.emf"
+                },
+                {
+                    "id": "panel-tmodel",
+                    "name": "Target Model",
+                    "ref": "xmi"
+                },
+                {
+                    "id": "panel-console",
+                    "name": "Console",
+                    "ref": "console"
+                }
+            ]
+
+        },
+	    {
+            "id": "yamtl-override-activity",
+            "title": "Rule Override",
+            "icon": "etl",
+            "tools": [ 
+                       "http://127.0.0.1:8070/epsilon_tool.json", 
+                       "http://127.0.0.1:8071/emfatic_tool.json",
+                       "http://127.0.0.1:8073/emf_tool.json", 
+                       "http://127.0.0.1:8500/yamtl_tool.json" ],
+            "layout": {
+                    "area": [
+                        ["panel-yamtl", "panel-smm", "panel-tmm"],
+                        ["panel-console", "panel-smodel", "panel-tmodel"]
+                    ]
+                },
+            "actions": [
+                {
+                    "source": "panel-yamtl",
+                    "sourceButton": "action-button",
+                    "parameters": {
+                        "trafoGroovy": "panel-yamtl",
+                        "inModel": "panel-smodel",
+                        "inMetamodel": "panel-smm",
+                        "outMetamodel": "panel-tmm"
+                    },
+                    "output": "panel-tmodel"
+
+                }
+            ],
+
+
+
+            "panels": [
+                {
+                    "id": "panel-yamtl",
+                    "name": "Rule Override Example Transformation (YAMTL)",
+                    "ref": "yamtl",
+                    "file": "examples/Override.groovy"
+                },
+                {
+                    "id": "panel-smodel",
+                    "name": "Source Model",
+                    "ref": "xmi",
+                    "file": "FlowchartToHTML_models/wakeup_with_subflow.xmi"
+                },
+                {
+                    "id": "panel-smm",
+                    "name": "Source Metamodel",
+                    "ref": "emfatic",
+                    "file": "FlowchartToHTML_models/flowchart.emf"
+                },
+                {
+                    "id": "panel-tmm",
+                    "name": "Target Metamodel",
+                    "ref": "emfatic",
+                    "file": "FlowchartToHTML_models/html.emf"
+                },
+                {
+                    "id": "panel-tmodel",
+                    "name": "Target Model",
+                    "ref": "xmi"
+                },
+                {
+                    "id": "panel-console",
+                    "name": "Console",
+                    "ref": "console"
+                }
+            ]
+
+        }
+
+] } 
