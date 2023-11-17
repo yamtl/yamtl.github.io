@@ -139,7 +139,7 @@ To configure and execute a YAMTL module for implementing rule-based queries, use
 === "Groovy"
 
     ```groovy
-    def resource = BaseQuery.loadMetamodel("<path_to_metamodel>")
+    def resource = BaseQuery.preloadMetamodel("<path_to_metamodel>")
     def query = new BaseQuery(resource.contents[0])
     YAMTLGroovyExtensions.init(query)
     query.selectedExecutionPhases = ExecutionPhase.MATCH_ONLY
@@ -150,7 +150,7 @@ To configure and execute a YAMTL module for implementing rule-based queries, use
 === "Xtend"
 
     ```xtend
-    val resource = BaseQuery.loadMetamodel("<path_to_metamodel>") as Resource
+    val resource = BaseQuery.preloadMetamodel("<path_to_metamodel>") as Resource
     val query = new BaseQuery(resource.contents[0] as EPackage)
     query.selectedExecutionPhases = ExecutionPhase.MATCH_ONLY
     query.loadInputModels(#[ "<in_domain_name>" -> "<path_to_model>" ])
@@ -160,7 +160,7 @@ To configure and execute a YAMTL module for implementing rule-based queries, use
 === "Java"
 
     ```java
-    Resource resource = (Resource) BaseQuery.loadMetamodel("<path_to_metamodel>");
+    Resource resource = (Resource) BaseQuery.preloadMetamodel("<path_to_metamodel>");
     BaseQuery query = new BaseQuery((EPackage) resource.getContents().get(0));
     query.setSelectedExecutionPhases(ExecutionPhase.MATCH_ONLY);
     query.loadInputModels(Collections.singletonMap("<in_domain_name>", "<path_to_model>"));
@@ -170,7 +170,7 @@ To configure and execute a YAMTL module for implementing rule-based queries, use
 === "Kotlin"
 
     ```kotlin
-    val resource = BaseQuery.loadMetamodel("<path_to_metamodel>")
+    val resource = BaseQuery.preloadMetamodel("<path_to_metamodel>")
     val query = BaseQuery(resource.contents[0])
     query.selectedExecutionPhases = ExecutionPhase.MATCH_ONLY
     query.loadInputModels(mapOf("<in_domain_name>" to "<path_to_model>"))
@@ -205,7 +205,7 @@ To configure and execute a YAMTL module for implementing an out-place transforma
 === "Groovy"
 
     ```groovy
-    def resource = YAMTLModule.loadMetamodel("<path_to_metamodel>")
+    def resource = YAMTLModule.preloadMetamodel("<path_to_metamodel>")
     def xform = new XForm(resource.contents[0])
     YAMTLGroovyExtensions.init(xform)
     xform.loadInputModels(["<in_domain_name>": "<path_to_model>"])
@@ -216,7 +216,7 @@ To configure and execute a YAMTL module for implementing an out-place transforma
 === "Xtend"
 
     ```xtend
-    val resource = YAMTLModule.loadMetamodel("<path_to_metamodel>") as Resource
+    val resource = YAMTLModule.preloadMetamodel("<path_to_metamodel>") as Resource
     val xform = new XForm(resource.contents[0] as EPackage)
     xform.loadInputModels(#[ "<in_domain_name>" -> "<path_to_model>" ])
     xform.execute()
@@ -226,7 +226,7 @@ To configure and execute a YAMTL module for implementing an out-place transforma
 === "Java"
 
     ```java
-    Resource resource = (Resource) YAMTLModule.loadMetamodel("<path_to_metamodel>");
+    Resource resource = (Resource) YAMTLModule.preloadMetamodel("<path_to_metamodel>");
     XForm xform = new XForm((EPackage)resource.getContents().get(0));
     xform.loadInputModels(Collections.singletonMap("<in_domain_name>", "<path_to_model>"));
     xform.execute();
@@ -236,7 +236,7 @@ To configure and execute a YAMTL module for implementing an out-place transforma
 === "Kotlin"
 
     ```kotlin
-    val resource = YAMTLModule.loadMetamodel("<path_to_metamodel>")
+    val resource = YAMTLModule.preloadMetamodel("<path_to_metamodel>")
     val xform = XForm(resource.contents[0])
     xform.loadInputModels(mapOf("<in_domain_name>" to "<path_to_model>"))
     xform.execute()
@@ -290,7 +290,7 @@ To configure and execute a YAMTL module for implementing an in-place transformat
 === "Groovy"
 
     ```groovy
-    def resource = YAMTLModule.loadMetamodel("<path_to_metamodel>")
+    def resource = YAMTLModule.preloadMetamodel("<path_to_metamodel>")
     def xform = new XForm(resource.contents[0])
     YAMTLGroovyExtensions.init(xform)
     xform.setInplace(true) // enables the in-place transformation semantics
@@ -305,7 +305,7 @@ To configure and execute a YAMTL module for implementing an in-place transformat
 === "Xtend"
 
     ```xtend
-    val resource = YAMTLModule.loadMetamodel("<path_to_metamodel>") as Resource
+    val resource = YAMTLModule.preloadMetamodel("<path_to_metamodel>") as Resource
     val xform = new XForm(resource.contents[0] as EPackage)
     xform.setInplace(true) // enables the in-place transformation semantics
     xform.setWithStagedExecution(false) // YAMTL to use one match at a time
@@ -319,7 +319,7 @@ To configure and execute a YAMTL module for implementing an in-place transformat
 === "Java"
 
     ```java
-    Resource resource = (Resource) YAMTLModule.loadMetamodel("<path_to_metamodel>");
+    Resource resource = (Resource) YAMTLModule.preloadMetamodel("<path_to_metamodel>");
     XForm xform = new XForm((EPackage)resource.getContents().get(0));
     xform.setInplace(true); // enables the in-place transformation semantics
     xform.setWithStagedExecution(false); // YAMTL to use one match at a time
@@ -333,7 +333,7 @@ To configure and execute a YAMTL module for implementing an in-place transformat
 === "Kotlin"
 
     ```kotlin
-    val resource = YAMTLModule.loadMetamodel("<path_to_metamodel>")
+    val resource = YAMTLModule.preloadMetamodel("<path_to_metamodel>")
     val xform = XForm(resource.contents[0])
     xform.setInplace(true) // enables the in-place transformation semantics
     xform.setWithStagedExecution(false) // YAMTL to use one match at a time
