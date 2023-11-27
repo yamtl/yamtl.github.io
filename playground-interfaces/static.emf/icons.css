@@ -4,3 +4,9 @@
 .mif-diagram::before {
     content: url("./icons/diagram.png");
 }
+.mif-xmi-favicon::before {
+    content: url("./icons/xmi-favicon.png");
+}
+.mif-plantuml-favicon::before {
+    content: url("./icons/plantuml-favicon.png");
+}
