@@ -1,0 +1,94 @@
+activities:
+  - id: yamtl-cd2db-activity
+    title: Model-to-Model CD2DB Example
+    icon: yamtl
+    tools:
+      - http://127.0.0.1:8073/emf_tool.yml
+      - http://127.0.0.1:8500/yamtl_m2m.yml
+    tools-remote:
+      - https://yamtl.github.io/playground-interfaces/static.emf/emf_tool.json
+      - https://yamtl.github.io/playground-interfaces/static.yamtlgroovy/yamtl_m2m.json
+    layout:
+      area:
+        - - panel-yamtl
+          - panel-smm
+          - panel-smm-diagram
+          - panel-tmm
+          - panel-tmm-diagram
+        - - panel-console
+          - panel-smodel
+          - panel-smodel-diagram
+          - panel-tmodel
+          - panel-tmodel-diagram
+    actions:
+      - source: panel-yamtl
+        sourceButton: run-trafo-button
+        parameters:
+          trafoGroovy: panel-yamtl
+          inModel: panel-smodel
+          inMetamodel: panel-smm
+          outMetamodel: panel-tmm
+        output: panel-tmodel
+        outputType: code
+        outputConsole: panel-console
+      - source: panel-smm
+        sourceButton: emfatic2cd-button
+        parameters:
+          metamodel: panel-smm
+        output: panel-smm-diagram
+        outputType: puml
+      - source: panel-tmm
+        sourceButton: emfatic2cd-button
+        parameters:
+          metamodel: panel-tmm
+        output: panel-tmm-diagram
+        outputType: puml
+      - source: panel-smodel
+        sourceButton: xmi2od-button
+        parameters:
+          metamodel: panel-smm
+          model: panel-smodel
+        output: panel-smodel-diagram
+        outputType: puml
+      - source: panel-tmodel
+        sourceButton: xmi2od-button
+        parameters:
+          metamodel: panel-tmm
+          model: panel-tmodel
+        output: panel-tmodel-diagram
+        outputType: puml
+    panels:
+      - id: panel-yamtl
+        name: Transformation(YAMTL)
+        ref: yamtl
+        file: CD2DB.groovy
+      - id: panel-smm
+        name: Source Metamodel
+        ref: emfatic
+        file: CD.emf
+      - id: panel-smm-diagram
+        name: Source Metamodel Diagram
+        ref: plantuml
+      - id: panel-tmm
+        name: Target Metamodel
+        ref: emfatic
+        file: Relational.emf
+      - id: panel-tmm-diagram
+        name: Target Metamodel Diagram
+        ref: plantuml
+      - id: panel-smodel
+        name: Source Model
+        ref: xmi
+        file: sourceModel.xmi
+      - id: panel-smodel-diagram
+        name: Source Model Diagram
+        ref: plantuml
+      - id: panel-tmodel
+        name: Target Model
+        ref: xmi
+      - id: panel-tmodel-diagram
+        name: Target Model Diagram
+        ref: plantuml
+      - id: panel-console
+        name: Console
+        ref: console
