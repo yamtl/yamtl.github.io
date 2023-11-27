@@ -4,7 +4,7 @@ nav:
   - Home: 'index.md'
   - Getting Started: 'getting-started.md'
   - Language Reference: 'yamtl-reference.md'
-  - Playground: https://yamtl.github.io/playground/?activities=https://yamtl.github.io/playground-activities/yamtl-cd2db-activity.json
+  - Playground: https://yamtl.github.io/playground/?activities=https://yamtl.github.io/playground-activities/yamtl-cd2db.yml
   - Choosing an IDE: 'yamtl-ide.md'
   - Examples: 
     - Examples Repository: 'examples/examples.md'
