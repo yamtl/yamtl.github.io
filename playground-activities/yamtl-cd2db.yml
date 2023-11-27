@@ -6,8 +6,8 @@ activities:
       - http://127.0.0.1:8073/emf_tool.yml
       - http://127.0.0.1:8500/yamtl_m2m.yml
     tools:
-      - https://yamtl.github.io/playground-interfaces/static.emf/emf_tool.json
-      - https://yamtl.github.io/playground-interfaces/static.yamtlgroovy/yamtl_m2m.json
+      - https://yamtl.github.io/playground-interfaces/static.emf/emf_tool.yml
+      - https://yamtl.github.io/playground-interfaces/static.yamtlgroovy/yamtl_m2m.yml
     layout:
       area:
         - - panel-yamtl
