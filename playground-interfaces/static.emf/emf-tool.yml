@@ -27,7 +27,7 @@ tool:
       returnType: puml
       path: https://microservices.yamtl.space/Prod/xmi2od_puml
   panelDefs:
-    - id: model-composite
+    - id: composite-panel
       panelclass: CompositePanel
       icon: diagram
     - id: model-panel
