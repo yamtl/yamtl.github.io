@@ -1,25 +1,21 @@
 activities:
   - id: yamtl-cd2db-activity
-    title: Model-to-Model CD2DB Example
+    title: CD2DB (Groovy)
     icon: yamtl
     tools-local:
-      - http://127.0.0.1:8073/emf_tool.yml
-      - http://127.0.0.1:8500/yamtl_m2m.yml
+      - http://127.0.0.1:8073/emf-tool.yml
+      - http://127.0.0.1:8500/yamtl-m2m.yml
     tools:
-      - https://yamtl.github.io/playground-interfaces/static.emf/emf_tool.yml
-      - https://yamtl.github.io/playground-interfaces/static.yamtlgroovy/yamtl_m2m.yml
+      - https://yamtl.github.io/playground-interfaces/static.emf/emf-tool.yml
+      - https://yamtl.github.io/playground-interfaces/static.yamtlgroovy/yamtl-m2m.yml
     layout:
       area:
         - - panel-yamtl
-          - panel-smm
-          - panel-smm-diagram
-          - panel-tmm
-          - panel-tmm-diagram
+          - smm-panel-composite
+          - tmm-panel-composite
         - - panel-console
-          - panel-smodel
-          - panel-smodel-diagram
-          - panel-tmodel
-          - panel-tmodel-diagram
+          - smodel-panel-composite
+          - tmodel-panel-composite
     actions:
       - source: panel-yamtl
         sourceButton: run-trafo-button
@@ -62,33 +58,96 @@ activities:
         name: Transformation(YAMTL)
         ref: yamtl
         file: CD2DB.groovy
-      - id: panel-smm
+      - id: smm-panel-composite
         name: Source Metamodel
-        ref: emfatic
-        file: CD.emf
-      - id: panel-smm-diagram
-        name: Source Metamodel Diagram
-        ref: plantuml
-      - id: panel-tmm
+        ref: composite-panel
+        childrenPanels:
+          - id: panel-smm
+            name: EMFatic
+            ref: emfatic
+            file: CD.emf
+          - id: panel-smm-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon:  editor
+            internal: toggle
+            targetPanel: panel-smm
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon:  diagram
+            internal: toggle
+            targetPanel: panel-smm-diagram
+            hint: Toggle diagram
+      - id: tmm-panel-composite
         name: Target Metamodel
-        ref: emfatic
-        file: Relational.emf
-      - id: panel-tmm-diagram
-        name: Target Metamodel Diagram
-        ref: plantuml
-      - id: panel-smodel
+        ref: composite-panel
+        childrenPanels:
+          - id: panel-tmm
+            name: EMFatic
+            ref: emfatic
+            file: Relational.emf
+          - id: panel-tmm-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon:  editor
+            internal: toggle
+            targetPanel: panel-tmm
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon:  diagram
+            internal: toggle
+            targetPanel: panel-tmm-diagram
+            hint: Toggle diagram
+      - id: smodel-panel-composite
         name: Source Model
-        ref: xmi
-        file: sourceModel.xmi
-      - id: panel-smodel-diagram
-        name: Source Model Diagram
-        ref: plantuml
-      - id: panel-tmodel
+        ref: composite-panel
+        icon: editor
+        childrenPanels:
+          - id: panel-smodel
+            name: XMI
+            ref: xmi
+            file: sourceModel.xmi
+          - id: panel-smodel-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon:  editor
+            internal: toggle
+            targetPanel: panel-smodel
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon:  diagram
+            internal: toggle
+            targetPanel: panel-smodel-diagram
+            hint: Toggle diagram
+      - id: tmodel-panel-composite
         name: Target Model
-        ref: xmi
-      - id: panel-tmodel-diagram
-        name: Target Model Diagram
-        ref: plantuml
+        icon: editor
+        ref: composite-panel
+        childrenPanels:
+          - id: panel-tmodel
+            name: XMI
+            ref: xmi
+          - id: panel-tmodel-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon:  editor
+            internal: toggle
+            targetPanel: panel-tmodel
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon:  diagram
+            internal: toggle
+            targetPanel: panel-tmodel-diagram
+            hint: Toggle diagram
       - id: panel-console
         name: Console
+        icon: console
         ref: console
