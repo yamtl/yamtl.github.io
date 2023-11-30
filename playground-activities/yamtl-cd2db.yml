@@ -2,10 +2,10 @@ activities:
   - id: yamtl-cd2db-activity
     title: CD2DB (Groovy)
     icon: yamtl
-    tools-local:
+    tools:
       - http://127.0.0.1:8073/emf-tool.yml
       - http://127.0.0.1:8500/yamtl-m2m.yml
-    tools:
+    tools-remote:
       - https://yamtl.github.io/playground-interfaces/static.emf/emf-tool.yml
       - https://yamtl.github.io/playground-interfaces/static.yamtlgroovy/yamtl-m2m.yml
     layout:

@@ -37,7 +37,7 @@ tool:
       language: emfatic
       buttons:
         - id: emfatic2cd-button
-          icon:  diagram
+          icon:  diagram-generate
           actionfunction: function-ecore2cd
           hint: Render the metamodel class diagram
         - id: help-button
@@ -51,7 +51,7 @@ tool:
       language: emfatic
       buttons:
         - id: emfatic2cd-button
-          icon:  diagram
+          icon:  diagram-generate
           actionfunction: function-ecore2cd
           hint: Render the metamodel class diagram
         - id: help-button
@@ -65,7 +65,7 @@ tool:
       language: ecore
       buttons:
         - id: ecore2cd-button
-          icon: diagram
+          icon: diagram-generate
           actionfunction: function-ecore2cd
           hint: Render the metamodel class diagram
         - id: help-button
@@ -79,7 +79,7 @@ tool:
       language: xmi
       buttons:
         - id: xmi2od-button
-          icon: diagram
+          icon: diagram-generate
           actionfunction: function-xmi2od
           hint: Render the model object diagram
         - id: help-button
