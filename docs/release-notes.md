@@ -1,9 +1,13 @@
 # Release notes
 
+
+#### 0.4.24
+
+FIX: In incremental execution of model transformation, a source model update may deactivate current tranformation steps and enable the application of one other rule/match.
+
 #### 0.4.23
 
 Graphical representation of metamodels and models using PlantUML in the class `prettyprinting.EMFPrettyPrinter`.
-
 
 #### 0.4.22
 
