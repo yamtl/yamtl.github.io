@@ -1,5 +1,16 @@
 # Release notes
 
+#### 0.4.25
+
+To enable rules that yield destructive actions in the output model, for example:
+* undoing a transformation step if the rule match is invalidated (matching semantics);
+* in-place rule with node destruction (in-place semantics).
+
+In those cases, models should be saved to a file using the method `YAMTLModule::saveOutputModels(pathList, rootClassNameList)`. 
+Only those root objects (detached) that are instance of root classes (whose names are in `rootClassNameList`) will be added to the resource. 
+If the list is empty, all objects will be returned.
+
+The method `YAMTLModule::saveOutputModels(pathList)` calls `YAMTLModule::saveOutputModels(pathList, #[])`.
 
 #### 0.4.24
 
