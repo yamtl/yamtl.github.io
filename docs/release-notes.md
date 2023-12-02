@@ -1,5 +1,9 @@
 # Release notes
 
+#### 0.4.26
+
+When re-executing trafo steps, those marked as dirty are not re-executed but they are not deleted.
+
 #### 0.4.25
 
 To enable rules that yield destructive actions in the output model, for example:
