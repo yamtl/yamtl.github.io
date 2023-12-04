@@ -1,5 +1,13 @@
 # Release notes
 
+#### 0.4.27
+
+When an object is modified, the following transformation steps need to be re-evaluated:
+1. Transformation steps whose input match involves the object.
+2. Transformation steps whose input match involves the object container.
+
+The second case is necessary in case the model update invalidates the match in transformation steps of type 1.
+
 #### 0.4.26
 
 When re-executing trafo steps, those marked as dirty are not re-executed but they are not deleted.
