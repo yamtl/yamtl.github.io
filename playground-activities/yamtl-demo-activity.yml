@@ -5,7 +5,7 @@ activities:
     tools-local:
       - http://127.0.0.1:8073/emf-tool.yml
       - http://127.0.0.1:8500/yamtl-m2m.yml
-    tools:
+    tools-local:
       - https://yamtl.github.io/playground-interfaces/static.emf/emf-tool.yml
       - https://yamtl.github.io/playground-interfaces/static.yamtlgroovy/yamtl-m2m.yml
     layout:
@@ -154,10 +154,10 @@ activities:
   - id: yamtl-groovy-reverse-list
     title: ReverseList 
     icon: yamtl
-    tools:
+    tools-local:
       - http://127.0.0.1:8073/emf-tool.yml
       - http://127.0.0.1:8500/yamtl-m2m.yml
-    tools-remote:
+    tools:
       - https://yamtl.github.io/playground-interfaces/static.emf/emf-tool.yml
       - https://yamtl.github.io/playground-interfaces/static.yamtlgroovy/yamtl-m2m.yml
     layout:
@@ -306,10 +306,10 @@ activities:
   - id: yamtl-groovy-workflow2html-base
     title: W2H Base 
     icon: yamtl
-    tools:
+    tools-local:
       - http://127.0.0.1:8073/emf-tool.yml
       - http://127.0.0.1:8500/yamtl-m2m.yml
-    tools-remote:
+    tools:
       - https://yamtl.github.io/playground-interfaces/static.emf/emf-tool.yml
       - https://yamtl.github.io/playground-interfaces/static.yamtlgroovy/yamtl-m2m.yml
     layout:
@@ -458,10 +458,10 @@ activities:
   - id: yamtl-groovy-workflow2html-derivedWith
     title: W2H DerivedWith
     icon: yamtl
-    tools:
+    tools-local:
       - http://127.0.0.1:8073/emf-tool.yml
       - http://127.0.0.1:8500/yamtl-m2m.yml
-    tools-remote:
+    tools:
       - https://yamtl.github.io/playground-interfaces/static.emf/emf-tool.yml
       - https://yamtl.github.io/playground-interfaces/static.yamtlgroovy/yamtl-m2m.yml
     layout:
@@ -610,10 +610,10 @@ activities:
   - id: yamtl-groovy-workflow2html-endWith
     title: W2H EndWith
     icon: yamtl
-    tools:
+    tools-local:
       - http://127.0.0.1:8073/emf-tool.yml
       - http://127.0.0.1:8500/yamtl-m2m.yml
-    tools-remote:
+    tools:
       - https://yamtl.github.io/playground-interfaces/static.emf/emf-tool.yml
       - https://yamtl.github.io/playground-interfaces/static.yamtlgroovy/yamtl-m2m.yml
     layout:
@@ -762,10 +762,10 @@ activities:
   - id: yamtl-groovy-workflow2html-filter
     title: W2H Filter 
     icon: yamtl
-    tools:
+    tools-local:
       - http://127.0.0.1:8073/emf-tool.yml
       - http://127.0.0.1:8500/yamtl-m2m.yml
-    tools-remote:
+    tools:
       - https://yamtl.github.io/playground-interfaces/static.emf/emf-tool.yml
       - https://yamtl.github.io/playground-interfaces/static.yamtlgroovy/yamtl-m2m.yml
     layout:
@@ -914,10 +914,10 @@ activities:
   - id: yamtl-groovy-workflow2html-inheritance
     title: W2H Inheritance
     icon: yamtl
-    tools:
+    tools-local:
       - http://127.0.0.1:8073/emf-tool.yml
       - http://127.0.0.1:8500/yamtl-m2m.yml
-    tools-remote:
+    tools:
       - https://yamtl.github.io/playground-interfaces/static.emf/emf-tool.yml
       - https://yamtl.github.io/playground-interfaces/static.yamtlgroovy/yamtl-m2m.yml
     layout:
@@ -1066,10 +1066,10 @@ activities:
   - id: yamtl-groovy-workflow2html-lazyExample
     title: W2H LazyExample
     icon: yamtl
-    tools:
+    tools-local:
       - http://127.0.0.1:8073/emf-tool.yml
       - http://127.0.0.1:8500/yamtl-m2m.yml
-    tools-remote:
+    tools:
       - https://yamtl.github.io/playground-interfaces/static.emf/emf-tool.yml
       - https://yamtl.github.io/playground-interfaces/static.yamtlgroovy/yamtl-m2m.yml
     layout:
@@ -1218,10 +1218,10 @@ activities:
   - id: yamtl-groovy-workflow2html-multipleSources
     title: W2H MultipleSources
     icon: yamtl
-    tools:
+    tools-local:
       - http://127.0.0.1:8073/emf-tool.yml
       - http://127.0.0.1:8500/yamtl-m2m.yml
-    tools-remote:
+    tools:
       - https://yamtl.github.io/playground-interfaces/static.emf/emf-tool.yml
       - https://yamtl.github.io/playground-interfaces/static.yamtlgroovy/yamtl-m2m.yml
     layout:
@@ -1370,10 +1370,10 @@ activities:
   - id: yamtl-groovy-workflow2html-multipleTargets
     title: W2H MultipleTargets 
     icon: yamtl
-    tools:
+    tools-local:
       - http://127.0.0.1:8073/emf-tool.yml
       - http://127.0.0.1:8500/yamtl-m2m.yml
-    tools-remote:
+    tools:
       - https://yamtl.github.io/playground-interfaces/static.emf/emf-tool.yml
       - https://yamtl.github.io/playground-interfaces/static.yamtlgroovy/yamtl-m2m.yml
     layout:
@@ -1522,10 +1522,10 @@ activities:
   - id: yamtl-groovy-workflow2html-override
     title: W2H Override
     icon: yamtl
-    tools:
+    tools-local:
       - http://127.0.0.1:8073/emf-tool.yml
       - http://127.0.0.1:8500/yamtl-m2m.yml
-    tools-remote:
+    tools:
       - https://yamtl.github.io/playground-interfaces/static.emf/emf-tool.yml
       - https://yamtl.github.io/playground-interfaces/static.yamtlgroovy/yamtl-m2m.yml
     layout:
@@ -1674,10 +1674,10 @@ activities:
   - id: yamtl-groovy-workflow2html-priority
     title: W2H Priority 
     icon: yamtl
-    tools:
+    tools-local:
       - http://127.0.0.1:8073/emf-tool.yml
       - http://127.0.0.1:8500/yamtl-m2m.yml
-    tools-remote:
+    tools:
       - https://yamtl.github.io/playground-interfaces/static.emf/emf-tool.yml
       - https://yamtl.github.io/playground-interfaces/static.yamtlgroovy/yamtl-m2m.yml
     layout:
@@ -1826,10 +1826,10 @@ activities:
   - id: yamtl-groovy-workflow2html-toMany
     title: W2H ToMany
     icon: yamtl
-    tools:
+    tools-local:
       - http://127.0.0.1:8073/emf-tool.yml
       - http://127.0.0.1:8500/yamtl-m2m.yml
-    tools-remote:
+    tools:
       - https://yamtl.github.io/playground-interfaces/static.emf/emf-tool.yml
       - https://yamtl.github.io/playground-interfaces/static.yamtlgroovy/yamtl-m2m.yml
     layout:
@@ -1978,10 +1978,10 @@ activities:
   - id: yamtl-groovy-workflow2html-transient
     title: W2H Transient
     icon: yamtl
-    tools:
+    tools-local:
       - http://127.0.0.1:8073/emf-tool.yml
       - http://127.0.0.1:8500/yamtl-m2m.yml
-    tools-remote:
+    tools:
       - https://yamtl.github.io/playground-interfaces/static.emf/emf-tool.yml
       - https://yamtl.github.io/playground-interfaces/static.yamtlgroovy/yamtl-m2m.yml
     layout:
