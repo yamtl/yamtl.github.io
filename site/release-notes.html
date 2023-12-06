@@ -291,7 +291,7 @@
   
   
     <li class="md-nav__item">
-      <a href="https://yamtl.github.io/playground/?activities=https://yamtl.github.io/playground-activities/yamtl-cd2db.yml" class="md-nav__link">
+      <a href="https://yamtl.github.io/playground/?activities=https://yamtl.github.io/playground-activities/yamtl-demo-activity.yml" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -539,6 +539,34 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#0427" class="md-nav__link">
+    0.4.27
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0426" class="md-nav__link">
+    0.4.26
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0425" class="md-nav__link">
+    0.4.25
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0424" class="md-nav__link">
+    0.4.24
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#0423" class="md-nav__link">
@@ -967,6 +995,34 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#0427" class="md-nav__link">
+    0.4.27
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0426" class="md-nav__link">
+    0.4.26
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0425" class="md-nav__link">
+    0.4.25
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0424" class="md-nav__link">
+    0.4.24
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#0423" class="md-nav__link">
     0.4.23
   </a>
@@ -1374,6 +1430,23 @@
 
 
 <h1 id="release-notes">Release notes</h1>
+<h4 id="0427">0.4.27</h4>
+<p>When an object is modified, the following transformation steps need to be re-evaluated:
+1. Transformation steps whose input match involves the object.
+2. Transformation steps whose input match involves the object container.</p>
+<p>The second case is necessary in case the model update invalidates the match in transformation steps of type 1.</p>
+<h4 id="0426">0.4.26</h4>
+<p>When re-executing trafo steps, those marked as dirty are not re-executed but they are not deleted.</p>
+<h4 id="0425">0.4.25</h4>
+<p>To enable rules that yield destructive actions in the output model, for example:
+* undoing a transformation step if the rule match is invalidated (matching semantics);
+* in-place rule with node destruction (in-place semantics).</p>
+<p>In those cases, models should be saved to a file using the method <code>YAMTLModule::saveOutputModels(pathList, rootClassNameList)</code>. 
+Only those root objects (detached) that are instance of root classes (whose names are in <code>rootClassNameList</code>) will be added to the resource. 
+If the list is empty, all objects will be returned.</p>
+<p>The method <code>YAMTLModule::saveOutputModels(pathList)</code> calls <code>YAMTLModule::saveOutputModels(pathList, #[])</code>.</p>
+<h4 id="0424">0.4.24</h4>
+<p>FIX: In incremental execution of model transformation, a source model update may deactivate current tranformation steps and enable the application of one other rule/match.</p>
 <h4 id="0423">0.4.23</h4>
 <p>Graphical representation of metamodels and models using PlantUML in the class <code>prettyprinting.EMFPrettyPrinter</code>.</p>
 <h4 id="0422">0.4.22</h4>
@@ -1703,7 +1776,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 5, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 4, 2023</span>
       
     
   </small>
