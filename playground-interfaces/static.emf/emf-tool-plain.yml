@@ -1,0 +1,79 @@
+tool:
+  id: emf
+  name: EMF
+  version: 0.0.2
+  author: Artur Boronat
+  homepage: https://github.com/mdenet/platformtools
+  functions:
+    - id: function-ecore2cd
+      name: "Conversion: Ecore to class diagram"
+      parameters:
+        - name: language
+          type: emfatic
+        - name: metamodel
+          type: emfatic
+      returnType: puml
+      path: https://microservices.yamtl.space/Prod/ecore2cd_puml
+    - id: function-xmi2od
+      name: "Conversion: Xmi model to augmented object diagram"
+      parameters:
+        - name: language
+          type: xmi
+        - name: metamodel
+          type: emfatic
+        - name: model
+          type: xmi
+          instanceOf: metamodel
+      returnType: puml
+      path: https://microservices.yamtl.space/Prod/xmi2od_puml
+  panelDefs:
+    - id: composite-panel
+      panelclass: CompositePanel
+      icon: emfatic
+    - id: emfatic
+      name: EMFatic
+      panelclass: ProgramPanel
+      icon: emfatic
+      language: emfatic
+      buttons:
+        - id: emfatic2cd-button
+          icon: diagram-generate
+          actionfunction: function-ecore2cd
+          hint: Render the metamodel class diagram
+        - id: help-button
+          icon: info
+          url: https://www.eclipse.org/emfatic/
+          hint: EMFatic Language Reference
+    - id: ecore
+      name: Ecore
+      panelclass: ProgramPanel
+      icon: ecore
+      language: ecore
+      buttons:
+        - id: ecore2cd-button
+          icon: diagram-generate
+          actionfunction: function-ecore2cd
+          hint: Render the metamodel class diagram
+        - id: help-button
+          icon: info
+          url: https://www.eclipse.org/modeling/emf/
+          hint: EMF Homepage
+    - id: xmi
+      name: XMI
+      panelclass: ProgramPanel
+      icon: xmi-favicon
+      language: xmi
+      buttons:
+        - id: xmi2od-button
+          icon: diagram-generate
+          actionfunction: function-xmi2od
+          hint: Render the model object diagram
+        - id: help-button
+          icon: info
+          url: https://www.omg.org/spec/XMI/
+          hint: OMG - XML Metadata Interchange
+    - id: plantuml
+      name: PlantUML
+      language: puml
+      panelclass: OutputPanel
+      icon: plantuml-favicon

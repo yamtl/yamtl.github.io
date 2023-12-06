@@ -1,0 +1,215 @@
+.modelPanel {
+	height: 100%;
+}
+
+.editor { 
+    height: 100%;
+    width: 100%;
+}
+
+.info { 
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 25px;
+    height: 100%;
+    font-size: 17pt;
+    padding-top: 1em;
+    font-style: normal;
+}
+
+
+.diagram {
+	display:none;
+}
+
+#thirdModelDiagram {
+	height:100%;
+	width:100%;
+}
+
+#thirdModelEditor {
+	display: none;
+}
+
+.rendering-error {
+	margin: 10px;
+	padding: 10px;
+	background-color: #CD352C;
+	color: white;
+}
+
+.mif-16::before {
+	position: relative;
+	top: 4px;
+	margin: 0px;
+}
+
+.mif-example-16::before {
+	position: relative;
+	top: 2px;
+	margin: 0px;
+}
+
+
+.mif-html::before {
+    content: url("../images/html.gif");
+}
+
+.mif-clear::before {
+	content: url("../images/clear.gif");
+}
+
+.mif-console::before {
+	content: url("../images/console.gif");
+}
+
+.mif-diagram::before {
+	content: url("../images/diagram.gif");
+}
+
+.mif-refresh::before {
+	content: url("../images/refresh.png");
+}
+
+.mif-run::before {
+	content: url("../images/run.png");
+}
+
+.mif-info::before {
+	content: url("../images/info.png");
+}
+
+.mif-save::before {
+	content: url("../images/save.png");
+}
+
+
+.mif-link::before {
+	content: url("../images/link.png");
+}
+
+.mif-help::before {
+	content: url("../images/help.png");
+}
+
+.mif-problems::before {
+	content: url("../images/problems.png");
+}
+
+.mif-editor::before {
+	content: url("../images/editor.gif");
+}
+
+.mif-highlight::before {
+	content: url("../images/highlight.png");
+}
+
+.mif-download::before {
+	content: url("../images/download.png");
+}
+
+.mif-settings::before {
+	content: url("../images/settings.png");
+}
+
+.mif-more::before {
+	content: url("../images/more.png");
+}
+
+.mif-folder::before {
+	content: url("../images/folder.png");
+}
+
+.active-toggle .icon .mif-folder::before {
+	content: url("../images/open-folder.png");
+}
+
+.panel .panel-title .custom-buttons {
+	margin-right: 10px;
+}
+
+.navview .navview-menu .caption {
+	position: relative;
+	left: -6px;
+}
+
+.panel .panel-title .icon {
+	border-right: 0px;
+	width: 20px;
+	margin-left:10px;
+}
+
+.panel .panel-title .caption {
+	padding-left: 6px;
+}
+
+.panel .panel-title .btn-custom {
+	width: 20px;
+}
+
+.panel .panel-title .button {
+	background-color: transparent;
+	border-left: 0px;
+	border-right: 0px;
+	padding-left: 15px;
+}
+
+body {
+	font-size: 16px
+}
+
+.hidden {
+	display:none;
+}
+
+.ace_gutter {
+	background-color: white !important;
+	border-right: 1px solid rgb(215,215,215) !important;
+	z-index: 0;
+}
+
+.ace_gutter-active-line {
+	background-color: white !important;
+}
+
+#preloader {
+	position: fixed; 
+	height: 100%; 
+	width: 100%; 
+	top:0; 
+	left: 0; 
+	background: white;
+	z-index:9999;
+	padding-top: 200px;
+	text-align: center;
+}
+
+.navview .navview-menu .dropdown-toggle::after {
+	display: none;
+}
+
+.navview.compacted .navview-menu .navview-menu, .navview.js-compact:not(.expanded) .navview-menu .navview-menu {
+	position: relative;
+	left: inherit;
+	width: inherit;
+}
+
+.navview.compacted .navview-menu .navview-menu .caption, .navview.js-compact:not(.expanded) .navview-menu .navview-menu .caption {
+	display: none !important;
+}
+
+
+.navview.js-compact:not(.expanded) .navview-menu .navview-menu a:hover .caption {
+	display: flex !important;
+	background-color: #cecece;
+	display: block !important;
+	position: absolute;
+	left: calc(100% + 0px);
+	padding: 0 16px;
+}
+
+.splitter .gutter::before {
+	background-color: inherit;
+}
