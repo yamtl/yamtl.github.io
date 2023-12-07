@@ -1,0 +1,24 @@
+.mif-emfatic::before {
+    content: url("./icons/emfatic.png");
+}
+.mif-diagram::before {
+    content: url("./icons/diagram.gif");
+}
+.mif-diagram-crossed::before {
+    content: url("./icons/diagram-crossed.gif");
+}
+.mif-diagram-generate::before {
+    content: url("./icons/diagram-generate.gif");
+}
+.mif-editor::before {
+    content: url("./icons/editor.gif");
+}
+.mif-editor-crossed::before {
+    content: url("./icons/editor-crossed.gif");
+}
+.mif-xmi-favicon::before {
+    content: url("./icons/xmi-favicon.png");
+}
+.mif-plantuml-favicon::before {
+    content: url("./icons/plantuml-favicon.png");
+}
