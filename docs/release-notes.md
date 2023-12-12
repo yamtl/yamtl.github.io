@@ -1,5 +1,9 @@
 # Release notes
 
+#### 0.4.31
+
+Metamodels/models can be loaded from URL via EMF, just by using a URL to the model instead of a file path.
+
 #### 0.4.27
 
 When an object is modified, the following transformation steps need to be re-evaluated:

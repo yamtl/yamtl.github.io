@@ -180,6 +180,8 @@ To configure and execute a YAMTL module for implementing rule-based queries, use
 
 When using dynamic EMF for accessing metamodel metadata (i.e., EMF code has not been generated for the metamodel), use the static method `YAMTLModule::loadMetamodel("<path_to_metamodel>")`, which works with both Ecore files (`.ecore`) and with [EMFatic](https://eclipse.dev/emfatic/) files (`.emf`) to load the metamodel. Then instantiate the YAMTL module containing the model query, configure it to execute only the matching phase, load the input models and, finally, execute the query using the method `YAMTLModule::execute()`. 
 
+The `<path_to_metamodel>` can also be a URL (`http:` or `https:`) to the model in an accessible remote repository.
+
 The results of the queries can be handled in blocks `endWith(<ACTION)` of query rules, for example printing them in the output console or accumulating them in local variables.
 
 
