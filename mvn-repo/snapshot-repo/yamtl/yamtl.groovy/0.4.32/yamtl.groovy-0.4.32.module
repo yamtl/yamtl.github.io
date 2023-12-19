@@ -1,0 +1,222 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "yamtl",
+    "module": "yamtl.groovy",
+    "version": "0.4.32",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.5.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "yamtl.groovy-0.4.32.jar",
+          "url": "yamtl.groovy-0.4.32.jar",
+          "size": 30747,
+          "sha512": "45e707a6afdd7006c3277f46948ef8698c3ff9beb468f6a1cd9da23b32be223a4dce63859cb098a11c37b5ee363f856a8a14aad19bddab4f9a46c5d587c9c479",
+          "sha256": "bc1ce7755eb6e94460a08f90b336ed0a492225b786a96a41bf132542d60e4431",
+          "sha1": "d796a006de2a2b5a29946b8e969a6460e9f2e8bf",
+          "md5": "032187dfaae9b3217c848981b66b3ef6"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.apache.groovy",
+          "module": "groovy-all",
+          "version": {
+            "requires": "4.0.15"
+          }
+        },
+        {
+          "group": "yamtl",
+          "module": "untyped-models",
+          "version": {
+            "requires": "0.0.25"
+          }
+        },
+        {
+          "group": "org.eclipse.emf",
+          "module": "org.eclipse.emf.ecore",
+          "version": {
+            "requires": "2.34.0"
+          }
+        },
+        {
+          "group": "org.eclipse.emf",
+          "module": "org.eclipse.emf.common",
+          "version": {
+            "requires": "2.28.0"
+          }
+        },
+        {
+          "group": "org.eclipse.emf",
+          "module": "org.eclipse.emf.ecore.xmi",
+          "version": {
+            "requires": "2.35.0"
+          }
+        },
+        {
+          "group": "org.eclipse.emf",
+          "module": "org.eclipse.emf.ecore.change",
+          "version": {
+            "requires": "2.14.0"
+          }
+        },
+        {
+          "group": "org.eclipse.xtend",
+          "module": "org.eclipse.xtend.core",
+          "version": {
+            "requires": "2.30.0"
+          }
+        },
+        {
+          "group": "org.eclipse.xtend",
+          "module": "org.eclipse.xtend.lib",
+          "version": {
+            "requires": "2.30.0"
+          }
+        },
+        {
+          "group": "commons-io",
+          "module": "commons-io",
+          "version": {
+            "requires": "2.11.0"
+          }
+        },
+        {
+          "group": "net.sourceforge.plantuml",
+          "module": "plantuml-mit",
+          "version": {
+            "requires": "1.2023.12"
+          }
+        },
+        {
+          "group": "org.apache.commons",
+          "module": "commons-lang3",
+          "version": {
+            "requires": "3.12.0"
+          }
+        },
+        {
+          "group": "org.apache.commons",
+          "module": "commons-text",
+          "version": {
+            "requires": "1.10.0"
+          }
+        },
+        {
+          "group": "com.fasterxml.jackson.core",
+          "module": "jackson-core",
+          "version": {
+            "requires": "2.14.2"
+          }
+        },
+        {
+          "group": "com.fasterxml.jackson.dataformat",
+          "module": "jackson-dataformat-csv",
+          "version": {
+            "requires": "2.14.2"
+          }
+        },
+        {
+          "group": "com.fasterxml.jackson.dataformat",
+          "module": "jackson-dataformat-xml",
+          "version": {
+            "requires": "2.14.2"
+          }
+        },
+        {
+          "group": "com.fasterxml.jackson.core",
+          "module": "jackson-databind",
+          "version": {
+            "requires": "2.14.2"
+          }
+        },
+        {
+          "group": "org.springframework.boot",
+          "module": "spring-boot-starter-aop",
+          "version": {
+            "requires": "3.1.0"
+          }
+        },
+        {
+          "group": "org.aspectj",
+          "module": "aspectjweaver",
+          "version": {
+            "requires": "1.9.19"
+          }
+        },
+        {
+          "group": "org.apache.commons",
+          "module": "commons-collections4",
+          "version": {
+            "requires": "4.1"
+          }
+        },
+        {
+          "group": "yamtl",
+          "module": "yamtl",
+          "version": {
+            "requires": "0.4.32"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "yamtl.groovy-0.4.32.jar",
+          "url": "yamtl.groovy-0.4.32.jar",
+          "size": 30747,
+          "sha512": "45e707a6afdd7006c3277f46948ef8698c3ff9beb468f6a1cd9da23b32be223a4dce63859cb098a11c37b5ee363f856a8a14aad19bddab4f9a46c5d587c9c479",
+          "sha256": "bc1ce7755eb6e94460a08f90b336ed0a492225b786a96a41bf132542d60e4431",
+          "sha1": "d796a006de2a2b5a29946b8e969a6460e9f2e8bf",
+          "md5": "032187dfaae9b3217c848981b66b3ef6"
+        }
+      ]
+    },
+    {
+      "name": "shadowRuntimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "shadowed",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "yamtl.groovy-0.4.32-all.jar",
+          "url": "yamtl.groovy-0.4.32-all.jar",
+          "size": 4804488,
+          "sha512": "612594aa9f64cebe04445bbbac65f79f744cf710e70b3fe51f11882f5bc88ef411188e213a5dd4331c1b583c4adad366964169e53cd4446b4bdebbb78e011e7b",
+          "sha256": "ab504fb961be43c4caa11d84ab628cd088622e068c4d779d85538074eaf9b586",
+          "sha1": "634145899c8536aab5a58a58b063044e84e2fc8c",
+          "md5": "341671d3d273e3be33088ade8b4e9362"
+        }
+      ]
+    }
+  ]
+}

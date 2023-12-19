@@ -1,5 +1,18 @@
 # Release notes
 
+#### 0.4.32
+
+Added programmable evaluation strategies for rules with four new operators: 
+
+* `applyOne()`: applies one rule to the source model, if a match exists. Returns the match or null.
+* `applyOne(ruleName)`: applies the rule once, if a match exists. Returns the match or null.
+* `applyAll()`: all at once semantics. Find all matches for rules in the ruleStore to the source model. Then applies them. Dependencies between rules are not considered.
+* `applyAll(ruleName)`: all at once for a given rule. Find all matches of a given rule and, then apply them in bulk. Dependencies between different rule applications are not considered.
+
+When the module specifies an in-place transformation, `applyOne` and `applyAll` delete the matchPool at the end of the execution.
+
+The method `YAMTLModule::execute(Runnable)` now takes a control flow specification as a `Runnable` that can indicate the order in which rules must be applied using the operators above and control flow logic in the host GPL of choice.
+
 #### 0.4.31
 
 Metamodels/models can be loaded from URL via EMF, just by using a URL to the model instead of a file path.
