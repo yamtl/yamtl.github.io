@@ -9,7 +9,7 @@ Create and set up a YAMTL project (without models and metamodels) that is ready 
 * An IDE (e.g. Eclipse, VSCode or IntelliJ)
 * Java 17 or later **(Minimum requirement)**
 * Gradle 8.0+ **(Minimum requirement)**
-* Groovy plugin installed in your IDE (see [Workspace Configuration](#workspace-configuration) to install it)
+* Groovy plugin installed in your IDE (see [Choosing an IDE](yamtl-ide.md) to install it)
 * Time to complete: about 10 minutes
 
 ## Walkthrough
@@ -50,7 +50,7 @@ dependencies {
     implementation "org.eclipse.emf:org.eclipse.emf.ecore.change:${ecoreChangeVersion}"
     implementation "org.eclipse.xtend:org.eclipse.xtend.core:${xtendVersion}"
     implementation "org.springframework.boot:spring-boot-starter-aop:${springAopVersion}"
-    implementation "org.aspectj:org.aspectj:${aspectJVersion}"
+    implementation "org.aspectj:org.aspectjweaver:${aspectJVersion}"
 }
 ```
 
@@ -136,7 +136,7 @@ helperStore([
 ])
 ```
 
-That is how you can create a YAMTL transformation script. For a better idea of a working MT definition check out this Groovy script for an [example](tutorials/linked-list-reversal-yamtl.md) project:
+That is how you can create a YAMTL transformation script. For a better idea of a working MT definition check out this Groovy script for an [example](examples/linked-list-reversal-example.md) project:
 
 ``` yamtl-groovy
 import static yamtl.dsl.Rule.*
@@ -172,6 +172,6 @@ class FirstExample extends YAMTLModule {
 }
 ```
 
-That's all! Now you know how to create your own YAMTL project and define a model transformation script. To learn how to use rules, see [Concrete Syntax](#concrete-syntax) section. Or if you want to learn how to run YAMTL projects and configure models, head over to [Examples](#examples) so you can understand model transformations and special YAMTL operations of varying difficulties.
+That's all! Now you know how to create your own YAMTL project and define a model transformation script. To learn how to use rules, see the [Language Reference](yamtl-reference.md) section. Or if you want to learn how to run YAMTL projects and configure models, head over to [Examples](examples/examples.md) so you can understand model transformations and special YAMTL operations of varying difficulties.
 
 <!-- New:End -->

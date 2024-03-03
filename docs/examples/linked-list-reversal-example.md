@@ -39,8 +39,6 @@ You will need to understand this example's project structure before you read any
   <figcaption>Dependencies of the project files</figcaption>
 </figure>
 
-This example slightly differs from general model transformation projects because the source and target metamodels are the same (as seen in the figure above). The model transformation definition (MT Definition) must adhere to the MTL syntax and semantics, so it has been documented separately for each MTL provided in the [MTL Solutions](#mtl-solutions) section at the bottom of this page. Next, we will look at other important files required for the model transformation.
-
 ## Metamodel
 The source and target model must conform to the linked list metamodel. This contains the necessary information regarding the structure of the linked list at an abstract level such that certain characteristics of the linked list can still be changed in the model files. Look at the pseudocode below for the linked list metamodel:
 
@@ -229,11 +227,11 @@ This is the output file you should expect when you correctly run the YAMTL progr
 
 [**Download**](../assets/downloads/yamtl-linkedlistreversal.zip) the linked list reversal project (ZIP file). You can unzip and import the project into an IDE of your choice. This documentation will provide details on how to setup the example project on Eclipse, IntelliJ and VSCode.
 
-YAMTL uses groovy scripts to define the models and transformations so generally any IDE will need some Groovy support through extensions/plug-ins. Make sure to have YAMTL correctly configured or do the necessary steps found in the [YAMTL Workspace Configuration](../yamtl.md#workspace-configuration) section before you run the project.
+YAMTL uses groovy scripts to define the models and transformations so generally any IDE will need some Groovy support through extensions/plug-ins. Make sure to have YAMTL correctly configured or do the necessary steps found in the [Choosing an IDE](../yamtl-ide.md) section before you run the project.
 
 ### **Eclipse**
 
-Unzip the downloaded project. In Eclipse, click on ``File → Import → Existing Projects into Workspace → Select root directory → Finish``. This will import and load the project in the IDE.
+Unzip the downloaded project. In Eclipse, click on ``File → Import Gradle Project → Select root directory → Finish``. This will import and load the project in the IDE.
 
 Right click on ``src/test/groovy/linkedListReversal/ReverseLinkedListTest.groovy`` then ``Run as → JUnit Test``. Once the test is completed, a new ``outputList.xmi`` will be generated in the ``model`` directory. Examine this file and notice if the linked list has been reversed.
 
