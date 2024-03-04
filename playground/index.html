@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="metro4:init" content="false">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v3.0.0/dist/cookieconsent.css">
     <link rel="stylesheet" href="css/metro-all.min.css" from="https://cdn.metroui.org.ua/v4.4.3/css/metro-all.min.css">
     <link rel="stylesheet" href="css/custom.css">
     <link rel="stylesheet" href="css/index.css">
@@ -14,7 +15,17 @@
 </head>
 
 <body class="h-100" onresize="fit()" onload="fit();updateGutterVisibility();">
+
+    <script type="module" src="js/cookieconsent-config.js"></script>
+
     <div id="preloader"><img src="images/preloader.gif" width="100px"></div>
+
+    <div id="feedback-button" style="display:none">
+        <!--feedback href set by env variable FEEDBACK_SURVEY_URL in dockerfile-->
+        <p><a id="feedback-url" target="_blank" rel="noopener noreferrer">
+            <img src="images/rate_review.svg" alt="Feedback" width="20" height="20">
+        </a></p>
+    </div>
 
     <div id="login" style="display:none">
         <h2>Login</h2>
