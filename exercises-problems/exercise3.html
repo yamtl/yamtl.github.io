@@ -12,7 +12,7 @@
       
       
       <link rel="icon" href="../assets/site-files/yamtl/favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.11">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.12">
     
     
       
@@ -654,33 +654,33 @@
 <p>Define the next rule as ‘Subflow2H1’ and add the tag inheritsFrom which requires a list of rule names as an argument e.g., <code>inheritsFrom([&lt;ruleNameList&gt;])</code>. The only rule we want the child rule to inherit is ‘Flowchart2H1’. Create an input object ‘f’ of the type ‘Subflow’. Remember, rules that inherit from another rule must have the same output object name and type. If they also have the same input names then you can pass child input object to the parent rule. Thus, define an output pattern with the same name and type as the one in the parent rule. Instead of just accessing the implementation of the parent rule, we can extend the functionality of the child rule by adding a lambda expression that sets the value of ‘h1’ output object as the concatenated string of  “Subflow ” and value of ‘h1’ again. Note that the second definition of h1 object inherits the implementation of the parent rule. This means, the subflow name is passed to the output pattern of the parent rule and the h1.value is calculated. This result is then passed to the output pattern of the child rule so the final value of h1 would be ‘Subflow Flowchart Snoozing’.</p>
 <h2 id="base-transformation">Base Transformation</h2>
 <p>Transformation class containing the MT definition. All rules are defined in the <code>ruleStore()</code>.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>package flowchartToHtmlExamples
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>import static yamtl.dsl.Rule.*
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>import org.eclipse.emf.ecore.EPackage
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>import yamtl.core.YAMTLModule
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>import yamtl.groovy.YAMTLGroovyExtensions
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>import yamtl.groovy.YAMTLGroovyExtensions_dynamicEMF
+<div class="language-yamtl-groovy highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">package</span><span class="w"> </span><span class="n">flowchartToHtmlExamples</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">static</span><span class="w"> </span><span class="n">yamtl</span><span class="o">.</span><span class="na">dsl</span><span class="o">.</span><span class="na">Rule</span><span class="o">.*</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">org.eclipse.emf.ecore.EPackage</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">yamtl.core.YAMTLModule</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="kn">import</span><span class="w"> </span><span class="nn">yamtl.groovy.YAMTLGroovyExtensions</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="kn">import</span><span class="w"> </span><span class="nn">yamtl.groovy.YAMTLGroovyExtensions_dynamicEMF</span>
 </span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>class Example3 extends YAMTLModule {
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    public Example3(EPackage flowchartPk, EPackage htmlPk) {
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>        YAMTLGroovyExtensions_dynamicEMF.init(this)
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="kd">class</span><span class="w"> </span><span class="nc">Example3</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">YAMTLModule</span><span class="w"> </span><span class="o">{</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Example3</span><span class="o">(</span><span class="nb">EPackage</span><span class="w"> </span><span class="n">flowchartPk</span><span class="o">,</span><span class="w"> </span><span class="nb">EPackage</span><span class="w"> </span><span class="n">htmlPk</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">        </span><span class="n">YAMTLGroovyExtensions_dynamicEMF</span><span class="o">.</span><span class="na">init</span><span class="o">(</span><span class="k">this</span><span class="o">)</span>
 </span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>        header().in(&quot;in&quot;, flowchartPk).out(&quot;out&quot;, htmlPk)
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">        </span><span class="n">header</span><span class="o">().</span><span class="cp">in</span><span class="o">(</span><span class="s">&quot;in&quot;</span><span class="o">,</span><span class="w"> </span><span class="n">flowchartPk</span><span class="o">).</span><span class="cp">out</span><span class="o">(</span><span class="s">&quot;out&quot;</span><span class="o">,</span><span class="w"> </span><span class="n">htmlPk</span><span class="o">)</span>
 </span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>        ruleStore([
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>            //This parent rule is abstract, so it will not be applied directly
-</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>            //but it can be executed by its children
-</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>            rule(&#39;Flowchart2H1&#39;)
-</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>                //TODO: Implement the parent rule here
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">        </span><span class="kd">ruleStore</span><span class="o">([</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">            </span><span class="c1">//This parent rule is abstract, so it will not be applied directly</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">            </span><span class="c1">//but it can be executed by its children</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">            </span><span class="nc">rule</span><span class="o">(</span><span class="s">&#39;Flowchart2H1&#39;</span><span class="o">)</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">                </span><span class="c1">//TODO: Implement the parent rule here</span>
 </span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>
-</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>            //This child rule inherits from the previous one
-</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>            rule(&#39;Subflow2H1&#39;)
-</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>                //TODO: Implement the child rule here
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">            </span><span class="c1">//This child rule inherits from the previous one</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">            </span><span class="nc">rule</span><span class="o">(</span><span class="s">&#39;Subflow2H1&#39;</span><span class="o">)</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">                </span><span class="c1">//TODO: Implement the child rule here</span>
 </span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>
-</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>        ])
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">        </span><span class="o">])</span>
 </span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>
-</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>    }
-</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>}
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="w">    </span><span class="o">}</span>
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="o">}</span>
 </span></code></pre></div>
 <h2 id="test-script">Test Script</h2>
 <p>This is a separate Groovy class that loads, executes and tests the model transformation. In particular, the source and target metamodels are loaded and passed to the transformation class. Then, the input model is loaded into this class and executed. Thus, creating an output model which is stored and tested for correctness.</p>
@@ -850,7 +850,7 @@
     <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.tabs.link"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.8fd75fb4.min.js"></script>
+      <script src="../assets/javascripts/bundle.c8d2eff1.min.js"></script>
       
     
   </body>

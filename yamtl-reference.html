@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="assets/site-files/yamtl/favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.11">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.12">
     
     
       
@@ -1243,44 +1243,44 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Groovy</label><label for="__tabbed_1_2">Xtend</label><label for="__tabbed_1_3">Java</label><label for="__tabbed_1_4">Kotlin</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>class &lt;name&gt; extends YAMTLModule {
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    public &lt;name&gt; (EPackage &lt;pk1&gt;, EPackage &lt;pk2&gt;) {
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        YAMTLGroovyExtensions_dynamicEMF.init(this)
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        header().in(&lt;in_domain_name1&gt;,&lt;pk1&gt;).out(&lt;in_domain_name2&gt;,&lt;pk2&gt;)
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        ruleStore([ /* rules here */ ])
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        helperStore([  /* managed helpers here */ ])
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    }
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>}
+<div class="language-yamtl-groovy highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">class</span><span class="w"> </span><span class="err">&lt;</span><span class="nc">name</span><span class="o">&gt;</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">YAMTLModule</span><span class="w"> </span><span class="o">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span><span class="w"> </span><span class="o">(</span><span class="nb">EPackage</span><span class="w"> </span><span class="o">&lt;</span><span class="n">pk1</span><span class="o">&gt;,</span><span class="w"> </span><span class="nb">EPackage</span><span class="w"> </span><span class="o">&lt;</span><span class="n">pk2</span><span class="o">&gt;)</span><span class="w"> </span><span class="o">{</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">        </span><span class="n">YAMTLGroovyExtensions_dynamicEMF</span><span class="o">.</span><span class="na">init</span><span class="o">(</span><span class="k">this</span><span class="o">)</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">        </span><span class="n">header</span><span class="o">().</span><span class="cp">in</span><span class="o">(&lt;</span><span class="n">in_domain_name1</span><span class="o">&gt;,&lt;</span><span class="n">pk1</span><span class="o">&gt;).</span><span class="cp">out</span><span class="o">(&lt;</span><span class="n">in_domain_name2</span><span class="o">&gt;,&lt;</span><span class="n">pk2</span><span class="o">&gt;)</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">        </span><span class="kd">ruleStore</span><span class="o">([</span><span class="w"> </span><span class="cm">/* rules here */</span><span class="w"> </span><span class="o">])</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">        </span><span class="kd">helperStore</span><span class="o">([</span><span class="w">  </span><span class="cm">/* managed helpers here */</span><span class="w"> </span><span class="o">])</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="o">}</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="o">}</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>class &lt;name&gt; extends YAMTLModule {
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    new(EPackage &lt;pk1&gt;, EPackage &lt;pk2&gt;) {
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>        header().in(&lt;in_domain_name1&gt;,&lt;pk1&gt;).out(&lt;in_domain_name2&gt;,&lt;pk2&gt;)
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        ruleStore(#[ /* rules here */ ])
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>        helperStore(#[ /* managed helpers here */ ])
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    }
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>}
+<div class="language-yamtl-xtend highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">class</span><span class="w"> </span><span class="err">&lt;</span><span class="nc">name</span><span class="o">&gt;</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">YAMTLModule</span><span class="w"> </span><span class="o">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="k">new</span><span class="o">(</span><span class="n">EPackage</span><span class="w"> </span><span class="o">&lt;</span><span class="n">pk1</span><span class="o">&gt;,</span><span class="w"> </span><span class="n">EPackage</span><span class="w"> </span><span class="o">&lt;</span><span class="n">pk2</span><span class="o">&gt;)</span><span class="w"> </span><span class="o">{</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">        </span><span class="n">header</span><span class="o">().</span><span class="cp">in</span><span class="o">(&lt;</span><span class="n">in_domain_name1</span><span class="o">&gt;,&lt;</span><span class="n">pk1</span><span class="o">&gt;).</span><span class="cp">out</span><span class="o">(&lt;</span><span class="n">in_domain_name2</span><span class="o">&gt;,&lt;</span><span class="n">pk2</span><span class="o">&gt;)</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">        </span><span class="kd">ruleStore</span><span class="o">(</span><span class="err">#</span><span class="o">[</span><span class="w"> </span><span class="cm">/* rules here */</span><span class="w"> </span><span class="o">])</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">        </span><span class="kd">helperStore</span><span class="o">(</span><span class="err">#</span><span class="o">[</span><span class="w"> </span><span class="cm">/* managed helpers here */</span><span class="w"> </span><span class="o">])</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="o">}</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="o">}</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>public class &lt;name&gt; extends YAMTLModule {
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    public &lt;name&gt;(EPackage &lt;pk1&gt;, EPackage &lt;pk2&gt;) {
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>        header().in(&lt;in_domain_name1&gt;,&lt;pk1&gt;).out(&lt;in_domain_name2&gt;,&lt;pk2&gt;);
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>        ruleStore(List.of( /* rules here */ ));
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>        helperStore(List.of( /* managed helpers here */ ));
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    }
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>}
+<div class="language-yamtl-java highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="err">&lt;</span><span class="nc">name</span><span class="o">&gt;</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">YAMTLModule</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span><span class="p">(</span><span class="n">EPackage</span><span class="w"> </span><span class="o">&lt;</span><span class="n">pk1</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">EPackage</span><span class="w"> </span><span class="o">&lt;</span><span class="n">pk2</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">        </span><span class="n">header</span><span class="p">().</span><span class="na">in</span><span class="p">(</span><span class="o">&lt;</span><span class="n">in_domain_name1</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">pk1</span><span class="o">&gt;</span><span class="p">).</span><span class="na">out</span><span class="p">(</span><span class="o">&lt;</span><span class="n">in_domain_name2</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">pk2</span><span class="o">&gt;</span><span class="p">);</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">        </span><span class="kd">ruleStore</span><span class="p">(</span><span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="w"> </span><span class="cm">/* rules here */</span><span class="w"> </span><span class="p">));</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">        </span><span class="kd">helperStore</span><span class="p">(</span><span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="w"> </span><span class="cm">/* managed helpers here */</span><span class="w"> </span><span class="p">));</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="p">}</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>class &lt;name&gt;(&lt;pk1&gt;: EPackage, &lt;pk2&gt;: EPackage) : YAMTLModule() {
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    init {
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>        header().`in`(&lt;in_domain_name1&gt;,&lt;pk1&gt;).out(&lt;in_domain_name2&gt;,&lt;pk2&gt;)
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>        ruleStore(listOf( /* rules here */ ))
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>        helperStore(listOf( /* managed helpers here */ ))
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    }
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>}
+<div class="language-yamtl-kotlin highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">class</span><span class="w"> </span><span class="err">&lt;</span><span class="nc">name</span><span class="o">&gt;</span><span class="p">(</span><span class="o">&lt;</span><span class="n">pk1</span><span class="o">&gt;</span><span class="p">:</span><span class="w"> </span><span class="n">EPackage</span><span class="p">,</span><span class="w"> </span><span class="o">&lt;</span><span class="n">pk2</span><span class="o">&gt;</span><span class="p">:</span><span class="w"> </span><span class="n">EPackage</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">YAMTLModule</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="k">init</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">        </span><span class="n">header</span><span class="p">().</span><span class="n">`in`</span><span class="p">(</span><span class="o">&lt;</span><span class="n">in_domain_name1</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">pk1</span><span class="o">&gt;</span><span class="p">).</span><span class="na">out</span><span class="p">(</span><span class="o">&lt;</span><span class="n">in_domain_name2</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">pk2</span><span class="o">&gt;</span><span class="p">)</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">        </span><span class="kd">ruleStore</span><span class="p">(</span><span class="n">listOf</span><span class="p">(</span><span class="w"> </span><span class="cm">/* rules here */</span><span class="w"> </span><span class="p">))</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">        </span><span class="kd">helperStore</span><span class="p">(</span><span class="n">listOf</span><span class="p">(</span><span class="w"> </span><span class="cm">/* managed helpers here */</span><span class="w"> </span><span class="p">))</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="p">}</span>
 </span></code></pre></div>
 </div>
 </div>
@@ -1293,11 +1293,11 @@
 <li><strong>Helper Store (Optional)</strong>: Accepts a list of managed helpers. Managed helpers are attributes or methods that are optimized in YAMTL using an internal cache for their results. Unmanaged helpers are declared as standard methods of the module class. This section is optional if no managed helpers are needed.</li>
 </ul>
 <p>The basic format of a YAMTL rule definition is as follows:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>rule(&quot;&lt;name&gt;&quot;)
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    .in(&quot;&lt;in_object_name&gt;&quot;, &lt;in_object_type&gt;)
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>        [.derivedWith(&lt;QUERY&gt;)]?
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>        [.filter(&lt;FILTER&gt;)]?
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    .out(&quot;&lt;out_object_name&gt;&quot;, &lt;out_object_type&gt;, &lt;ACTION&gt;)
+<div class="language-yamtl-groovy highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">rule</span><span class="o">(</span><span class="s">&quot;&lt;name&gt;&quot;</span><span class="o">)</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="o">.</span><span class="cp">in</span><span class="o">(</span><span class="s">&quot;&lt;in_object_name&gt;&quot;</span><span class="o">,</span><span class="w"> </span><span class="o">&lt;</span><span class="n">in_object_type</span><span class="o">&gt;)</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">        </span><span class="o">[.</span><span class="na">derivedWith</span><span class="o">(&lt;</span><span class="n">QUERY</span><span class="o">&gt;)]?</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">        </span><span class="o">[.</span><span class="na">filter</span><span class="o">(&lt;</span><span class="n">FILTER</span><span class="o">&gt;)]?</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="o">.</span><span class="cp">out</span><span class="o">(</span><span class="s">&quot;&lt;out_object_name&gt;&quot;</span><span class="o">,</span><span class="w"> </span><span class="o">&lt;</span><span class="n">out_object_type</span><span class="o">&gt;,</span><span class="w"> </span><span class="o">&lt;</span><span class="n">ACTION</span><span class="o">&gt;)</span>
 </span></code></pre></div>
 <div class="admonition info">
 <p class="admonition-title">Legend</p>
@@ -1341,10 +1341,10 @@
 </ol>
 </div>
 <p>YAMTL's pattern matcher can be used to implement model queries. A model query is a rule that only has an input pattern and that may have a final action block <code>endWith(&lt;ACTION&gt;)</code>:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>rule(&quot;&lt;name&gt;&quot;)
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    .in(&quot;&lt;in_object_name&gt;&quot;, &lt;in_object_type&gt;)[.derivedWith(&lt;QUERY&gt;)]?[.filter(&lt;FILTER&gt;)]?
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    .query()
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    [.endWith(&lt;ACTION&gt;)]?
+<div class="language-yamtl-groovy highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">rule</span><span class="o">(</span><span class="s">&quot;&lt;name&gt;&quot;</span><span class="o">)</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="o">.</span><span class="cp">in</span><span class="o">(</span><span class="s">&quot;&lt;in_object_name&gt;&quot;</span><span class="o">,</span><span class="w"> </span><span class="o">&lt;</span><span class="n">in_object_type</span><span class="o">&gt;)[.</span><span class="na">derivedWith</span><span class="o">(&lt;</span><span class="n">QUERY</span><span class="o">&gt;)]?[.</span><span class="na">filter</span><span class="o">(&lt;</span><span class="n">FILTER</span><span class="o">&gt;)]?</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="o">.</span><span class="na">query</span><span class="o">()</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="o">[.</span><span class="na">endWith</span><span class="o">(&lt;</span><span class="n">ACTION</span><span class="o">&gt;)]?</span>
 </span></code></pre></div>
 <p>The <code>&lt;ACTION&gt;</code> in <code>endWith(&lt;ACTION&gt;)</code> is a lambda expression of type <code>Runnable</code> that may use the input element variables to perform some action on the input objects that have been matched, e.g., reporting error messages or computing metrics.</p>
 <p>To configure and execute a YAMTL module for implementing rule-based queries, use the following template:</p>
@@ -1536,24 +1536,24 @@ Objects can be frozen/unfrozen using the operations <code>.freeze()</code>/<code
 </div>
 <h2 id="yamtl-rules">YAMTL Rules</h2>
 <p>YAMTL is as expressive as ATL so it also has a lot of optional operations. These options provide a more thorough (full) syntax for the language.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>rule(&quot;&lt;name&gt;&quot;)
-</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>    [.inheritsFrom(&lt;ruleNameList&gt;)]? 
-</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>    [.isAbstract()]? 
-</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>    [.isLazy() | .isUniqueLazy()]? 
-</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>    [.isTransient()]?
-</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>    {
-</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>        .in(&quot;&lt;in_object_name&gt;&quot;, &lt;in_object_type&gt;)
-</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>        [(.filter(&lt;FILTER&gt;) | .derivedWith(&lt;QUERY&gt;))]?
-</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>    }+
-</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>    [.using(&quot;&lt;var_name&gt;&quot;, &lt;QUERY&gt;)]*
-</span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>    [.globalFilter(&lt;FILTER&gt;)]?
-</span><span id="__span-19-12"><a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a>    {
-</span><span id="__span-19-13"><a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a>        .out(&quot;&lt;out_object_name&gt;&quot;, &lt;out_object_type&gt;, &lt;ACTION&gt;)
-</span><span id="__span-19-14"><a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a>        [.overriding()]?
-</span><span id="__span-19-15"><a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a>        [.drop()|.freeze()|.unfreeze()]?
-</span><span id="__span-19-16"><a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a>    }+
-</span><span id="__span-19-17"><a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a>    [.endWith(&lt;ACTION&gt;)]?
-</span><span id="__span-19-18"><a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a>    [.priority(P)]?
+<div class="language-yamtl-groovy highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">rule</span><span class="o">(</span><span class="s">&quot;&lt;name&gt;&quot;</span><span class="o">)</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">    </span><span class="o">[.</span><span class="na">inheritsFrom</span><span class="o">(&lt;</span><span class="n">ruleNameList</span><span class="o">&gt;)]?</span><span class="w"> </span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">    </span><span class="o">[.</span><span class="na">isAbstract</span><span class="o">()]?</span><span class="w"> </span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">    </span><span class="o">[.</span><span class="na">isLazy</span><span class="o">()</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="o">.</span><span class="na">isUniqueLazy</span><span class="o">()]?</span><span class="w"> </span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="w">    </span><span class="o">[.</span><span class="na">isTransient</span><span class="o">()]?</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="w">    </span><span class="o">{</span>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="w">        </span><span class="o">.</span><span class="cp">in</span><span class="o">(</span><span class="s">&quot;&lt;in_object_name&gt;&quot;</span><span class="o">,</span><span class="w"> </span><span class="o">&lt;</span><span class="n">in_object_type</span><span class="o">&gt;)</span>
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="w">        </span><span class="o">[(.</span><span class="na">filter</span><span class="o">(&lt;</span><span class="n">FILTER</span><span class="o">&gt;)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="o">.</span><span class="na">derivedWith</span><span class="o">(&lt;</span><span class="n">QUERY</span><span class="o">&gt;))]?</span>
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="w">    </span><span class="o">}+</span>
+</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="w">    </span><span class="o">[.</span><span class="na">using</span><span class="o">(</span><span class="s">&quot;&lt;var_name&gt;&quot;</span><span class="o">,</span><span class="w"> </span><span class="o">&lt;</span><span class="n">QUERY</span><span class="o">&gt;)]*</span>
+</span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="w">    </span><span class="o">[.</span><span class="na">globalFilter</span><span class="o">(&lt;</span><span class="n">FILTER</span><span class="o">&gt;)]?</span>
+</span><span id="__span-19-12"><a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a><span class="w">    </span><span class="o">{</span>
+</span><span id="__span-19-13"><a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a><span class="w">        </span><span class="o">.</span><span class="cp">out</span><span class="o">(</span><span class="s">&quot;&lt;out_object_name&gt;&quot;</span><span class="o">,</span><span class="w"> </span><span class="o">&lt;</span><span class="n">out_object_type</span><span class="o">&gt;,</span><span class="w"> </span><span class="o">&lt;</span><span class="n">ACTION</span><span class="o">&gt;)</span>
+</span><span id="__span-19-14"><a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a><span class="w">        </span><span class="o">[.</span><span class="na">overriding</span><span class="o">()]?</span>
+</span><span id="__span-19-15"><a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a><span class="w">        </span><span class="o">[.</span><span class="na">drop</span><span class="o">()|.</span><span class="na">freeze</span><span class="o">()|.</span><span class="na">unfreeze</span><span class="o">()]?</span>
+</span><span id="__span-19-16"><a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a><span class="w">    </span><span class="o">}+</span>
+</span><span id="__span-19-17"><a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a><span class="w">    </span><span class="o">[.</span><span class="na">endWith</span><span class="o">(&lt;</span><span class="n">ACTION</span><span class="o">&gt;)]?</span>
+</span><span id="__span-19-18"><a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a><span class="w">    </span><span class="o">[.</span><span class="na">priority</span><span class="o">(</span><span class="n">P</span><span class="o">)]?</span>
 </span></code></pre></div>
 <div class="admonition info">
 <p class="admonition-title">Legend</p>
@@ -1622,30 +1622,30 @@ Objects can be frozen/unfrozen using the operations <code>.freeze()</code>/<code
 <div class="tabbed-set tabbed-alternate" data-tabs="5:4"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><input id="__tabbed_5_3" name="__tabbed_5" type="radio" /><input id="__tabbed_5_4" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Groovy</label><label for="__tabbed_5_2">Xtend</label><label for="__tabbed_5_3">Java</label><label for="__tabbed_5_4">Kotlin</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>staticAttribute(&quot;&lt;AttributeName&gt;&quot;, {  
-</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>    // an expression returning a value from allInstances(&lt;InputEClass&gt;)
-</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>})
+<div class="language-yamtl-groovy highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">staticAttribute</span><span class="o">(</span><span class="s">&quot;&lt;AttributeName&gt;&quot;</span><span class="o">,</span><span class="w"> </span><span class="o">{</span><span class="w">  </span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="w">    </span><span class="c1">// an expression returning a value from allInstances(&lt;InputEClass&gt;)</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="o">})</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>staticAttribute(&quot;&lt;AttributeName&gt;&quot;, [|  
-</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>    // an expression returning a value from allInstances(&lt;InputEClass&gt;)
-</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>])
+<div class="language-yamtl-xtend highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="nc">staticAttribute</span><span class="o">(</span><span class="s2">&quot;&lt;AttributeName&gt;&quot;</span><span class="o">,</span><span class="w"> </span><span class="o">[|</span><span class="w">  </span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="w">    </span><span class="c1">// an expression returning a value from allInstances(&lt;InputEClass&gt;)</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="o">])</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>staticAttribute(&quot;&lt;AttributeName&gt;&quot;, new Supplier&lt;Object&gt;() {  
-</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>    @Override
-</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>    public Object get() {
-</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>        // an expression returning a value from allInstances(&lt;InputEClass&gt;)
-</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>    }
-</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>});
+<div class="language-yamtl-java highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="nc">staticAttribute</span><span class="p">(</span><span class="s">&quot;&lt;AttributeName&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Supplier</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">    </span><span class="nd">@Override</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Object</span><span class="w"> </span><span class="nf">get</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="w">        </span><span class="c1">// an expression returning a value from allInstances(&lt;InputEClass&gt;)</span>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="p">});</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>staticAttribute(&quot;&lt;AttributeName&gt;&quot;) {  
-</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>    // an expression returning a value from allInstances(&lt;InputEClass&gt;)
-</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>}
+<div class="language-yamtl-kotlin highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="nc">staticAttribute</span><span class="p">(</span><span class="s">&quot;&lt;AttributeName&gt;&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="w">    </span><span class="c1">// an expression returning a value from allInstances(&lt;InputEClass&gt;)</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="p">}</span>
 </span></code></pre></div>
 </div>
 </div>
@@ -1658,15 +1658,15 @@ Objects can be frozen/unfrozen using the operations <code>.freeze()</code>/<code
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>fetch(&quot;&lt;AttributeName&gt;&quot;)
+<div class="language-yamtl-xtend highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="ni">fetch</span><span class="o">(</span><span class="s2">&quot;&lt;AttributeName&gt;&quot;</span><span class="o">)</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>fetch(&quot;&lt;AttributeName&gt;&quot;)
+<div class="language-yamtl-java highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="n">fetch</span><span class="p">(</span><span class="s">&quot;&lt;AttributeName&gt;&quot;</span><span class="p">)</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>fetch(&quot;&lt;AttributeName&gt;&quot;)
+<div class="language-yamtl-kotlin highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="n">fetch</span><span class="p">(</span><span class="s">&quot;&lt;AttributeName&gt;&quot;</span><span class="p">)</span>
 </span></code></pre></div>
 </div>
 </div>
@@ -1676,31 +1676,31 @@ Objects can be frozen/unfrozen using the operations <code>.freeze()</code>/<code
 <div class="tabbed-set tabbed-alternate" data-tabs="7:4"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><input id="__tabbed_7_3" name="__tabbed_7" type="radio" /><input id="__tabbed_7_4" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Groovy</label><label for="__tabbed_7_2">Xtend</label><label for="__tabbed_7_3">Java</label><label for="__tabbed_7_4">Kotlin</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>staticOperation(&quot;&lt;OperationName&gt;&quot;, { argMap -&gt; 
-</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>    // returns the value of the parameter with name &lt;param_name&gt;
-</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>    argMap.&lt;param_name&gt; 
-</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>})
+<div class="language-yamtl-groovy highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="n">staticOperation</span><span class="o">(</span><span class="s">&quot;&lt;OperationName&gt;&quot;</span><span class="o">,</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="n">argMap</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span>
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="w">    </span><span class="c1">// returns the value of the parameter with name &lt;param_name&gt;</span>
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="w">    </span><span class="n">argMap</span><span class="o">.&lt;</span><span class="n">param_name</span><span class="o">&gt;</span><span class="w"> </span>
+</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="o">})</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>staticOperation(&quot;&lt;OperationName&gt;&quot;, [ argMap | 
-</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>    // returns the value of the parameter with name &lt;param_name&gt;
-</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>    argMap.get(&quot;&lt;param_name&gt;&quot;)
-</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>])
+<div class="language-yamtl-xtend highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="nc">staticOperation</span><span class="o">(</span><span class="s2">&quot;&lt;OperationName&gt;&quot;</span><span class="o">,</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="n">argMap</span><span class="w"> </span><span class="o">|</span><span class="w"> </span>
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="w">    </span><span class="c1">// returns the value of the parameter with name &lt;param_name&gt;</span>
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="w">    </span><span class="n">argMap</span><span class="o">.</span><span class="n">get</span><span class="o">(</span><span class="s2">&quot;&lt;param_name&gt;&quot;</span><span class="o">)</span>
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="o">])</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>staticOperation(&quot;&lt;OperationName&gt;&quot;, argMap -&gt; {
-</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>    // returns the value of the parameter with name &lt;param_name&gt;
-</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>    return argMap.get(&quot;&lt;param_name&gt;&quot;);
-</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>});
+<div class="language-yamtl-java highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="nc">staticOperation</span><span class="p">(</span><span class="s">&quot;&lt;OperationName&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">argMap</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="w">    </span><span class="c1">// returns the value of the parameter with name &lt;param_name&gt;</span>
+</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">argMap</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;&lt;param_name&gt;&quot;</span><span class="p">);</span>
+</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a><span class="p">});</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>staticOperation(&quot;&lt;OperationName&gt;&quot;) { argMap -&gt;
-</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>    // returns the value of the parameter with name &lt;param_name&gt;
-</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>    argMap[&quot;&lt;param_name&gt;&quot;]
-</span><span id="__span-31-4"><a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a>}
+<div class="language-yamtl-kotlin highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="nc">staticOperation</span><span class="p">(</span><span class="s">&quot;&lt;OperationName&gt;&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">argMap</span><span class="w"> </span><span class="o">-&gt;</span>
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="w">    </span><span class="c1">// returns the value of the parameter with name &lt;param_name&gt;</span>
+</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="w">    </span><span class="n">argMap</span><span class="o">[</span><span class="s">&quot;&lt;param_name&gt;&quot;</span><span class="o">]</span>
+</span><span id="__span-31-4"><a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="p">}</span>
 </span></code></pre></div>
 </div>
 </div>
@@ -1709,19 +1709,19 @@ Objects can be frozen/unfrozen using the operations <code>.freeze()</code>/<code
 <div class="tabbed-set tabbed-alternate" data-tabs="8:4"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><input id="__tabbed_8_3" name="__tabbed_8" type="radio" /><input id="__tabbed_8_4" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">Groovy</label><label for="__tabbed_8_2">Xtend</label><label for="__tabbed_8_3">Java</label><label for="__tabbed_8_4">Kotlin</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>&lt;OperationName&gt;([&quot;&lt;param1&gt;&quot; : &lt;value1&gt;, ...])
+<div class="language-yamtl-groovy highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="o">&lt;</span><span class="n">OperationName</span><span class="o">&gt;([</span><span class="s">&quot;&lt;param1&gt;&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="n">value1</span><span class="o">&gt;,</span><span class="w"> </span><span class="o">...])</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>fetch(&quot;&lt;OperationName&gt;&quot;, #[&quot;&lt;param1&gt;&quot; -&gt; &lt;value1&gt;, ...])
+<div class="language-yamtl-xtend highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="ni">fetch</span><span class="o">(</span><span class="s2">&quot;&lt;OperationName&gt;&quot;</span><span class="o">,</span><span class="w"> </span><span class="err">#</span><span class="o">[</span><span class="s2">&quot;&lt;param1&gt;&quot;</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="o">&lt;</span><span class="n">value1</span><span class="o">&gt;,</span><span class="w"> </span><span class="o">...])</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>fetch(&quot;&lt;OperationName&gt;&quot;, Map.of(&quot;&lt;param1&gt;&quot;, &lt;value1&gt;, ...));
+<div class="language-yamtl-java highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="n">fetch</span><span class="p">(</span><span class="s">&quot;&lt;OperationName&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Map</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">&quot;&lt;param1&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&lt;</span><span class="n">value1</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="p">...));</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>fetch(&quot;&lt;OperationName&gt;&quot;, mapOf(&quot;&lt;param1&gt;&quot; to &lt;value1&gt;, ...))
+<div class="language-yamtl-kotlin highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="n">fetch</span><span class="p">(</span><span class="s">&quot;&lt;OperationName&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">mapOf</span><span class="p">(</span><span class="s">&quot;&lt;param1&gt;&quot;</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="o">&lt;</span><span class="n">value1</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="p">...))</span>
 </span></code></pre></div>
 </div>
 </div>
@@ -1731,35 +1731,35 @@ Objects can be frozen/unfrozen using the operations <code>.freeze()</code>/<code
 <div class="tabbed-set tabbed-alternate" data-tabs="9:4"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><input id="__tabbed_9_3" name="__tabbed_9" type="radio" /><input id="__tabbed_9_4" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">Groovy</label><label for="__tabbed_9_2">Xtend</label><label for="__tabbed_9_3">Java</label><label for="__tabbed_9_4">Kotlin</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>contextualOperation(&quot;&lt;OperationName&gt;&quot;, { obj, argMap -&gt; 
-</span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a>    // to access the contextual instance use &#39;obj&#39; 
-</span><span id="__span-36-3"><a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a>    // to access an argument use &#39;argMap.&lt;param_name&gt;&#39; 
-</span><span id="__span-36-4"><a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a>    // must return a value
-</span><span id="__span-36-5"><a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a>})
+<div class="language-yamtl-groovy highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="n">contextualOperation</span><span class="o">(</span><span class="s">&quot;&lt;OperationName&gt;&quot;</span><span class="o">,</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="n">obj</span><span class="o">,</span><span class="w"> </span><span class="n">argMap</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span>
+</span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a><span class="w">    </span><span class="c1">// to access the contextual instance use &#39;obj&#39; </span>
+</span><span id="__span-36-3"><a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a><span class="w">    </span><span class="c1">// to access an argument use &#39;argMap.&lt;param_name&gt;&#39; </span>
+</span><span id="__span-36-4"><a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a><span class="w">    </span><span class="c1">// must return a value</span>
+</span><span id="__span-36-5"><a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a><span class="o">})</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>contextualOperation(&quot;&lt;OperationName&gt;&quot;, [ obj, argMap | 
-</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a>    // to access the contextual instance use &#39;obj&#39; 
-</span><span id="__span-37-3"><a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a>    // to access an argument use &#39;argMap.get(&quot;&lt;param_name&gt;&quot;)&#39; 
-</span><span id="__span-37-4"><a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a>    // must return a value
-</span><span id="__span-37-5"><a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a>])
+<div class="language-yamtl-xtend highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="nc">contextualOperation</span><span class="o">(</span><span class="s2">&quot;&lt;OperationName&gt;&quot;</span><span class="o">,</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="n">obj</span><span class="o">,</span><span class="w"> </span><span class="n">argMap</span><span class="w"> </span><span class="o">|</span><span class="w"> </span>
+</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="w">    </span><span class="c1">// to access the contextual instance use &#39;obj&#39; </span>
+</span><span id="__span-37-3"><a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a><span class="w">    </span><span class="c1">// to access an argument use &#39;argMap.get(&quot;&lt;param_name&gt;&quot;)&#39; </span>
+</span><span id="__span-37-4"><a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a><span class="w">    </span><span class="c1">// must return a value</span>
+</span><span id="__span-37-5"><a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a><span class="o">])</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>contextualOperation(&quot;&lt;OperationName&gt;&quot;, (obj, argMap) -&gt; {
-</span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a>    // to access the contextual instance use &#39;obj&#39;
-</span><span id="__span-38-3"><a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a>    // to access an argument use &#39;argMap.get(&quot;&lt;param_name&gt;&quot;)&#39;
-</span><span id="__span-38-4"><a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a>    // must return a value
-</span><span id="__span-38-5"><a id="__codelineno-38-5" name="__codelineno-38-5" href="#__codelineno-38-5"></a>});
+<div class="language-yamtl-java highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="nc">contextualOperation</span><span class="p">(</span><span class="s">&quot;&lt;OperationName&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">obj</span><span class="p">,</span><span class="w"> </span><span class="n">argMap</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a><span class="w">    </span><span class="c1">// to access the contextual instance use &#39;obj&#39;</span>
+</span><span id="__span-38-3"><a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a><span class="w">    </span><span class="c1">// to access an argument use &#39;argMap.get(&quot;&lt;param_name&gt;&quot;)&#39;</span>
+</span><span id="__span-38-4"><a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a><span class="w">    </span><span class="c1">// must return a value</span>
+</span><span id="__span-38-5"><a id="__codelineno-38-5" name="__codelineno-38-5" href="#__codelineno-38-5"></a><span class="p">});</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>contextualOperation(&quot;&lt;OperationName&gt;&quot;) { obj, argMap -&gt;
-</span><span id="__span-39-2"><a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a>    // to access the contextual instance use &#39;obj&#39;
-</span><span id="__span-39-3"><a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a>    // to access an argument use &#39;argMap[&quot;&lt;param_name&gt;&quot;]&#39;
-</span><span id="__span-39-4"><a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a>    // must return a value
-</span><span id="__span-39-5"><a id="__codelineno-39-5" name="__codelineno-39-5" href="#__codelineno-39-5"></a>}
+<div class="language-yamtl-kotlin highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="nc">contextualOperation</span><span class="p">(</span><span class="s">&quot;&lt;OperationName&gt;&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">obj</span><span class="p">,</span><span class="w"> </span><span class="n">argMap</span><span class="w"> </span><span class="o">-&gt;</span>
+</span><span id="__span-39-2"><a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a><span class="w">    </span><span class="c1">// to access the contextual instance use &#39;obj&#39;</span>
+</span><span id="__span-39-3"><a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a><span class="w">    </span><span class="c1">// to access an argument use &#39;argMap[&quot;&lt;param_name&gt;&quot;]&#39;</span>
+</span><span id="__span-39-4"><a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a><span class="w">    </span><span class="c1">// must return a value</span>
+</span><span id="__span-39-5"><a id="__codelineno-39-5" name="__codelineno-39-5" href="#__codelineno-39-5"></a><span class="p">}</span>
 </span></code></pre></div>
 </div>
 </div>
@@ -1768,19 +1768,19 @@ Objects can be frozen/unfrozen using the operations <code>.freeze()</code>/<code
 <div class="tabbed-set tabbed-alternate" data-tabs="10:4"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><input id="__tabbed_10_3" name="__tabbed_10" type="radio" /><input id="__tabbed_10_4" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">Groovy</label><label for="__tabbed_10_2">Xtend</label><label for="__tabbed_10_3">Java</label><label for="__tabbed_10_4">Kotlin</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>&lt;OperationName&gt;(&lt;ContextualInstance&gt;, [&quot;&lt;param1&gt;&quot; : &lt;value1&gt;, ...])
+<div class="language-yamtl-groovy highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="o">&lt;</span><span class="n">OperationName</span><span class="o">&gt;(&lt;</span><span class="n">ContextualInstance</span><span class="o">&gt;,</span><span class="w"> </span><span class="o">[</span><span class="s">&quot;&lt;param1&gt;&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="n">value1</span><span class="o">&gt;,</span><span class="w"> </span><span class="o">...])</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>&lt;ContextualInstance&gt;.fetch(&quot;&lt;OperationName&gt;&quot;, #[&quot;&lt;param1&gt;&quot; -&gt; &lt;value1&gt;, ...])
+<div class="language-yamtl-xtend highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="o">&lt;</span><span class="n">ContextualInstance</span><span class="o">&gt;.</span><span class="ni">fetch</span><span class="o">(</span><span class="s2">&quot;&lt;OperationName&gt;&quot;</span><span class="o">,</span><span class="w"> </span><span class="err">#</span><span class="o">[</span><span class="s2">&quot;&lt;param1&gt;&quot;</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="o">&lt;</span><span class="n">value1</span><span class="o">&gt;,</span><span class="w"> </span><span class="o">...])</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>fetch(&lt;ContextualInstance&gt;, &quot;&lt;OperationName&gt;&quot;, Map.of(&quot;&lt;param1&gt;&quot;, &lt;value1&gt;, ...));
+<div class="language-yamtl-java highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="n">fetch</span><span class="p">(</span><span class="o">&lt;</span><span class="n">ContextualInstance</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&lt;OperationName&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Map</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">&quot;&lt;param1&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&lt;</span><span class="n">value1</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="p">...));</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a>fetch(&lt;ContextualInstance&gt;, &quot;&lt;OperationName&gt;&quot;, mapOf(&quot;&lt;param1&gt;&quot; to &lt;value1&gt;, ...))
+<div class="language-yamtl-kotlin highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="n">fetch</span><span class="p">(</span><span class="o">&lt;</span><span class="n">ContextualInstance</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&lt;OperationName&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">mapOf</span><span class="p">(</span><span class="s">&quot;&lt;param1&gt;&quot;</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="o">&lt;</span><span class="n">value1</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="p">...))</span>
 </span></code></pre></div>
 </div>
 </div>
@@ -2223,7 +2223,7 @@ In YAMTL, this tracking occurs implicitly, eliminating the need for user-initiat
     <script id="__config" type="application/json">{"base": ".", "features": ["content.code.copy", "content.tabs.link"], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.8fd75fb4.min.js"></script>
+      <script src="assets/javascripts/bundle.c8d2eff1.min.js"></script>
       
     
   </body>
