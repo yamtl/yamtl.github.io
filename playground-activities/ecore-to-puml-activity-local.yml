@@ -1,0 +1,27 @@
+activities:
+  - id: ecore-to-puml
+    title: Ecore Visualization
+    icon: emfatic
+    tools:
+      - http://127.0.0.1:8073/emf-tool.yml
+    tools-remote:
+      - https://yamtl.github.io/playground-interfaces/static.emf/emf-tool.yml
+    layout:
+      area:
+        - - panel-emf
+          - panel-diagram
+    actions:
+      - source: panel-emf
+        sourceButton: emfatic2cd-button
+        parameters:
+          metamodel: panel-emf
+        output: panel-diagram
+        outputType: puml
+    panels:
+      - id: panel-emf
+        name: Ecore model (EMFatic)
+        ref: model-panel
+        file: CD.emf
+      - id: panel-diagram
+        name: Class diagram
+        ref: plantuml
