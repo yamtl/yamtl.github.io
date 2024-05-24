@@ -1,5 +1,9 @@
 # Release notes
 
+#### 0.4.33
+
+Improvement in accessors for semi-structured models (JSON, CSV) in the Groovy dialect. The internal structure of the metamodel is hidden and these can be accessed using `.` notation as in mainstream programming languages.
+
 #### 0.4.32
 
 Added programmable evaluation strategies for rules with four new operators: 
