@@ -1,5 +1,14 @@
 # Release notes
 
+#### 0.4.34
+
+Unified interface for handling flexible models:
+* loading models using `loadInputModels` 
+* saving models using `saveOutputModels`
+* serializing models using `toText`
+
+Added support for YAML.
+
 #### 0.4.33
 
 Improvement in accessors for semi-structured models (JSON, CSV) in the Groovy dialect. The internal structure of the metamodel is hidden and these can be accessed using `.` notation as in mainstream programming languages.
