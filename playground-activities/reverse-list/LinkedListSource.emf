@@ -1,0 +1,13 @@
+@namespace(uri="linkedlist_source", prefix="lls")
+package linkedlist;
+
+class LinkedList {
+	ref Node head;
+	val Node[*] nodes;
+}
+
+class Node {
+	attr String name;
+	ref Node next;
+}
+
