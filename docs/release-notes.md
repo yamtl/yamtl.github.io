@@ -1,6 +1,6 @@
 # Release notes
 
-#### 0.4.35
+#### 0.4.35, 0.4.36
 
 Support for loading Ecore metamodels with subpackages.
 
