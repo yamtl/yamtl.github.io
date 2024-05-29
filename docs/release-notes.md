@@ -1,5 +1,9 @@
 # Release notes
 
+#### 0.4.35
+
+Support for loading Ecore metamodels with subpackages.
+
 #### 0.4.34
 
 Unified interface for handling flexible models:
