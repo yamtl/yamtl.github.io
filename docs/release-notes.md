@@ -1,5 +1,9 @@
 # Release notes
 
+#### 0.4.37
+
+FIX: registration of metamodels, removing caching so that they can be updated.
+
 #### 0.4.35, 0.4.36
 
 Support for loading Ecore metamodels with subpackages.
