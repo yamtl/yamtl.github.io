@@ -1,5 +1,12 @@
 # Release notes
 
+#### 1.0.0
+
+* Version tried and tested since 2018 with reliable support for model-to-model transformations and a Groovy DSL.
+* Support for multimodel transformations:
+  * Several in/out models can be declared with a unique domainName.
+  * allInstances(domainName, type): the domainName needs to be specified when the transformation is multimodel.
+
 #### 0.4.37
 
 FIX: registration of metamodels, removing caching so that they can be updated.
