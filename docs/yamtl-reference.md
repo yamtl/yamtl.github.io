@@ -701,13 +701,15 @@ Contextual operations are invoked on the `<ContextualInstance>` using the `<Oper
     fetch(<ContextualInstance>, "<OperationName>", mapOf("<param1>" to <value1>, ...))
     ```
 
-## `fetch()`
+## Commands
+
+### `fetch()`
 
 The fetch operation in YAMTL, `YAMTLModule::fetch()`, is used to retrieve output objects that correspond to given input objects through the application of transformation rules. The main purpose of `fetch()` is to resolve references to output objects that are created by other rules. Since rules in YAMTL transformations execute independently, they cannot directly access the output objects produced by other rules. The fetch operation serves as a bridge to connect these separate rule contexts.
 
 When a rule's action needs to reference an output element initialized by another rule, it uses fetch with the input object to look up the corresponding output object. For example, `fetch(input_object)` returns the output object created by the rule that matched `input_object`.
 
-### Multiple elements in the Input Pattern
+#### Multiple elements in the Input Pattern
 
 When the input pattern contains more than one element, instead of using one single input object, a [valid match](#pattern-matching-semantics) must be provided by using a map where the keys are ``<in_object_name>``s and the values are the matched `EObject`s. The match must contain an `in` element for each `in` object patterns in the input pattern of the rule.
 
@@ -735,28 +737,28 @@ When the input pattern contains more than one element, instead of using one sing
     fetch( mapOf("in_var1" to eObject1, "in_var2" to eObject2, ...) )
     ```
 
-### Multiple Elements in the Output Pattern
+#### Multiple Elements in the Output Pattern
 
 When the output pattern comprises several object patterns, it's necessary to specify which output element we wish to fetch: `fetch(<input_matched_object>, "<out_var_name>")` will return the output object linked to the output element `outVarName`. If a matched rule with a complex output pattern also uses the `toMany` declaration, the output object can be retrieved with `fetch(<input_matched_object>, "<out_var_name>", <i>)`.
 
-### Calling Lazy Rules
+#### Calling Lazy Rules
 
 The fetch operation is the only mechanism available to execute lazy rules, as explained in the [subsection Lazy Rules](#lazy-rules).
   
-### Calling Helpers
+#### Calling Helpers
 
 In JVM languages, other than Groovy, the fetch operation is also used to call helpers, as explained in the [subsection Helpers](#helpers).
 
-### Handling ToMany Rules
+#### Handling ToMany Rules
 
 ToMany rules can be applied to the same input object multiple times. In such cases, we can retrieve the output objects obtained in each rule application using the operation fetch(), as explained in the [subsection ToMany Rules](#tomany-rules).
 
-### Variables in Execution Context
+#### Variables in Execution Context
 
 In JVM languages, other than Groovy, the fetch operation is also used to call helpers, fetch variables from the execution environment, with the expression `fetch("<variable-name>")`.
 
 
-## `allInstances(EClass)`
+### `allInstances(EClass)`
 
 The `allInstances(<typeName>)` operation is used to create OCL-like queries in lambda expressions and can be invoked in any of the following expressions: `<FILTER>`, `<QUERY>` and `<ACTION>`.
 
