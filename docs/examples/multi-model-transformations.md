@@ -78,7 +78,7 @@ public class Embedding extends YAMTLModule {
 
 The input pattern in the transformation rule `Class` finds the classes `c1` in the domain `model1` that do not have a counterpart `c2` (with the same name) in `model2`. Hence, spotting inconsistencies. The block `endWith` is executed at the end of the rule application and appends the inconsistency to a list `inconsistencyList`.
 
-This transformation is executed with the following code, where we only use [pattern matching semantics](../yamtl-reference.html#pattern-matching-semantics) to apply the input pattern, without creating any output model:
+This transformation is executed with the following code, where we only use [pattern matching semantics](https://yamtl.github.io/yamtl-reference.html#pattern-matching-semantics) to apply the input pattern, without creating any output model:
 
 ```groovy
 def resSM = Embedding.preloadMetamodel("path/to/CD.ecore")
@@ -146,9 +146,9 @@ public class Comparator extends YAMTLModule {
 
 Each rule in this transformation identifies common elements by type and name for the rules `MatchPackage`, `MatchDataType`, and `MatchClass`. The rule `MatchAttribute` additionally requires that the classes containing these attributes be matched as well.
 
-This transformation uses [Out-Place Semantics](../yamtl-reference.html#out-place-transformation-semantics) to produce an output model with the common parts of two class diagrams, representing the match. Variants can be easily specified by using the `endWith` block or by including an additional `out` domain in the header to build an additional model.
+This transformation uses [Out-Place Semantics](https://yamtl.github.io/yamtl-reference.html#out-place-transformation-semantics) to produce an output model with the common parts of two class diagrams, representing the match. Variants can be easily specified by using the `endWith` block or by including an additional `out` domain in the header to build an additional model.
 
-This example illustrates how the `fetch()` operator is used to find the output matches for a set of input matches. For example, `fetch(['c1': p1.classifiers, 'c2': p2.classifiers])` will return the list of objects that correspond to matches in `p1.classifiers` and `p2.classifiers` via the rules `MatchClass` and `MatchDataType`. YAMTL will automatically apply the rules internally and find the correct objects. Note that for this to work properly, the `in` elements must use the same variables, `c1` and `c2`, in both rules. This process can be simplified using [rule inheritance](../yamtl-reference.html#rule-inheritance) by defining a super-rule that declares the common `in` element names.
+This example illustrates how the `fetch()` operator is used to find the output matches for a set of input matches. For example, `fetch(['c1': p1.classifiers, 'c2': p2.classifiers])` will return the list of objects that correspond to matches in `p1.classifiers` and `p2.classifiers` via the rules `MatchClass` and `MatchDataType`. YAMTL will automatically apply the rules internally and find the correct objects. Note that for this to work properly, the `in` elements must use the same variables, `c1` and `c2`, in both rules. This process can be simplified using [rule inheritance](https://yamtl.github.io/yamtl-reference.html#rule-inheritance) by defining a super-rule that declares the common `in` element names.
 
 The transformation above is executed as a normal out-place transformation:
 
