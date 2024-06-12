@@ -423,7 +423,6 @@ When a rule's action needs to reference an output element initialized by another
 
 When the input pattern contains more than one element, instead of using one single input object, a [valid match](#pattern-matching-semantics) must be provided by using a map where the keys are ``<in_object_name>``s and the values are the matched `EObject`s. The match must contain an `in` element for each `in` object patterns in the input pattern of the rule.
 
-<!--
 === "Groovy"
 
     ```groovy
@@ -439,15 +438,14 @@ When the input pattern contains more than one element, instead of using one sing
 === "Java"
 
     ```java
-    
+    fetch(Map.of("in_var1", eObject1, "in_var2", eObject2, ...))
     ```
 
 === "Kotlin"
 
     ```kotlin
-
+    fetch( mapOf("in_var1" to eObject1, "in_var2" to eObject2, ...) )
     ```
---> 
 
 ### Multiple Elements in the Output Pattern
 
