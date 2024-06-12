@@ -374,6 +374,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#yamtl-header" class="md-nav__link">
+    <span class="md-ellipsis">
+      YAMTL Header
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#yamtl-rules" class="md-nav__link">
     <span class="md-ellipsis">
       YAMTL Rules
@@ -452,6 +461,16 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commands
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#fetch" class="md-nav__link">
     <span class="md-ellipsis">
       fetch()
@@ -519,13 +538,18 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#allinstanceseclass" class="md-nav__link">
     <span class="md-ellipsis">
       allInstances(EClass)
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -965,6 +989,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#yamtl-header" class="md-nav__link">
+    <span class="md-ellipsis">
+      YAMTL Header
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#yamtl-rules" class="md-nav__link">
     <span class="md-ellipsis">
       YAMTL Rules
@@ -1043,6 +1076,16 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commands
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#fetch" class="md-nav__link">
     <span class="md-ellipsis">
       fetch()
@@ -1110,13 +1153,18 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#allinstanceseclass" class="md-nav__link">
     <span class="md-ellipsis">
       allInstances(EClass)
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1238,6 +1286,23 @@
 
 
 <h1 id="yamtl-language-reference">YAMTL Language Reference</h1>
+<p>In YAMTL, <code>YAMTLModule</code> is a foundational class that provides the core functionality and infrastructure for defining and executing model transformations. It serves as the base class for any transformation module, offering access to the YAMTL DSL and methods necessary for configuring and running transformations.</p>
+<p>The key roles of <code>YAMTLModule</code> are:</p>
+<ol>
+<li>
+<p><strong>Configuration</strong>: <code>YAMTLModule</code> is used to set up the transformation environment, including input and output models, namespaces, and execution modes.</p>
+</li>
+<li>
+<p><strong>Transformation Definition</strong>: It allows users to define transformation rules, helpers, and various other elements necessary for transforming models.</p>
+</li>
+<li>
+<p><strong>Execution Control</strong>: It provides methods to execute the transformation, propagate changes, and manage incremental transformations.</p>
+</li>
+<li>
+<p><strong>Utility Methods</strong>: It includes utility commands like <code>fetch()</code> and <code>allInstances()</code> to facilitate querying and manipulating model elements during transformation.</p>
+</li>
+</ol>
+<p>The following section describes how to use it.</p>
 <h2 id="basic-syntax">Basic Syntax</h2>
 <p>A YAMTL model transformation is defined as a class that specializes the <code>YAMTLModule</code> class, which provides access to the YAMTL DSL and to methods to configure and execute model transformations:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Groovy</label><label for="__tabbed_1_2">Xtend</label><label for="__tabbed_1_3">Java</label><label for="__tabbed_1_4">Kotlin</label></div>
@@ -1292,6 +1357,15 @@
 <li><strong>Rule Store</strong>: This section declares a list of transformation rules.</li>
 <li><strong>Helper Store (Optional)</strong>: Accepts a list of managed helpers. Managed helpers are attributes or methods that are optimized in YAMTL using an internal cache for their results. Unmanaged helpers are declared as standard methods of the module class. This section is optional if no managed helpers are needed.</li>
 </ul>
+<div class="admonition tip">
+<p class="admonition-title">Static Typing for Accessors/Mutators</p>
+<p>If you <a href="https://www.vogella.com/tutorials/EclipseEMF/article.html">generate code from Ecore models</a> within the Eclipse Modeling Framework, there is no need to declare <code>EPackage</code> parameters for the headers. These are accessible from the <code>eINSTANCE</code> associated with each <code>&lt;X&gt;Package</code> class, where <code>&lt;X&gt;</code> is the name of your <code>EPackage</code> in the Ecore model.
+Once the models are stable, generated code will provide several advantages:
+1. Static typing and code completion in IDEs.
+2. Optimized performance at runtime: accessors/mutators will not need to use generic EMF reflection.
+3. Groovy is the only language configured to work with dynamic EMF models (i.e., models whose metamodel is given as an Ecore model but not implemented in Java). Other languages (Java, Kotlin, Xtend, etc.) will benefit from generated code to avoid using lengthy expressions with the EMF API.    </p>
+<p>However, if you are still experimenting with your Ecore models, we recommend working with dynamic EMF models and the YAMTL Groovy DSL for faster prototyping.</p>
+</div>
 <p>The basic format of a YAMTL rule definition is as follows:</p>
 <div class="language-yamtl-groovy highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">rule</span><span class="o">(</span><span class="s">&quot;&lt;name&gt;&quot;</span><span class="o">)</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="o">.</span><span class="cp">in</span><span class="o">(</span><span class="s">&quot;&lt;in_object_name&gt;&quot;</span><span class="o">,</span><span class="w"> </span><span class="o">&lt;</span><span class="n">in_object_type</span><span class="o">&gt;)</span>
@@ -1534,6 +1608,49 @@ Objects can be frozen/unfrozen using the operations <code>.freeze()</code>/<code
 <p class="admonition-title">In-place semantics and fetch()</p>
 <p>The mapping from input match to output match is traced as a transformation step in the out-place semantics only. In the in-place semantics, transformation steps are not traced and the <code>fetch()</code> operation cannot be used to resolve references to output objects from input objects (or the matches that contain them). The reason is that the transformation executes modifications on the input model, and references to objects in that model are reachable and need not be resolved using <code>fetch()</code>.</p>
 </div>
+<h2 id="yamtl-header">YAMTL Header</h2>
+<p>A YAMTL header is a configuration section within a YAMTL transformation module that specifies the input and output domains for the transformation. It serves as the signature of the transformation, defining which metamodels (EPackage instances) are used for the source (input) and target (output) models.</p>
+<p>The purpose of the YAMTL Header is as follows:</p>
+<ol>
+<li><strong>Define Input and Output Models</strong>: The header specifies the metamodels for the input and output domains, establishing the types of models that the transformation will work with.</li>
+<li><strong>Set Transformation Context</strong>: It provides context for the transformation rules, ensuring that the rules can refer to the correct metamodels and their elements.</li>
+<li><strong>Initialization</strong>: It initializes the transformation module with the necessary metadata about the models, enabling the YAMTL engine to understand the structure and elements of the input and output models.</li>
+</ol>
+<p>The header is usually defined within the constructor of a class that extends <code>YAMTLModule</code>. It uses the <code>header()</code> method to declare the input and output domains, followed by the specification of rules and helpers.</p>
+<p>Each component of a header is called domain. In YAMTL, the following component types are supported:</p>
+<ol>
+<li><strong>Input Domain (<code>in</code>)</strong>: Specifies the name and EPackage of the input model domain for out-place transformations.</li>
+<li>
+<p>Example: <code>.in("sourceDomain", pk1)</code></p>
+</li>
+<li>
+<p><strong>Input/Output Domain (<code>inOut</code>)</strong>: Specifies the name and EPackage of an input/output model domain for in-place transformations.</p>
+</li>
+<li>
+<p>Example: <code>.out("targetDomain", pk2)</code></p>
+</li>
+<li>
+<p><strong>Output Domain (<code>out</code>)</strong>: Specifies the name and EPackage of the output model domain for out-place transformations.</p>
+</li>
+<li>Example: <code>.out("targetDomain", pk2)</code></li>
+</ol>
+<p>The header is used as follows:</p>
+<ul>
+<li>
+<p><strong>Rule Definitions</strong>: The rules defined in the transformation module use the domains specified in the header to match and transform elements. For instance, a rule might match elements from the input domain and create corresponding elements in the output domain.</p>
+</li>
+<li>
+<p><strong>Model Loading</strong>: When executing the transformation, the models corresponding to the input and output domains are loaded based on the header configuration.</p>
+</li>
+<li>
+<p><strong>Helper Functions</strong>: Helpers defined in the module can use the domains to perform operations on the models, like <code>allInstances()</code>, ensuring that they work within the correct context.</p>
+</li>
+</ul>
+<p>The YAMTL header is essential for setting up the transformation context, ensuring that the transformation rules and helpers operate within the correct metamodel framework. The following constraints should be considered:</p>
+<ol>
+<li>Using <code>inOut</code> domains enables <a href="#in-place-semantics">in-place semantics</a>, and <code>in</code>/<code>out</code> domains must be avoided in such cases. Conversely, <code>in</code>/<code>out</code> domains enable <a href="#out-place-transformation-semantics">out-place semantics</a> and <a href="#pattern-matching-semantics">pattern-matching semantics</a> and must not be used with <code>inOut</code> domains.</li>
+<li>Using several <code>in</code>/<code>out</code> domains for out-place transformations or model patterns, as well as using several <code>inOut</code> domains for in-place transformations, leads to multi-model transformation. A <strong>multi-model transformation</strong> enables the use of the pattern matcher across domains, for example, to define constraints over different metamodels, and facilitates the production of multiple output models. In a multi-model transformation, whenever we refer to a specific type (in object element patterns for <code>in</code>/<code>out</code> patterns of rules or in <code>allInstances()</code>), we must specify which domain the class belongs to. This is necessary to avoid confusion when the same metamodel is used for multiple domains.</li>
+</ol>
 <h2 id="yamtl-rules">YAMTL Rules</h2>
 <p>YAMTL is as expressive as ATL so it also has a lot of optional operations. These options provide a more thorough (full) syntax for the language.</p>
 <div class="language-yamtl-groovy highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">rule</span><span class="o">(</span><span class="s">&quot;&lt;name&gt;&quot;</span><span class="o">)</span>
@@ -1872,10 +1989,11 @@ Objects can be frozen/unfrozen using the operations <code>.freeze()</code>/<code
 </div>
 </div>
 </div>
-<h2 id="fetch"><code>fetch()</code></h2>
+<h2 id="commands">Commands</h2>
+<h3 id="fetch"><code>fetch()</code></h3>
 <p>The fetch operation in YAMTL, <code>YAMTLModule::fetch()</code>, is used to retrieve output objects that correspond to given input objects through the application of transformation rules. The main purpose of <code>fetch()</code> is to resolve references to output objects that are created by other rules. Since rules in YAMTL transformations execute independently, they cannot directly access the output objects produced by other rules. The fetch operation serves as a bridge to connect these separate rule contexts.</p>
 <p>When a rule's action needs to reference an output element initialized by another rule, it uses fetch with the input object to look up the corresponding output object. For example, <code>fetch(input_object)</code> returns the output object created by the rule that matched <code>input_object</code>.</p>
-<h3 id="multiple-elements-in-the-input-pattern">Multiple elements in the Input Pattern</h3>
+<h4 id="multiple-elements-in-the-input-pattern">Multiple elements in the Input Pattern</h4>
 <p>When the input pattern contains more than one element, instead of using one single input object, a <a href="#pattern-matching-semantics">valid match</a> must be provided by using a map where the keys are <code>&lt;in_object_name&gt;</code>s and the values are the matched <code>EObject</code>s. The match must contain an <code>in</code> element for each <code>in</code> object patterns in the input pattern of the rule.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="11:4"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><input id="__tabbed_11_3" name="__tabbed_11" type="radio" /><input id="__tabbed_11_4" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">Groovy</label><label for="__tabbed_11_2">Xtend</label><label for="__tabbed_11_3">Java</label><label for="__tabbed_11_4">Kotlin</label></div>
 <div class="tabbed-content">
@@ -1897,17 +2015,17 @@ Objects can be frozen/unfrozen using the operations <code>.freeze()</code>/<code
 </div>
 </div>
 </div>
-<h3 id="multiple-elements-in-the-output-pattern">Multiple Elements in the Output Pattern</h3>
+<h4 id="multiple-elements-in-the-output-pattern">Multiple Elements in the Output Pattern</h4>
 <p>When the output pattern comprises several object patterns, it's necessary to specify which output element we wish to fetch: <code>fetch(&lt;input_matched_object&gt;, "&lt;out_var_name&gt;")</code> will return the output object linked to the output element <code>outVarName</code>. If a matched rule with a complex output pattern also uses the <code>toMany</code> declaration, the output object can be retrieved with <code>fetch(&lt;input_matched_object&gt;, "&lt;out_var_name&gt;", &lt;i&gt;)</code>.</p>
-<h3 id="calling-lazy-rules">Calling Lazy Rules</h3>
+<h4 id="calling-lazy-rules">Calling Lazy Rules</h4>
 <p>The fetch operation is the only mechanism available to execute lazy rules, as explained in the <a href="#lazy-rules">subsection Lazy Rules</a>.</p>
-<h3 id="calling-helpers">Calling Helpers</h3>
+<h4 id="calling-helpers">Calling Helpers</h4>
 <p>In JVM languages, other than Groovy, the fetch operation is also used to call helpers, as explained in the <a href="#helpers">subsection Helpers</a>.</p>
-<h3 id="handling-tomany-rules">Handling ToMany Rules</h3>
+<h4 id="handling-tomany-rules">Handling ToMany Rules</h4>
 <p>ToMany rules can be applied to the same input object multiple times. In such cases, we can retrieve the output objects obtained in each rule application using the operation fetch(), as explained in the <a href="#tomany-rules">subsection ToMany Rules</a>.</p>
-<h3 id="variables-in-execution-context">Variables in Execution Context</h3>
+<h4 id="variables-in-execution-context">Variables in Execution Context</h4>
 <p>In JVM languages, other than Groovy, the fetch operation is also used to call helpers, fetch variables from the execution environment, with the expression <code>fetch("&lt;variable-name&gt;")</code>.</p>
-<h2 id="allinstanceseclass"><code>allInstances(EClass)</code></h2>
+<h3 id="allinstanceseclass"><code>allInstances(EClass)</code></h3>
 <p>The <code>allInstances(&lt;typeName&gt;)</code> operation is used to create OCL-like queries in lambda expressions and can be invoked in any of the following expressions: <code>&lt;FILTER&gt;</code>, <code>&lt;QUERY&gt;</code> and <code>&lt;ACTION&gt;</code>.</p>
 <h2 id="module-composition">Module Composition</h2>
 <p>YAMTL modules can be imported and used in other Xtend/Java/Groovy classes by creating instances of their main classes. This allows you to reuse the functionality provided by a YAMTL module within your code. A YAMTL module can also incorporate any Java Virtual Machine (JVM) library, extending its functionality by using external code.</p>
