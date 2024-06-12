@@ -455,7 +455,7 @@ When the output pattern comprises several object patterns, it's necessary to spe
 
 The fetch operation is the only mechanism available to execute lazy rules, as explained in the [subsection Lazy Rules](#lazy-rules).
   
-### Helpers
+### Calling Helpers
 
 In JVM languages, other than Groovy, the fetch operation is also used to call helpers, as explained in the [subsection Helpers](#helpers).
 
