@@ -774,7 +774,7 @@ When the input pattern contains more than one element, instead of using one sing
 === "Groovy"
 
     ```groovy
-    fetch(['in_var1': eObject1, 'in_var2', eObject2, ...])
+    fetch(['in_var1': eObject1, 'in_var2': eObject2, ...])
     ```
 
 === "Xtend"
@@ -794,6 +794,46 @@ When the input pattern contains more than one element, instead of using one sing
     ```kotlin
     fetch( mapOf("in_var1" to eObject1, "in_var2" to eObject2, ...) )
     ```
+
+
+### Multiple Elements in the Input Pattern in Multi-Model Transformations
+
+When specifying input patterns across domains in multi-model transformations, you can resolve output objects by presenting `fetch()` with a set of matches, specifying lists of objects for each domain in the match. `fetch()` will internally apply pattern matching with transformation rules in the rule store and return a list of objects for the default output variable. Refer to the next section for cases where there is more than one `out` variable.
+
+=== "Groovy"
+
+    ```groovy
+    fetch(['in_var1': [eObject1, ...], 'in_var2': [eObject2, ...], ...])
+    ```
+
+=== "Xtend"
+
+    ```xtend
+    fetch(#{'in_var1' -> #[eObject1, ...], 'in_var2' -> #[eObject2, ...], ...})
+    ```
+
+=== "Java"
+
+    ```java
+    fetch(Map.of(
+        "in_var1", List.of(eObject1, ...),
+        "in_var2", List.of(eObject2, ...),
+        ...
+    ));
+    ```
+
+=== "Kotlin"
+
+    ```kotlin
+    fetch(
+        mapOf(
+            "in_var1" to listOf(eObject1, ...),
+            "in_var2" to listOf(eObject2, ...),
+            ...
+        )
+    )
+    ```
+
 
 #### Multiple Elements in the Output Pattern
 
