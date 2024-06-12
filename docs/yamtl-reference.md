@@ -77,12 +77,13 @@ In the code above there are four important sections:
 *   **Helper Store (Optional)**: Accepts a list of managed helpers. Managed helpers are attributes or methods that are optimized in YAMTL using an internal cache for their results. Unmanaged helpers are declared as standard methods of the module class. This section is optional if no managed helpers are needed.
 
 !!! tip "Static Typing for Accessors/Mutators"
-    If you [generate code from Ecore models](https://www.vogella.com/tutorials/EclipseEMF/article.html) within the Eclipse Modeling Framework, there is no need to declare EPackage parameters for the headers. These are accessible from the `eINSTANCE` associated with each `<X>Package` class, where `<X>` is the name of your EPackage in the Ecore model.
-    Once the models are stable, generated code will give you several advantages:
+    If you [generate code from Ecore models](https://www.vogella.com/tutorials/EclipseEMF/article.html) within the Eclipse Modeling Framework, there is no need to declare `EPackage` parameters for the headers. These are accessible from the `eINSTANCE` associated with each `<X>Package` class, where `<X>` is the name of your `EPackage` in the Ecore model.
+    Once the models are stable, generated code will provide several advantages:
     1. Static typing and code completion in IDEs.
-    2. Optimized performance at run time: accessors/mutators will not need to use generic EMF reflection.
-    3. Groovy is the only language that has been configured to work with dynamic EMF models (i.e. models whose metamodel is given as an Ecore model but not implemented in Java). Other languages (Java, Kotlin, Xtend, etc) will benefit from generated code to avoid using lentghy expressions using the EMF API.
-    However, if you are still experimenting with Ecore models, we recommend working with dynamic EMF models and the YAMTL Groovy DSL.
+    2. Optimized performance at runtime: accessors/mutators will not need to use generic EMF reflection.
+    3. Groovy is the only language configured to work with dynamic EMF models (i.e., models whose metamodel is given as an Ecore model but not implemented in Java). Other languages (Java, Kotlin, Xtend, etc.) will benefit from generated code to avoid using lengthy expressions with the EMF API.    
+    
+    However, if you are still experimenting with your Ecore models, we recommend working with dynamic EMF models and the YAMTL Groovy DSL for faster prototyping.
 
 The basic format of a YAMTL rule definition is as follows:
 
