@@ -412,66 +412,6 @@ To change the **priority** of a rule, you can use the ``priority(P)`` operation 
 The helpers are defined in  the block ``helperStore()`` of the the transformation's constructor. The helper syntax ``Helper("<helperName>")`` is used to define an attribute helper with the name in single quotes and is followed by a query lambda expression enclosed in square brackets. 
 
 
-
-## `fetch()`
-
-The fetch operation in YAMTL, `YAMTLModule::fetch()`, is used to retrieve output objects that correspond to given input objects through the application of transformation rules. The main purpose of `fetch()` is to resolve references to output objects that are created by other rules. Since rules in YAMTL transformations execute independently, they cannot directly access the output objects produced by other rules. The fetch operation serves as a bridge to connect these separate rule contexts.
-
-When a rule's action needs to reference an output element initialized by another rule, it uses fetch with the input object to look up the corresponding output object. For example, `fetch(input_object)` returns the output object created by the rule that matched `input_object`.
-
-### Multiple elements in the Input Pattern
-
-When the input pattern contains more than one element, instead of using one single input object, a [valid match](#pattern-matching-semantics) must be provided by using a map where the keys are ``<in_object_name>``s and the values are the matched `EObject`s. The match must contain an `in` element for each `in` object patterns in the input pattern of the rule.
-
-=== "Groovy"
-
-    ```groovy
-    fetch(['in_var1': eObject1, 'in_var2', eObject2, ...])
-    ```
-
-=== "Xtend"
-
-    ```xtend
-    fetch(#{'in_var1' -> eObject1, 'in_var2'-> eObject2, ...})
-    ```
-
-=== "Java"
-
-    ```java
-    fetch(Map.of("in_var1", eObject1, "in_var2", eObject2, ...))
-    ```
-
-=== "Kotlin"
-
-    ```kotlin
-    fetch( mapOf("in_var1" to eObject1, "in_var2" to eObject2, ...) )
-    ```
-
-### Multiple Elements in the Output Pattern
-
-When the output pattern comprises several object patterns, it's necessary to specify which output element we wish to fetch: `fetch(<input_matched_object>, "<out_var_name>")` will return the output object linked to the output element `outVarName`. If a matched rule with a complex output pattern also uses the `toMany` declaration, the output object can be retrieved with `fetch(<input_matched_object>, "<out_var_name>", <i>)`.
-
-### Calling Lazy Rules
-
-The fetch operation is the only mechanism available to execute lazy rules, as explained in the [subsection Lazy Rules](#lazy-rules).
-  
-### Calling Helpers
-
-In JVM languages, other than Groovy, the fetch operation is also used to call helpers, as explained in the [subsection Helpers](#helpers).
-
-### Handling ToMany Rules
-
-ToMany rules can be applied to the same input object multiple times. In such cases, we can retrieve the output objects obtained in each rule application using the operation fetch(), as explained in the [subsection ToMany Rules](#tomany-rules).
-
-### Variables in Execution Context
-
-In JVM languages, other than Groovy, the fetch operation is also used to call helpers, fetch variables from the execution environment, with the expression `fetch("<variable-name>")`.
-
-
-## `allInstances(EClass)`
-
-The `allInstances(<typeName>)` operation is used to create OCL-like queries in lambda expressions and can be invoked in any of the following expressions: `<FILTER>`, `<QUERY>` and `<ACTION>`.
-
 ## Lazy Rules
 
 Lazy rules, similar to matched rules, transform input objects into output objects. However, unlike matched rules that apply automatically, lazy rules must be explicitly invoked. This can be achieved using the fetch() operation. Since they only execute when called, they produce outputs based on specific inputs without unnecessary runs. This ensures that transformations only occur when required, enhancing both modularisation and efficiency.
@@ -486,6 +426,65 @@ A lazy rule, whether unique or non-unique, requires explicit invocation to produ
 *   `fetch(<input_matched_object>, <out_object_name>, <rule_name>)` for lazy rules with a single input object and multiple output objects.
 *   `fetch(<input_matched_object>, <out_object_name>, <rule_name>, <i>)` for `toMany` lazy rules with a single input object and multiple output objects.
 *   `fetch(<input_matched_object>, <out_object_name>, <rule_name>, <argsMap>)` for lazy rules with a single input object and multiple output objects that, in addition, are parameterized. `<argsMap>` is a map of type `Map<String,Object>`, where the keys are parameter names and the values are the actual parameter values.
+
+
+## ToMany Rules
+
+
+Matched rules can be declared with the modifier `toMany` to enable repeated rule applications to the same input object, using `toManyCap` to indicate how many rule applications should be performed. With `toMany` rules, the same rule might match the same object multiple times. In such cases, we can reference each match (occurrence 'i' of a match) by the order in which they occurred: `fetch(<input_matched_object>, <i>)` will return the output object created by the ith match.
+
+Declaring a rule with the modifier `toMany` adds the variable `matchCount` to the execution environment, which is used to distinguish the different rule applications starting from `0` for the first application. This variable is available during both pattern matching and transformation execution. This means that the variable `matchCount` can be used in filter expressions
+
+The property `toManyCap` receives a function of type `Supplier<Integer>`, which determines the total number of rule applications that should apply to the same match.
+
+When declaring rules using rule inheritance together with the modifier `toMany()`, all rules in the inheritance hierarchy must be `toMany()`.
+
+!!! info "Differences with Lazy Rules"
+
+    A matched rule that is `toMany` is scheduled by the tranformation engine and not called on demand. However, when it is matched, the same match is associated with a list of rule applications. While the match is still unique for a particular rule, it is shared among several of the rule applications.
+
+
+## Rule Inheritance
+
+Rule inheritance in YAMTL enables a transformation developer to create a new transformation rule by inheriting the behaviour of multiple existing rules. This mechanism simplifies the transformation process by allowing you to build on existing rule logic without duplicating code, promoting code reuse and encapsulation.
+
+The following characteristics define multiple rule inheritance in YAMTL:
+
+* **Abstract rules**: Abstract rules are defined with the clause `.isAbstract()`. These rules typically act as templates or base rules that other rules can inherit from. These rules are not executed directly and their input/output pattern elements may refer to abstract classes.
+* **Concrete rules** are rules that are executed if a valid match is found for the input pattern and the output pattern can only refer to concrete classes, i.e., those that can be instantiated in the output model.
+* A descendant rule can inherit from one or several parent rules using the clause ``inheritsFrom(<ruleNameList>)``, where `<ruleNameList>` is of type `List<String>`.
+
+When using rule inheritance, rules are expected to be **covariant** both in input elements and in output elements with respect to inheritance relationships in the corresponding metamodels. When an input or an output element is declared in a parent rule but not declared in a child rule, it is implicitly inherited. The semantics of a transformation rule with respect to inheritance is as follows: 
+
+* **Pattern matching semantics**. In **matched** input elements, filter expressions are inherited using a leftmost top-down evaluation strategy w.r.t. the inheritance hierarchy defined in clauses ``inheritsFrom(<ruleNameList>)``. When an input element `in("<in_object_name1>", <in_object_type1>).filter{ <FILTER1> }` is declared in a parent rule but it is not declared in a descendant rule, it is inherited. If the input element `in("<in_object_name1>", <in_object_type2>).filter{ <FILTER2> }` is also defined in a descendant rule, `<FILTER2>` refines `<FILTER1>` by adding more constraints. In other words, both `<FILTER1>` and `<FILTER2>` must be satisfied by a match for the descendant rule. In addition, `<in_object_type2>` can be a subclass of `<in_object_type1>`. In **derived** input elements, derivation expressions (``derivedWith(<QUERY>)``) are overriden if they are declared in a descendant rule or simply inherited otherwise.  
+* **Transformation execution semantics**. In output elements, action expressions are also inherited following a leftmost top-down evaluation strategy w.r.t. the inheritance hierarchy by default. When an output element `out("<out_object_name>", <out_object_type1>, { <ACTION1> })` in a parent rule is refined by an output element `out("<out_object_name>", <out_object_type2>, { <ACTION2> })` in a descendant rule, where `<in_object_type2>` may be a subclass of `<in_object_type1>`, then both `<ACTION1>` and `<ACTION2>` will be executed, in that order. The default behaviour can be overriden by using the qualifier `overriding()` in the corresponding output element of a descendant rule. When using `overriding()` in an output element, the parent action `<ACTION1>` is not executed.
+
+The following table summarizes the errors that YAMTL detects when parsing model transformation rules when rule inheritance is used:
+
+| Scope | Error Description | Explanation | Resolution |
+| --- | --- | --- | --- |
+| Rule | Abstract Rule with No Children Rules | An abstract rule should have at least one child rule. | Define child rules for the abstract rule or consider making it non-abstract if no child rules are intended. |
+| Rule | Concrete Rule Specialized by an Abstract Rule | Occurs when a concrete rule is specialized by an abstract rule, which is not allowed. | Ensure that concrete rules are not specialized by abstract rules. |
+| Input | Incompatible Input Element Types | Occurs when an input element's type in a descendant rule is not a subtype of the same input element's type in a parent rule. | Make sure that the types of input elements in the descendant rule are compatible with those in the parent rule. |
+| Input | Mismatched Nature of Input Elements | Occurs when an input element's nature (matched/derived) differs between a rule and its parent rule. | Ensure that the nature of input elements is consistent between the descendant rule and its parent rule. |
+| Input | Input Element Inherited from Two Separate Parent Rules | An input element cannot be inherited from two separate parent rules. | Avoid inheriting the same input element from two separate parent rules to prevent conflicts. |
+| Output | Output Element Declared as 'Overriding' with No Parent Rule | Occurs when an output element is declared as 'overriding', but there is no parent rule to override. | Remove the 'overriding' declaration or ensure that the rule has a valid parent rule. |
+| Output | Incompatible Output Element Types | Occurs when an output element's type in a descendant rule is not a subtype of the same output element's type in a parent rule. | Ensure that the types of output elements in the descendant rule are compatible with those in the parent rule. |
+| Output | Output Element Declared as 'Drop' with No Valid Input Element | Occurs when an output element is declared as 'drop', but it does not refer to a valid input element. | Check that the 'drop' declaration references a valid input element, or remove it if unnecessary. |
+| Output | Output Element Inherited from Two Parent Rules with Different Types | An output element cannot be inherited from two parent rules with incompatible types; this results in an error. | Ensure that the types of inherited output elements are compatible between parent rules. |
+| Output | Rule Inherits the Same Output Element from Two Parent Classes | When a rule inherits the same output element from two parent classes, it's a potential issue, and a warning is issued. | Review the rule's inheritance structure and consider if it leads to unintended behavior. |
+
+When a descendant rule inherits the same output element from two different parent rules, situation known as the [diamond problem](https://en.wikipedia.org/wiki/Multiple_inheritance#the-diamond-problem), YAMTL detects the situation and warns the user but the model transformation proceeds using inheritance semantics as explained above.
+
+
+!!! tip Using Rule Inheritance to Optimize Run Time
+
+    During pattern matching, YAMTL selects the most generic rules first. When a match is found for the parent rule, it then processes the match with the input pattern of the descendant rules using a depth-first strategy.
+
+!!! info Multiple Rule Inheritance 
+
+    In the original YAMTL semantics, YAMTL supported multiple rule inheritance in both input patterns and output patterns. Since version 0.3.6, multiple inheritance only applies to output patterns in rules. This feature has been deprecated to facilitate more concise syntax when specifying input patterns in rules.
+
 
 ## Helpers
 
@@ -702,62 +701,65 @@ Contextual operations are invoked on the `<ContextualInstance>` using the `<Oper
     fetch(<ContextualInstance>, "<OperationName>", mapOf("<param1>" to <value1>, ...))
     ```
 
-## ToMany Rules
+## `fetch()`
+
+The fetch operation in YAMTL, `YAMTLModule::fetch()`, is used to retrieve output objects that correspond to given input objects through the application of transformation rules. The main purpose of `fetch()` is to resolve references to output objects that are created by other rules. Since rules in YAMTL transformations execute independently, they cannot directly access the output objects produced by other rules. The fetch operation serves as a bridge to connect these separate rule contexts.
+
+When a rule's action needs to reference an output element initialized by another rule, it uses fetch with the input object to look up the corresponding output object. For example, `fetch(input_object)` returns the output object created by the rule that matched `input_object`.
+
+### Multiple elements in the Input Pattern
+
+When the input pattern contains more than one element, instead of using one single input object, a [valid match](#pattern-matching-semantics) must be provided by using a map where the keys are ``<in_object_name>``s and the values are the matched `EObject`s. The match must contain an `in` element for each `in` object patterns in the input pattern of the rule.
+
+=== "Groovy"
+
+    ```groovy
+    fetch(['in_var1': eObject1, 'in_var2', eObject2, ...])
+    ```
+
+=== "Xtend"
+
+    ```xtend
+    fetch(#{'in_var1' -> eObject1, 'in_var2'-> eObject2, ...})
+    ```
+
+=== "Java"
+
+    ```java
+    fetch(Map.of("in_var1", eObject1, "in_var2", eObject2, ...))
+    ```
+
+=== "Kotlin"
+
+    ```kotlin
+    fetch( mapOf("in_var1" to eObject1, "in_var2" to eObject2, ...) )
+    ```
+
+### Multiple Elements in the Output Pattern
+
+When the output pattern comprises several object patterns, it's necessary to specify which output element we wish to fetch: `fetch(<input_matched_object>, "<out_var_name>")` will return the output object linked to the output element `outVarName`. If a matched rule with a complex output pattern also uses the `toMany` declaration, the output object can be retrieved with `fetch(<input_matched_object>, "<out_var_name>", <i>)`.
+
+### Calling Lazy Rules
+
+The fetch operation is the only mechanism available to execute lazy rules, as explained in the [subsection Lazy Rules](#lazy-rules).
+  
+### Calling Helpers
+
+In JVM languages, other than Groovy, the fetch operation is also used to call helpers, as explained in the [subsection Helpers](#helpers).
+
+### Handling ToMany Rules
+
+ToMany rules can be applied to the same input object multiple times. In such cases, we can retrieve the output objects obtained in each rule application using the operation fetch(), as explained in the [subsection ToMany Rules](#tomany-rules).
+
+### Variables in Execution Context
+
+In JVM languages, other than Groovy, the fetch operation is also used to call helpers, fetch variables from the execution environment, with the expression `fetch("<variable-name>")`.
 
 
-Matched rules can be declared with the modifier `toMany` to enable repeated rule applications to the same input object, using `toManyCap` to indicate how many rule applications should be performed. With `toMany` rules, the same rule might match the same object multiple times. In such cases, we can reference each match (occurrence 'i' of a match) by the order in which they occurred: `fetch(<input_matched_object>, <i>)` will return the output object created by the ith match.
+## `allInstances(EClass)`
 
-Declaring a rule with the modifier `toMany` adds the variable `matchCount` to the execution environment, which is used to distinguish the different rule applications starting from `0` for the first application. This variable is available during both pattern matching and transformation execution. This means that the variable `matchCount` can be used in filter expressions
+The `allInstances(<typeName>)` operation is used to create OCL-like queries in lambda expressions and can be invoked in any of the following expressions: `<FILTER>`, `<QUERY>` and `<ACTION>`.
 
-The property `toManyCap` receives a function of type `Supplier<Integer>`, which determines the total number of rule applications that should apply to the same match.
-
-When declaring rules using rule inheritance together with the modifier `toMany()`, all rules in the inheritance hierarchy must be `toMany()`.
-
-!!! info "Differences with Lazy Rules"
-
-    A matched rule that is `toMany` is scheduled by the tranformation engine and not called on demand. However, when it is matched, the same match is associated with a list of rule applications. While the match is still unique for a particular rule, it is shared among several of the rule applications.
-
-
-## Rule Inheritance
-
-Rule inheritance in YAMTL enables a transformation developer to create a new transformation rule by inheriting the behaviour of multiple existing rules. This mechanism simplifies the transformation process by allowing you to build on existing rule logic without duplicating code, promoting code reuse and encapsulation.
-
-The following characteristics define multiple rule inheritance in YAMTL:
-
-* **Abstract rules**: Abstract rules are defined with the clause `.isAbstract()`. These rules typically act as templates or base rules that other rules can inherit from. These rules are not executed directly and their input/output pattern elements may refer to abstract classes.
-* **Concrete rules** are rules that are executed if a valid match is found for the input pattern and the output pattern can only refer to concrete classes, i.e., those that can be instantiated in the output model.
-* A descendant rule can inherit from one or several parent rules using the clause ``inheritsFrom(<ruleNameList>)``, where `<ruleNameList>` is of type `List<String>`.
-
-When using rule inheritance, rules are expected to be **covariant** both in input elements and in output elements with respect to inheritance relationships in the corresponding metamodels. When an input or an output element is declared in a parent rule but not declared in a child rule, it is implicitly inherited. The semantics of a transformation rule with respect to inheritance is as follows: 
-
-* **Pattern matching semantics**. In **matched** input elements, filter expressions are inherited using a leftmost top-down evaluation strategy w.r.t. the inheritance hierarchy defined in clauses ``inheritsFrom(<ruleNameList>)``. When an input element `in("<in_object_name1>", <in_object_type1>).filter{ <FILTER1> }` is declared in a parent rule but it is not declared in a descendant rule, it is inherited. If the input element `in("<in_object_name1>", <in_object_type2>).filter{ <FILTER2> }` is also defined in a descendant rule, `<FILTER2>` refines `<FILTER1>` by adding more constraints. In other words, both `<FILTER1>` and `<FILTER2>` must be satisfied by a match for the descendant rule. In addition, `<in_object_type2>` can be a subclass of `<in_object_type1>`. In **derived** input elements, derivation expressions (``derivedWith(<QUERY>)``) are overriden if they are declared in a descendant rule or simply inherited otherwise.  
-* **Transformation execution semantics**. In output elements, action expressions are also inherited following a leftmost top-down evaluation strategy w.r.t. the inheritance hierarchy by default. When an output element `out("<out_object_name>", <out_object_type1>, { <ACTION1> })` in a parent rule is refined by an output element `out("<out_object_name>", <out_object_type2>, { <ACTION2> })` in a descendant rule, where `<in_object_type2>` may be a subclass of `<in_object_type1>`, then both `<ACTION1>` and `<ACTION2>` will be executed, in that order. The default behaviour can be overriden by using the qualifier `overriding()` in the corresponding output element of a descendant rule. When using `overriding()` in an output element, the parent action `<ACTION1>` is not executed.
-
-The following table summarizes the errors that YAMTL detects when parsing model transformation rules when rule inheritance is used:
-
-| Scope | Error Description | Explanation | Resolution |
-| --- | --- | --- | --- |
-| Rule | Abstract Rule with No Children Rules | An abstract rule should have at least one child rule. | Define child rules for the abstract rule or consider making it non-abstract if no child rules are intended. |
-| Rule | Concrete Rule Specialized by an Abstract Rule | Occurs when a concrete rule is specialized by an abstract rule, which is not allowed. | Ensure that concrete rules are not specialized by abstract rules. |
-| Input | Incompatible Input Element Types | Occurs when an input element's type in a descendant rule is not a subtype of the same input element's type in a parent rule. | Make sure that the types of input elements in the descendant rule are compatible with those in the parent rule. |
-| Input | Mismatched Nature of Input Elements | Occurs when an input element's nature (matched/derived) differs between a rule and its parent rule. | Ensure that the nature of input elements is consistent between the descendant rule and its parent rule. |
-| Input | Input Element Inherited from Two Separate Parent Rules | An input element cannot be inherited from two separate parent rules. | Avoid inheriting the same input element from two separate parent rules to prevent conflicts. |
-| Output | Output Element Declared as 'Overriding' with No Parent Rule | Occurs when an output element is declared as 'overriding', but there is no parent rule to override. | Remove the 'overriding' declaration or ensure that the rule has a valid parent rule. |
-| Output | Incompatible Output Element Types | Occurs when an output element's type in a descendant rule is not a subtype of the same output element's type in a parent rule. | Ensure that the types of output elements in the descendant rule are compatible with those in the parent rule. |
-| Output | Output Element Declared as 'Drop' with No Valid Input Element | Occurs when an output element is declared as 'drop', but it does not refer to a valid input element. | Check that the 'drop' declaration references a valid input element, or remove it if unnecessary. |
-| Output | Output Element Inherited from Two Parent Rules with Different Types | An output element cannot be inherited from two parent rules with incompatible types; this results in an error. | Ensure that the types of inherited output elements are compatible between parent rules. |
-| Output | Rule Inherits the Same Output Element from Two Parent Classes | When a rule inherits the same output element from two parent classes, it's a potential issue, and a warning is issued. | Review the rule's inheritance structure and consider if it leads to unintended behavior. |
-
-When a descendant rule inherits the same output element from two different parent rules, situation known as the [diamond problem](https://en.wikipedia.org/wiki/Multiple_inheritance#the-diamond-problem), YAMTL detects the situation and warns the user but the model transformation proceeds using inheritance semantics as explained above.
-
-
-!!! tip Using Rule Inheritance to Optimize Run Time
-
-    During pattern matching, YAMTL selects the most generic rules first. When a match is found for the parent rule, it then processes the match with the input pattern of the descendant rules using a depth-first strategy.
-
-!!! info Multiple Rule Inheritance 
-
-    In the original YAMTL semantics, YAMTL supported multiple rule inheritance in both input patterns and output patterns. Since version 0.3.6, multiple inheritance only applies to output patterns in rules. This feature has been deprecated to facilitate more concise syntax when specifying input patterns in rules.
 
 ## Module Composition
 
