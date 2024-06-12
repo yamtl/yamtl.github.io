@@ -82,7 +82,7 @@ In the code above there are four important sections:
     1. Static typing and code completion in IDEs.
     2. Optimized performance at runtime: accessors/mutators will not need to use generic EMF reflection.
     3. Groovy is the only language configured to work with dynamic EMF models (i.e., models whose metamodel is given as an Ecore model but not implemented in Java). Other languages (Java, Kotlin, Xtend, etc.) will benefit from generated code to avoid using lengthy expressions with the EMF API.    
-    
+
     However, if you are still experimenting with your Ecore models, we recommend working with dynamic EMF models and the YAMTL Groovy DSL for faster prototyping.
 
 The basic format of a YAMTL rule definition is as follows:
@@ -375,11 +375,41 @@ To configure and execute a YAMTL module for implementing an in-place transformat
 
     
 
-## YAMTLModule and Header
+## YAMTL Header
 
+A YAMTL header is a configuration section within a YAMTL transformation module that specifies the input and output domains for the transformation. It serves as the signature of the transformation, defining which metamodels (EPackage instances) are used for the source (input) and target (output) models.
 
+The purpose of the YAMTL Header is as follows:
 
+1. **Define Input and Output Models**: The header specifies the metamodels for the input and output domains, establishing the types of models that the transformation will work with.
+2. **Set Transformation Context**: It provides context for the transformation rules, ensuring that the rules can refer to the correct metamodels and their elements.
+3. **Initialization**: It initializes the transformation module with the necessary metadata about the models, enabling the YAMTL engine to understand the structure and elements of the input and output models.
 
+The header is usually defined within the constructor of a class that extends `YAMTLModule`. It uses the `header()` method to declare the input and output domains, followed by the specification of rules and helpers.
+
+Each component of a header is called domain. In YAMTL, the following component types are supported:
+
+1. **Input Domain (`in`)**: Specifies the name and EPackage of the input model domain for out-place transformations.
+   - Example: `.in("sourceDomain", pk1)`
+
+2. **Input/Output Domain (`inOut`)**: Specifies the name and EPackage of an input/output model domain for in-place transformations.
+   - Example: `.out("targetDomain", pk2)`
+
+3. **Output Domain (`out`)**: Specifies the name and EPackage of the output model domain for out-place transformations.
+   - Example: `.out("targetDomain", pk2)`
+
+The header is used as follows:
+
+- **Rule Definitions**: The rules defined in the transformation module use the domains specified in the header to match and transform elements. For instance, a rule might match elements from the input domain and create corresponding elements in the output domain.
+  
+- **Model Loading**: When executing the transformation, the models corresponding to the input and output domains are loaded based on the header configuration.
+  
+- **Helper Functions**: Helpers defined in the module can use the domains to perform operations on the models, like `allInstances()`, ensuring that they work within the correct context.
+
+The YAMTL header is essential for setting up the transformation context, ensuring that the transformation rules and helpers operate within the correct metamodel framework. The following constraints should be considered:
+
+1. Using `inOut` domains enables [in-place semantics](#in-place-semantics), and `in`/`out` domains must be avoided in such cases. Conversely, `in`/`out` domains enable [out-place semantics](#out-place-transformation-semantics) and [pattern-matching semantics](#pattern-matching-semantics) and must not be used with `inOut` domains.
+2. Using several `in`/`out` domains for out-place transformations or model patterns, as well as using several `inOut` domains for in-place transformations, leads to multi-model transformation. A **multi-model transformation** enables the use of the pattern matcher across domains, for example, to define constraints over different metamodels, and facilitates the production of multiple output models. In a multi-model transformation, whenever we refer to a specific type (in object element patterns for `in`/`out` patterns of rules or in `allInstances()`), we must specify which domain the class belongs to. This is necessary to avoid confusion when the same metamodel is used for multiple domains.
 
 
 ## YAMTL Rules
