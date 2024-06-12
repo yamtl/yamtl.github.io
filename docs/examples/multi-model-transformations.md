@@ -5,7 +5,7 @@ hide:
 
 # Multi-Model Transformations
 
-The code for the transformation below can be found [here](https://github.com/yamtl/examples/tree/master/multimodel) (`src` contains the definition of transformations and `test` how to execute them with some example models).
+The code for the transformation below can be found [here](https://github.com/yamtl/examples/tree/master/multimodel) (`src/main/groovy/multimodel` contains the definition of transformations and `src/test/groovy/multimodel` how to execute them with some example models).
 
 The examples below use the metamodel `CD` of class diagrams below (in EMFatic notation):
 
