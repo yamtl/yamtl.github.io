@@ -10,6 +10,7 @@ nav:
     - Examples Repository: 'examples/examples.md'
     - Linked List Reversal: 'examples/linked-list-reversal-example.md'
     - Flowchart to HTML: 'examples/flowchart-to-html-example.md'
+    - Multi-Model Transformations: 'examples/multi-model-transformations.md'
   - Exercises:
     - Flowchart to HTML: 'exercises/flowchart-to-html-worksheet.md'
   - Release Notes: 'release-notes.md'
