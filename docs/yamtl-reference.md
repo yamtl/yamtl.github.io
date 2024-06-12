@@ -1,5 +1,19 @@
 # YAMTL Language Reference
 
+In YAMTL, `YAMTLModule` is a foundational class that provides the core functionality and infrastructure for defining and executing model transformations. It serves as the base class for any transformation module, offering access to the YAMTL DSL and methods necessary for configuring and running transformations.
+
+The key roles of `YAMTLModule` are:
+
+1. **Configuration**: `YAMTLModule` is used to set up the transformation environment, including input and output models, namespaces, and execution modes.
+
+2. **Transformation Definition**: It allows users to define transformation rules, helpers, and various other elements necessary for transforming models.
+
+3. **Execution Control**: It provides methods to execute the transformation, propagate changes, and manage incremental transformations.
+
+4. **Utility Methods**: It includes utility commands like `fetch()` and `allInstances()` to facilitate querying and manipulating model elements during transformation.
+
+The following section describes how to use it.
+
 ## Basic Syntax
 
 A YAMTL model transformation is defined as a class that specializes the `YAMTLModule` class, which provides access to the YAMTL DSL and to methods to configure and execute model transformations:
@@ -62,6 +76,14 @@ In the code above there are four important sections:
 *   **Rule Store**: This section declares a list of transformation rules.
 *   **Helper Store (Optional)**: Accepts a list of managed helpers. Managed helpers are attributes or methods that are optimized in YAMTL using an internal cache for their results. Unmanaged helpers are declared as standard methods of the module class. This section is optional if no managed helpers are needed.
 
+!!! tip "Static Typing for Accessors/Mutators"
+    If you [generate code from Ecore models](https://www.vogella.com/tutorials/EclipseEMF/article.html) within the Eclipse Modeling Framework, there is no need to declare EPackage parameters for the headers. These are accessible from the `eINSTANCE` associated with each `<X>Package` class, where `<X>` is the name of your EPackage in the Ecore model.
+    Once the models are stable, generated code will give you several advantages:
+    1. Static typing and code completion in IDEs.
+    2. Optimized performance at run time: accessors/mutators will not need to use generic EMF reflection.
+    3. Groovy is the only language that has been configured to work with dynamic EMF models (i.e. models whose metamodel is given as an Ecore model but not implemented in Java). Other languages (Java, Kotlin, Xtend, etc) will benefit from generated code to avoid using lentghy expressions using the EMF API.
+    However, if you are still experimenting with Ecore models, we recommend working with dynamic EMF models and the YAMTL Groovy DSL.
+
 The basic format of a YAMTL rule definition is as follows:
 
 ``` yamtl-groovy
@@ -81,7 +103,6 @@ A rule is declared using `rule("<name>")` with a rule name. The static operation
 ## YAMTL Semantics
 
 Model transformations can be used to define model queries by using pattern matching, out-place model transformation by *mapping* an input model into a *new* output model, or in-place model transformations by *rewriting* a given model.
-
 
 ### Pattern Matching Semantics
 
@@ -352,6 +373,10 @@ To configure and execute a YAMTL module for implementing an in-place transformat
     The mapping from input match to output match is traced as a transformation step in the out-place semantics only. In the in-place semantics, transformation steps are not traced and the `fetch()` operation cannot be used to resolve references to output objects from input objects (or the matches that contain them). The reason is that the transformation executes modifications on the input model, and references to objects in that model are reachable and need not be resolved using `fetch()`.
 
     
+
+## YAMTLModule and Header
+
+
 
 
 
