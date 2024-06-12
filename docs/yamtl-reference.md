@@ -421,7 +421,33 @@ When a rule's action needs to reference an output element initialized by another
 
 ### Multiple elements in the Input Pattern
 
-When the input pattern contains more than one element, instead of using one single input object, a [valid match](#pattern-matching-semantics) must be provided by using a map where the keys are ``<in_object_name>``s and the values are the matched `EObject`s.
+When the input pattern contains more than one element, instead of using one single input object, a [valid match](#pattern-matching-semantics) must be provided by using a map where the keys are ``<in_object_name>``s and the values are the matched `EObject`s. The match must contain an `in` element for each `in` object patterns in the input pattern of the rule.
+
+<!--
+=== "Groovy"
+
+    ```groovy
+    fetch(['in_var1': eObject1, 'in_var2', eObject2, ...])
+    ```
+
+=== "Xtend"
+
+    ```xtend
+    fetch(#{'in_var1' -> eObject1, 'in_var2'-> eObject2, ...})
+    ```
+
+=== "Java"
+
+    ```java
+    
+    ```
+
+=== "Kotlin"
+
+    ```kotlin
+
+    ```
+--> 
 
 ### Multiple Elements in the Output Pattern
 
