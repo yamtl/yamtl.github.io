@@ -423,13 +423,13 @@ rule("<name>")
     [.isLazy() | .isUniqueLazy()]? 
     [.isTransient()]?
     {
-        .in("<in_object_name>", <in_object_type>)
+        .in("<in_object_name>", (<domain_name>,)? <in_object_type>) 
         [(.filter(<FILTER>) | .derivedWith(<QUERY>))]?
     }+
     [.using("<var_name>", <QUERY>)]*
     [.globalFilter(<FILTER>)]?
     {
-        .out("<out_object_name>", <out_object_type>, <ACTION>)
+        .out("<out_object_name>", (<domain_name>,)? <out_object_type>, <ACTION>)
         [.overriding()]?
         [.drop()|.freeze()|.unfreeze()]?
     }+
@@ -449,7 +449,8 @@ Every rule has several options for additional customization. They will be discus
 * [Lazy rules](#lazy-rules) can be declared with ``isLazy()`` or `isUniqueLazy()`. These rules are only applicable when the matched input elements are explicitly provided using an expression involving the operation ``fetch``. 
 * A rule defined as `isTransient()` does not persist the target (output) elements when the target model flushes to physical storage.
 
-The input pattern in a rule determines where the rule should be applied and it consists of at least one input element, which can be configured with the following options:
+The **input pattern** in a rule determines where the rule should be applied and it consists of at least one input element, which can be configured with the following options:
+* In multi-model transformations, the `in` element must specify the domainName that it refers to.
 * A ``filter(<FILTER>)`` clause enables the user to add a local filter condition that needs to be satisfied by the matched object of the corresponding input element. 
 * A ``derivedWith(<QUERY>)`` clause is used to declare an input element as **derived** where ``QUERY`` is a lambda expression of the "EObject" type used to calculate the value of the match. 
 
@@ -457,7 +458,8 @@ Rules can be equipped with **local variables** that can be initialized with usin
 
 A **global filter** condition for a rule can be added after the input element block using `globalFilter(<FILTER>)` clause which allows the user to add filter(s) applicable to the global scope of the rule.
 
-The output pattern of a rule defines the side effects of the rule and consists of at least one output element, which can be configured with the following options:
+The **output pattern** of a rule defines the side effects of the rule and consists of at least one output element, which can be configured with the following options:
+* In multi-model transformations, the `out` element must specify the domainName that it refers to.
 * An ``overriding()`` qualifier is used to override inherited action expression(s) in the output element of a descendant rule, as discussed in [rule inheritance](#rule-inheritance).
 * Elements that are used both as input and output can be managed using the options ``.drop()`` or `.freeze()/.unfreeze()`, as explained in the [Subsection In-place Semantics](#in-place-semantics).
 
@@ -816,8 +818,11 @@ In JVM languages, other than Groovy, the fetch operation is also used to call he
 
 ### `allInstances(EClass)`
 
-The `allInstances(<typeName>)` operation is used to create OCL-like queries in lambda expressions and can be invoked in any of the following expressions: `<FILTER>`, `<QUERY>` and `<ACTION>`.
+The `allInstances(<typeName>)` operation is used to create OCL-like queries in lambda expressions and can be invoked in any of the following expressions: `<FILTER>`, `<QUERY>`, and `<ACTION>`.
 
+`allInstances(<typeName>)` returns the collection of objects of type `<typeName>` in the input model. In multi-model transformations, it is necessary to specify the `<domainName>` of the corresponding domain `in` or `inOut` in the transformation header, as follows: `allInstances(<domainName>, <typeName>)`. This retrieves a collection of objects of type `<typeName>` from the domain `<domainName>` only. 
+
+Note that `out` domains cannot be queried with `allInstances()`. Output objects can only be fetched via the operator `fetch()`.
 
 ## Module Composition
 
