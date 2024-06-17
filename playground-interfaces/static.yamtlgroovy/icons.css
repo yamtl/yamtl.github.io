@@ -1,0 +1,6 @@
+.mif-yamtl::before {
+	content: url("./icons/yamtl-icon.png");
+}
+.mif-icons8-json-16::before {
+    content: url("./icons/icons8-json-16.png");
+}

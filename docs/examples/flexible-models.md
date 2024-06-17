@@ -27,8 +27,8 @@ It is common to encounter datasets that are stored in semi-structured formats, s
 To enable the use of flexible models, we define a metamodel that can represent the structure of models that do not have a fixed metamodel. This allows us to handle semi-structured data within MDE frameworks. The metamodel consists of the following main elements:
 
 - **UntypedModel**: Represents the overall model.
-- **ERecord**: Represents an instance of a semi-structured EObject.
-- **RecordField**: Abstract class representing a field of an EObject, either an **AttributeField** containing a value, a **ReferenceField** referring to another EObject, or a **ContainmentField** containing other ERecords.
+- **ERecord**: Represents an instance of a semi-structured `EObject`.
+- **RecordField**: Abstract class representing a field of an `ERecord`, either an **AttributeField** containing a value, a **ReferenceField** referring to other `ERecord`s, or a **ContainmentField** containing other `ERecord`s.
 
 The class diagram below illustrates the metamodel for flexible models for presentation purposes. 
 
@@ -104,6 +104,7 @@ xform.saveOutputModels(['pa': 'path/to/output.xmi'])
 ```
 
 The methods `loadInputModels`/`saveOutputModels` from the `YAMTLModule` I/O interface will select the right data conversion based on the given file extension:
+
 * `csv`, `json`, `yml`, `xml` are associated with the metamodel of flexible models described above,
 * `xmi` is assumed to correspond to an EMF model whose metamodel has already been loaded.
 
