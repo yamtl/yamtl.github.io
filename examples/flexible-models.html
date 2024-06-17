@@ -817,8 +817,8 @@
 <p>To enable the use of flexible models, we define a metamodel that can represent the structure of models that do not have a fixed metamodel. This allows us to handle semi-structured data within MDE frameworks. The metamodel consists of the following main elements:</p>
 <ul>
 <li><strong>UntypedModel</strong>: Represents the overall model.</li>
-<li><strong>ERecord</strong>: Represents an instance of a semi-structured EObject.</li>
-<li><strong>RecordField</strong>: Abstract class representing a field of an EObject, either an <strong>AttributeField</strong> containing a value, a <strong>ReferenceField</strong> referring to another EObject, or a <strong>ContainmentField</strong> containing other ERecords.</li>
+<li><strong>ERecord</strong>: Represents an instance of a semi-structured <code>EObject</code>.</li>
+<li><strong>RecordField</strong>: Abstract class representing a field of an <code>ERecord</code>, either an <strong>AttributeField</strong> containing a value, a <strong>ReferenceField</strong> referring to other <code>ERecord</code>s, or a <strong>ContainmentField</strong> containing other <code>ERecord</code>s.</li>
 </ul>
 <p>The class diagram below illustrates the metamodel for flexible models for presentation purposes. </p>
 <p><img alt="Flexible Model Metamodel" src="images/untypedModel-mm.jpg" /></p>
@@ -875,9 +875,11 @@
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">xform</span><span class="o">.</span><span class="na">execute</span><span class="o">()</span>
 </span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">xform</span><span class="o">.</span><span class="na">saveOutputModels</span><span class="o">([</span><span class="s1">&#39;pa&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;path/to/output.xmi&#39;</span><span class="o">])</span>
 </span></code></pre></div>
-<p>The methods <code>loadInputModels</code>/<code>saveOutputModels</code> from the <code>YAMTLModule</code> I/O interface will select the right data conversion based on the given file extension:
-* <code>csv</code>, <code>json</code>, <code>yml</code>, <code>xml</code> are associated with the metamodel of flexible models described above,
-* <code>xmi</code> is assumed to correspond to an EMF model whose metamodel has already been loaded.</p>
+<p>The methods <code>loadInputModels</code>/<code>saveOutputModels</code> from the <code>YAMTLModule</code> I/O interface will select the right data conversion based on the given file extension:</p>
+<ul>
+<li><code>csv</code>, <code>json</code>, <code>yml</code>, <code>xml</code> are associated with the metamodel of flexible models described above,</li>
+<li><code>xmi</code> is assumed to correspond to an EMF model whose metamodel has already been loaded.</li>
+</ul>
 <p>The code for the transformation below can be found <a href="https://github.com/yamtl/examples/tree/master/flexibleModels">here</a> (<code>src/main/groovy/flexibleModels</code> contains the definition of transformations and <code>src/test/groovy/flexibleModels</code> how to execute them with some example models).</p>
 
 
