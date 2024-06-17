@@ -462,5 +462,5 @@ Binaries compiled with Java 11.
 * Experimental support for `rewriting` semantics.
 
 ***
-&copy; [Artur Boronat](arturboronat.info), 2018
+&copy; [Artur Boronat](arturboronat.github.io), 2018
 
