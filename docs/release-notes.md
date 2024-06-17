@@ -1,6 +1,10 @@
 # Release notes
 
-#### 1.0.0
+#### 1.0.2
+
+Operations (both static and contextual) have their parameters included in the execution configuration, allowing them to be accessed within the operation's body.
+
+#### 1.0.0-1.0.1
 
 * Version tried and tested since 2018 with reliable support for model-to-model transformations and a Groovy DSL.
 * Support for multimodel transformations:
