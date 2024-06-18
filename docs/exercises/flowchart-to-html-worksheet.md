@@ -100,6 +100,9 @@ These examples allow learners to practice the use of the YAMTL language at diffe
 * [Exercise 5](../exercises-problems/exercise5.md): using lazy and non-lazy rules.
 * [Exercise 6](../exercises-problems/exercise6.md): using helpers.
 
+To solve them go to the [YAMTL playground](https://yamtl.github.io/playground/?activities=https://yamtl.github.io/playground-activities/yamtl-demo-activity.yml).
+
+
 ## Solutions
 
 * [Exercise 1 - Solution](../exercises-solutions/solution1.md)
