@@ -82,43 +82,6 @@ class Example3 extends YAMTLModule {
 }
 ```
 
-## Test Script
+To solve this exercises interactively, go to the [YAMTL playground](https://yamtl.github.io/playground/?activities=https://yamtl.github.io/playground-activities/yamtl-exercises-activity.yml).
 
-This is a separate Groovy class that loads, executes and tests the model transformation. In particular, the source and target metamodels are loaded and passed to the transformation class. Then, the input model is loaded into this class and executed. Thus, creating an output model which is stored and tested for correctness.
-
-``` groovy
-package flowchartToHtmlExamples
-import static org.junit.Assert.assertTrue;
-import org.junit.jupiter.api.Test
-import yamtl.core.YAMTLModule
-import yamtl.groovy.YAMTLGroovyExtensions
-import yamtl.utils.EMFComparator
-
-class Example3Test extends YAMTLModule {
-	final BASE_PATH = 'model'
-
-	@Test
-	def void testExample3() {
-		// model transformation execution
-		def srcRes = YAMTLModule.preloadMetamodel(BASE_PATH + '/flowchart.ecore')
-		def tgtRes = YAMTLModule.preloadMetamodel(BASE_PATH + '/html.ecore')
-
-		def xform = new Example3(srcRes.contents[0], tgtRes.contents[0])
-		YAMTLGroovyExtensions.init(this)
-		xform.loadInputModels(['in': BASE_PATH + '/wakeup_with_subflow.xmi'])
-		xform.execute()
-		xform.saveOutputModels(['out': BASE_PATH + '/example3Output.xmi'])
-		
-		// test assertion
-		def actualModel = xform.getOutputModel('out')
-		EMFComparator comparator = new EMFComparator();
-		
-		// Load the expected model using the identical output metamodel from the transformation.
-		// Essentially, use the same in-memory metamodel.
-		xform.loadMetamodelResource(tgtRes)
-		def expectedResource = xform.loadModel(BASE_PATH + '/example3ExpectedOutput.xmi', false)
-		def assertionResult =  comparator.equals(expectedResource.getContents(), actualModel.getContents())
-		assertTrue(assertionResult);
-	}
-}
-```
+A downloadable solution can be found [here](https://github.com/yamtl/examples/tree/master/FlowchartToHTML_exercises).
