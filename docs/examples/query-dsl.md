@@ -9,39 +9,31 @@ Model queries in model-driven engineering applications are specialized queries d
 
 In this example, we introduce a QueryDsl to perform model queries atop YAMTL. For the example we are going to use a simple class diagram metamodel:
 
-<figure markdown style="height:350px;width:800px">
+<figure markdown>
     ```mermaid
     classDiagram
         class NamedElt {
             <<abstract>>
             name: String
         }
-
         class Classifier {
             <<abstract>>
         }
-
         class Package {
         }
-
         class Class {
             isAbstract: Boolean = false
         }
-
-
         class Attribute {
             multiValued: Boolean  = false
         }
-
         class DataType {
         }
-
         NamedElt <|-- Classifier
         NamedElt <|-- Attribute
         Classifier <|-- Package
         Classifier <|-- DataType    
         Classifier <|-- Class
-        
         Class "0..*" --> "0..*" Class : ~super
         Class "1" *--> "0..*" Attribute : ~attr
         Attribute "1" --> "1" Classifier : type
