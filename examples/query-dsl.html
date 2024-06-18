@@ -727,9 +727,7 @@
 <h1 id="model-queries-atop-yamtl">Model Queries atop YAMTL</h1>
 <p>Model queries in model-driven engineering applications are specialized queries designed to extract, manipulate, or analyze specific information from models that represent complex systems. These models, which may depict software architecture, business processes, or system behaviors, are central to the engineering process. Model queries enable developers to efficiently retrieve data, check model consistency, perform transformations, and validate system specifications against predefined criteria. By providing a mechanism to interact with models at a high level of abstraction, model queries facilitate automation, enhance accuracy, and improve the efficiency of model-driven development workflows.</p>
 <p>In this example, we introduce a QueryDsl to perform model queries atop YAMTL. For the example we are going to use a simple class diagram metamodel:</p>
-<figure>
-<div class="language-text highlight"><pre><span></span><code>```mermaid
-classDiagram
+<pre class="mermaid"><code>classDiagram
     class NamedElt {
         &lt;&lt;abstract&gt;&gt;
         name: String
@@ -752,14 +750,10 @@ classDiagram
     Classifier &lt;|-- Package
     Classifier &lt;|-- DataType    
     Classifier &lt;|-- Class
-    Class &quot;0..*&quot; --&gt; &quot;0..*&quot; Class : ~super
-    Class &quot;1&quot; *--&gt; &quot;0..*&quot; Attribute : ~attr
-    Attribute &quot;1&quot; --&gt; &quot;1&quot; Classifier : type
-    Package &quot;0..*&quot; *--&gt; &quot;0..*&quot; Classifier : classifiers
-```
-</code></pre></div>
-<figcaption>Metamodel Simple Class Diagram</figcaption>
-</figure>
+    Class "0..*" --&gt; "0..*" Class : ~super
+    Class "1" *--&gt; "0..*" Attribute : ~attr
+    Attribute "1" --&gt; "1" Classifier : type
+    Package "0..*" *--&gt; "0..*" Classifier : classifiers</code></pre>
 <h2 id="model-queries">Model Queries</h2>
 <p>The YAMTL QueryDsl is a Groovy DSL for evaluating model queries over EMF models. A model query is internally encoded as a match-only YAMTL model transformation that uses the <a href="https://yamtl.github.io/yamtl-reference.html#pattern-matching-semantics">YAMTL pattern matching semantics</a>.</p>
 <p>A model query is defined using JSON-style syntax with Groovy closures as follows:</p>
