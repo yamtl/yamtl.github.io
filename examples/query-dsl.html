@@ -727,39 +727,31 @@
 <h1 id="model-queries-atop-yamtl">Model Queries atop YAMTL</h1>
 <p>Model queries in model-driven engineering applications are specialized queries designed to extract, manipulate, or analyze specific information from models that represent complex systems. These models, which may depict software architecture, business processes, or system behaviors, are central to the engineering process. Model queries enable developers to efficiently retrieve data, check model consistency, perform transformations, and validate system specifications against predefined criteria. By providing a mechanism to interact with models at a high level of abstraction, model queries facilitate automation, enhance accuracy, and improve the efficiency of model-driven development workflows.</p>
 <p>In this example, we introduce a QueryDsl to perform model queries atop YAMTL. For the example we are going to use a simple class diagram metamodel:</p>
-<figure style="height:350px;width:800px">
+<figure>
 <div class="language-text highlight"><pre><span></span><code>```mermaid
 classDiagram
     class NamedElt {
         &lt;&lt;abstract&gt;&gt;
         name: String
     }
-
     class Classifier {
         &lt;&lt;abstract&gt;&gt;
     }
-
     class Package {
     }
-
     class Class {
         isAbstract: Boolean = false
     }
-
-
     class Attribute {
         multiValued: Boolean  = false
     }
-
     class DataType {
     }
-
     NamedElt &lt;|-- Classifier
     NamedElt &lt;|-- Attribute
     Classifier &lt;|-- Package
     Classifier &lt;|-- DataType    
     Classifier &lt;|-- Class
-
     Class &quot;0..*&quot; --&gt; &quot;0..*&quot; Class : ~super
     Class &quot;1&quot; *--&gt; &quot;0..*&quot; Attribute : ~attr
     Attribute &quot;1&quot; --&gt; &quot;1&quot; Classifier : type
