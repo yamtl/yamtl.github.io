@@ -5,55 +5,55 @@ hide:
 
 # Flowchart to HTML
 
-## Problem Description
+In this worksheet, we will look at converting flowchart elements into HTML elements to practice different elements of the YAMTL language.
 
-In this worksheet, we will look at converting flowchart elements into HTML elements. The problem is open-ended, meaning, there is no one solution but rather the project will contain many small examples that showcase a multitude of operations for each documented MTL. The flowchart which should be used as the source model of the project is depicted in the diagram below:
+In the following subsections, you'll find:
 
-<figure markdown style="height:350px;width:400px">
-  ``` mermaid
-  graph LR
-    A[Begin] -->|Start| B[Wake up];
-    B --> C{Is it really too early?};
-    C --> |Yes| D[Sleep];
-    C --> |No| E[Get up]
-    D --> |Some Time Passes| B;
-  ```
-  <figcaption>Wakeup Flowchart</figcaption>
-</figure>
+* Source metamodel: to define workflows
+* Source workflow model that we will use in most of the exercises
+* Target metamodel: to define HTML documents
+* Fill-in-the gap exercises
+* Solutions: **attempt the exercises first!**
 
-Let’s look at the required models for this transformation:
+``` mermaid
+graph BT
+    B[Source Model] -->|conforms to| A[Flowchart Metamodel];
+    C[YAMTL Engine] -->|reads| B;
+    C -->|executes| D[YAMTLModule];
+    C -->|writes| E[Target Model];
+    D -->|uses| A;
+    E -->|conforms to| F[HTML Metamodel];
+    D -->|uses| F;
+```
 
-<figure markdown style="height:350px;width:400px">
-  ``` mermaid
-  graph BT
-      B[Source Model] -->|conforms to| A[Flowchart Metamodel];
-      C[MT Execution Engine] -->|reads| B;
-      C -->|executes| D[MT Definition];
-      C -->|writes| E[Target Model];
-      D -->|uses| A;
-      E -->|conforms to| F[HTML Metamodel];
-      D -->|uses| F;
-  ```
-  <figcaption>Dependencies of the project files</figcaption>
-</figure>
+These exercises can be solved interactively in the [YAMTL playground](https://yamtl.github.io/playground/?activities=https://yamtl.github.io/playground-activities/yamtl-exercises-activity.yml).
 
-Now, let's see how the models are defined.
+If you prefer to work with them in your IDE of choice, dowload the Gradle project from [here](https://github.com/yamtl/examples/tree/master/FlowchartToHTML_exercises).
 
 ## Source Metamodel
 
-The source metamodel is defined using Emfatic (.emf), which can be converted into an `ECore` file. You can then access the flowchart classes as `EPackage`s (`ECore` has `EClasses` which are referenced as `EPackage` in Groovy) to be used within the MT definition. Let's view the class diagram and code implementation (in Emfatic) of the source metamodel representing the Flowchart domain.
-
-### Class Diagram
+The source metamodel is defined using Emfatic (.emf), which can be converted into an `Ecore` file. You can then access the flowchart classes as `EPackage`s (`Ecore` has `EClasses` which are referenced as `EPackage` in Groovy) to be used within the MT definition. Let's view the class diagram and code implementation (in Emfatic) of the source metamodel representing the Flowchart domain.
 
 ![Flowchart Class Diagram](../assets/images/flowchart-class-diagram.png)
 
-The full metamodel can be read in EMFatic notation [here](https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML_exercises/model/flowchart.emf).
+The full metamodel can be read in Emfatic notation [here](https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML_exercises/model/flowchart.emf).
+
+## Source Model
+
+The flowchart that will be used as source model for most of the exercises is depicted in the diagram below:
+
+``` mermaid
+graph LR
+  A[Begin] -->|Start| B[Wake up];
+  B --> C{Is it really too early?};
+  C --> |Yes| D[Sleep];
+  C --> |No| E[Get up]
+  D --> |Some Time Passes| B;
+```
 
 ## Target Metamodel
 
 Just like before, the target metamodel is also defined using Emfatic. The metamodel script is long because all HTML elements must be defined so that the transformation generates a valid HTML document. Let's check out the class diagram and code implementation (in Emfatic) of the target metamodel representing the HTML domain.
-
-### Class Diagram
 
 The HTML metamodel is quite large to be viewed as one class diagram, so, let's see different sections of the metamodel for better understanding.
 
@@ -87,7 +87,7 @@ A lot of body related elements extend the BODYElement class. To show all of thos
 
 ![Other Classes Diagram](../assets/images/other-classes-section.png)
 
-The full metamodel can be read in EMFatic notation [here](https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML_exercises/model/html.emf).
+The full metamodel can be read in Emfatic notation [here](https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML_exercises/model/html.emf).
 
 ## Fill-the-Gap Exercises
 
@@ -112,8 +112,6 @@ To solve these exercises interactively, go to the [YAMTL playground](https://yam
 * [Exercise 5 - Solution](../exercises-solutions/solution5.md)
 * [Exercise 6 - Solution](../exercises-solutions/solution6.md)
 
-## References
+## Documentation
 
-* [YAMTL Syntax](https://dl.acm.org/doi/10.1145/3239372.3239386)
-* [YAMTL Incremental Support](https://link.springer.com/article/10.1007/s10009-020-00583-y)
-* [YAMTL Original Documentation](https://arturboronat.github.io/yamtl/)
+* [YAMTL reference language](https://yamtl.github.io/yamtl-reference.html)
