@@ -796,7 +796,7 @@ When the input pattern contains more than one element, instead of using one sing
     ```
 
 
-### Multiple Elements in the Input Pattern in Multi-Model Transformations
+#### Multiple Elements in the Input Pattern in Multi-Model Transformations
 
 When specifying input patterns across domains in multi-model transformations, you can resolve output objects by presenting `fetch()` with a set of matches, specifying lists of objects for each domain in the match. `fetch()` will internally apply pattern matching with transformation rules in the rule store and return a list of objects for the default output variable. Refer to the next section for cases where there is more than one `out` variable.
 
