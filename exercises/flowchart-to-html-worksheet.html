@@ -590,35 +590,20 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#problem-description" class="md-nav__link">
-    <span class="md-ellipsis">
-      Problem Description
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#source-metamodel" class="md-nav__link">
     <span class="md-ellipsis">
       Source Metamodel
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Source Metamodel">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#class-diagram" class="md-nav__link">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#source-model" class="md-nav__link">
     <span class="md-ellipsis">
-      Class Diagram
+      Source Model
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -628,21 +613,6 @@
       Target Metamodel
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Target Metamodel">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#class-diagram_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Class Diagram
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -665,9 +635,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
+  <a href="#documentation" class="md-nav__link">
     <span class="md-ellipsis">
-      References
+      Documentation
     </span>
   </a>
   
@@ -758,35 +728,20 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#problem-description" class="md-nav__link">
-    <span class="md-ellipsis">
-      Problem Description
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#source-metamodel" class="md-nav__link">
     <span class="md-ellipsis">
       Source Metamodel
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Source Metamodel">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#class-diagram" class="md-nav__link">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#source-model" class="md-nav__link">
     <span class="md-ellipsis">
-      Class Diagram
+      Source Model
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -796,21 +751,6 @@
       Target Metamodel
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Target Metamodel">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#class-diagram_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Class Diagram
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -833,9 +773,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
+  <a href="#documentation" class="md-nav__link">
     <span class="md-ellipsis">
-      References
+      Documentation
     </span>
   </a>
   
@@ -857,40 +797,39 @@
 
 
 <h1 id="flowchart-to-html">Flowchart to HTML</h1>
-<h2 id="problem-description">Problem Description</h2>
-<p>In this worksheet, we will look at converting flowchart elements into HTML elements. The problem is open-ended, meaning, there is no one solution but rather the project will contain many small examples that showcase a multitude of operations for each documented MTL. The flowchart which should be used as the source model of the project is depicted in the diagram below:</p>
-<figure style="height:350px;width:400px">
-<p><pre class="mermaid"><code>graph LR
+<p>In this worksheet, we will look at converting flowchart elements into HTML elements to practice different elements of the YAMTL language.</p>
+<p>In the following subsections, you'll find:</p>
+<ul>
+<li>Source metamodel: to define workflows</li>
+<li>Source workflow model that we will use in most of the exercises</li>
+<li>Target metamodel: to define HTML documents</li>
+<li>Fill-in-the gap exercises</li>
+<li>Solutions: <strong>attempt the exercises first!</strong></li>
+</ul>
+<pre class="mermaid"><code>graph BT
+    B[Source Model] --&gt;|conforms to| A[Flowchart Metamodel];
+    C[YAMTL Engine] --&gt;|reads| B;
+    C --&gt;|executes| D[YAMTLModule];
+    C --&gt;|writes| E[Target Model];
+    D --&gt;|uses| A;
+    E --&gt;|conforms to| F[HTML Metamodel];
+    D --&gt;|uses| F;</code></pre>
+<p>These exercises can be solved interactively in the <a href="https://yamtl.github.io/playground/?activities=https://yamtl.github.io/playground-activities/yamtl-exercises-activity.yml">YAMTL playground</a>.</p>
+<p>If you prefer to work with them in your IDE of choice, dowload the Gradle project from <a href="https://github.com/yamtl/examples/tree/master/FlowchartToHTML_exercises">here</a>.</p>
+<h2 id="source-metamodel">Source Metamodel</h2>
+<p>The source metamodel is defined using Emfatic (.emf), which can be converted into an <code>Ecore</code> file. You can then access the flowchart classes as <code>EPackage</code>s (<code>Ecore</code> has <code>EClasses</code> which are referenced as <code>EPackage</code> in Groovy) to be used within the MT definition. Let's view the class diagram and code implementation (in Emfatic) of the source metamodel representing the Flowchart domain.</p>
+<p><img alt="Flowchart Class Diagram" src="../assets/images/flowchart-class-diagram.png" /></p>
+<p>The full metamodel can be read in Emfatic notation <a href="https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML_exercises/model/flowchart.emf">here</a>.</p>
+<h2 id="source-model">Source Model</h2>
+<p>The flowchart that will be used as source model for most of the exercises is depicted in the diagram below:</p>
+<pre class="mermaid"><code>graph LR
   A[Begin] --&gt;|Start| B[Wake up];
   B --&gt; C{Is it really too early?};
   C --&gt; |Yes| D[Sleep];
   C --&gt; |No| E[Get up]
   D --&gt; |Some Time Passes| B;</code></pre>
-  </p>
-<figcaption>Wakeup Flowchart</figcaption>
-</figure>
-<p>Let’s look at the required models for this transformation:</p>
-<figure style="height:350px;width:400px">
-<p><pre class="mermaid"><code>graph BT
-    B[Source Model] --&gt;|conforms to| A[Flowchart Metamodel];
-    C[MT Execution Engine] --&gt;|reads| B;
-    C --&gt;|executes| D[MT Definition];
-    C --&gt;|writes| E[Target Model];
-    D --&gt;|uses| A;
-    E --&gt;|conforms to| F[HTML Metamodel];
-    D --&gt;|uses| F;</code></pre>
-  </p>
-<figcaption>Dependencies of the project files</figcaption>
-</figure>
-<p>Now, let's see how the models are defined.</p>
-<h2 id="source-metamodel">Source Metamodel</h2>
-<p>The source metamodel is defined using Emfatic (.emf), which can be converted into an <code>ECore</code> file. You can then access the flowchart classes as <code>EPackage</code>s (<code>ECore</code> has <code>EClasses</code> which are referenced as <code>EPackage</code> in Groovy) to be used within the MT definition. Let's view the class diagram and code implementation (in Emfatic) of the source metamodel representing the Flowchart domain.</p>
-<h3 id="class-diagram">Class Diagram</h3>
-<p><img alt="Flowchart Class Diagram" src="../assets/images/flowchart-class-diagram.png" /></p>
-<p>The full metamodel can be read in EMFatic notation <a href="https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML_exercises/model/flowchart.emf">here</a>.</p>
 <h2 id="target-metamodel">Target Metamodel</h2>
 <p>Just like before, the target metamodel is also defined using Emfatic. The metamodel script is long because all HTML elements must be defined so that the transformation generates a valid HTML document. Let's check out the class diagram and code implementation (in Emfatic) of the target metamodel representing the HTML domain.</p>
-<h3 id="class-diagram_1">Class Diagram</h3>
 <p>The HTML metamodel is quite large to be viewed as one class diagram, so, let's see different sections of the metamodel for better understanding.</p>
 <p><strong>HTML Section</strong></p>
 <p><img alt="HTML Class Diagram" src="../assets/images/html-abstract-uml.png" /></p>
@@ -908,7 +847,7 @@
 <p><img alt="LISTElement Class Diagram" src="../assets/images/listelement-section.png" /></p>
 <p><strong>Other Classes</strong></p>
 <p><img alt="Other Classes Diagram" src="../assets/images/other-classes-section.png" /></p>
-<p>The full metamodel can be read in EMFatic notation <a href="https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML_exercises/model/html.emf">here</a>.</p>
+<p>The full metamodel can be read in Emfatic notation <a href="https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML_exercises/model/html.emf">here</a>.</p>
 <h2 id="fill-the-gap-exercises">Fill-the-Gap Exercises</h2>
 <p>These examples allow learners to practice the use of the YAMTL language at different levels of complexity: </p>
 <ul>
@@ -929,11 +868,9 @@
 <li><a href="../exercises-solutions/solution5.html">Exercise 5 - Solution</a></li>
 <li><a href="../exercises-solutions/solution6.html">Exercise 6 - Solution</a></li>
 </ul>
-<h2 id="references">References</h2>
+<h2 id="documentation">Documentation</h2>
 <ul>
-<li><a href="https://dl.acm.org/doi/10.1145/3239372.3239386">YAMTL Syntax</a></li>
-<li><a href="https://link.springer.com/article/10.1007/s10009-020-00583-y">YAMTL Incremental Support</a></li>
-<li><a href="https://arturboronat.github.io/yamtl/">YAMTL Original Documentation</a></li>
+<li><a href="https://yamtl.github.io/yamtl-reference.html">YAMTL reference language</a></li>
 </ul>
 
 
