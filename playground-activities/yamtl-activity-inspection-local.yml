@@ -1,0 +1,221 @@
+activities:
+  - id: yamtl-activity-inspection
+    title: Activity Inspection
+    icon: yamtl
+    tools:
+      - http://127.0.0.1:8073/emf-tool.yml
+      - http://127.0.0.1:8500/yamtl-m2m.yml
+    tools-remote:
+      - https://yamtl.github.io/playground-interfaces/static.emf/emf-tool.yml
+      - https://yamtl.github.io/playground-interfaces/static.yamtlgroovy/yamtl-m2m.yml
+    layout:
+      area:
+        - - sflexible-panel
+          - smodel-panel-composite
+          - panel-yamtl
+        - - panel-console
+          - tmm-panel-composite
+          - panel-yamtl-query
+    actions:
+      - source: panel-yamtl
+        sourceButton: run-trafo-flexible-button
+        parameters:
+          trafoGroovy: panel-yamtl
+          inModel: sflexible-panel
+          outMetamodel: panel-tmm
+        output: panel-smodel
+        outputType: code
+        outputConsole: panel-console
+      - source: panel-yamtl-query
+        sourceButton: run-query-button
+        parameters:
+          query: panel-yamtl-query
+          model: panel-smodel
+          metamodel: panel-tmm
+        output: panel-console    
+        outputType: text
+        outputConsole: panel-console        
+      - source: panel-tmm
+        sourceButton: emfatic2cd-button
+        parameters:
+          metamodel: panel-tmm
+        output: panel-tmm-diagram
+        outputType: puml
+      - source: panel-smodel
+        sourceButton: xmi2od-button
+        parameters:
+          metamodel: panel-tmm
+          model: panel-smodel
+        output: panel-smodel-diagram
+        outputType: puml
+    panels:
+      - id: sflexible-panel
+        name: Flexible model
+        ref: yaml
+        file: cd2db_activity.yml
+      - id: smodel-panel-composite
+        name: Source Model
+        ref: composite-panel
+        icon: editor
+        childPanels:
+          - id: panel-smodel
+            name: XMI
+            ref: xmi
+          - id: panel-smodel-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-smodel
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-smodel-diagram
+            hint: Toggle diagram
+      - id: panel-yamtl
+        name: Transformation (YAMTL)
+        ref: yamtl-from-flexible
+        file: ActivityAndToolLoad.groovy
+      - id: panel-console
+        name: Console
+        icon: console
+        ref: console
+      - id: tmm-panel-composite
+        name: Target Metamodel
+        ref: composite-panel
+        childPanels:
+          - id: panel-tmm
+            name: EMFatic
+            ref: emfatic
+            file: activity_and_tool_lang.emf
+          - id: panel-tmm-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-tmm
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-tmm-diagram
+            hint: Toggle diagram
+      - id: panel-yamtl-query
+        name: QueryDsl (YAMTL)
+        ref: yamtl-query
+        file: Query_Activity_Inspection.groovy
+  - id: yamtl-activity-with-tool-inspection
+    title: Activity and Tool Inspection
+    icon: yamtl
+    tools:
+      - http://127.0.0.1:8073/emf-tool.yml
+      - http://127.0.0.1:8500/yamtl-m2m.yml
+    tools-remote:
+      - https://yamtl.github.io/playground-interfaces/static.emf/emf-tool.yml
+      - https://yamtl.github.io/playground-interfaces/static.yamtlgroovy/yamtl-m2m.yml
+    layout:
+      area:
+        - - sflexible-panel
+          - smodel-panel-composite
+          - panel-yamtl
+        - - panel-console
+          - tmm-panel-composite
+          - panel-yamtl-query
+    actions:
+      - source: panel-yamtl
+        sourceButton: run-trafo-flexible-button
+        parameters:
+          trafoGroovy: panel-yamtl
+          inModel: sflexible-panel
+          outMetamodel: panel-tmm
+        output: panel-smodel
+        outputType: code
+        outputConsole: panel-console
+      - source: panel-yamtl-query
+        sourceButton: run-query-button
+        parameters:
+          query: panel-yamtl-query
+          model: panel-smodel
+          metamodel: panel-tmm
+        output: panel-console    
+        outputType: text
+        outputConsole: panel-console        
+      - source: panel-tmm
+        sourceButton: emfatic2cd-button
+        parameters:
+          metamodel: panel-tmm
+        output: panel-tmm-diagram
+        outputType: puml
+      - source: panel-smodel
+        sourceButton: xmi2od-button
+        parameters:
+          metamodel: panel-tmm
+          model: panel-smodel
+        output: panel-smodel-diagram
+        outputType: puml
+    panels:
+      - id: sflexible-panel
+        name: Flexible model
+        ref: yaml
+        file: cd2db_activity_with_tool.yml
+      - id: smodel-panel-composite
+        name: Source Model
+        ref: composite-panel
+        icon: editor
+        childPanels:
+          - id: panel-smodel
+            name: XMI
+            ref: xmi
+          - id: panel-smodel-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-smodel
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-smodel-diagram
+            hint: Toggle diagram
+      - id: panel-yamtl
+        name: Transformation (YAMTL)
+        ref: yamtl-from-flexible
+        file: ActivityAndToolLoad.groovy
+      - id: panel-console
+        name: Console
+        icon: console
+        ref: console
+      - id: tmm-panel-composite
+        name: Target Metamodel
+        ref: composite-panel
+        childPanels:
+          - id: panel-tmm
+            name: EMFatic
+            ref: emfatic
+            file: activity_and_tool_lang.emf
+          - id: panel-tmm-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-tmm
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-tmm-diagram
+            hint: Toggle diagram
+      - id: panel-yamtl-query
+        name: QueryDsl (YAMTL)
+        ref: yamtl-query
+        file: Query_Activity_Inspection.groovy        
