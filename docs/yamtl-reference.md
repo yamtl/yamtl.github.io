@@ -864,6 +864,24 @@ The `allInstances(<typeName>)` operation is used to create OCL-like queries in l
 
 Note that `out` domains cannot be queried with `allInstances()`. Output objects can only be fetched via the operator `fetch()`.
 
+
+### Implicit fetch()
+
+When using the YAMTL Groovy dialect, `fetch()` is used implicitly when the input object (or list of input objects) can be resolved using matched rules that have a single `out` element, ensuring no disambiguation is required. In such cases, the following expressions will work correctly by resolving the input object `<inVar>` using `fetch` implicitly:
+
+```groovy
+<outVar>.<feature> = <inVar>
+<outVar>.<feature>.add(<inVar>)
+<outVar>.<feature>.addAll([<inVar>])
+```
+
+This implicit fetching mechanism simplifies the code by automatically handling the resolution of input objects through the appropriate matched rules.
+
+
+
+
+
+
 ## Module Composition
 
 YAMTL modules can be imported and used in other Xtend/Java/Groovy classes by creating instances of their main classes. This allows you to reuse the functionality provided by a YAMTL module within your code. A YAMTL module can also incorporate any Java Virtual Machine (JVM) library, extending its functionality by using external code.
