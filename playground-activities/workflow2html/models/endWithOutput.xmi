@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<BODY xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="HTML" xmlns:_1="flowchart" text="Wakeup">
+  <children xsi:type="_1:Action" name="Wake up" outgoing="//@children.6/@children.0" incoming="//@children.6/@children.2 //@children.6/@children.4"/>
+  <children xsi:type="_1:Decision" name="Is it really too early?" outgoing="//@children.6/@children.1 //@children.6/@children.3" incoming="//@children.6/@children.0"/>
+  <children xsi:type="_1:Action" name="Sleep" outgoing="//@children.6/@children.2" incoming="//@children.6/@children.1"/>
+  <children xsi:type="_1:Action" name="Get up" incoming="//@children.6/@children.3"/>
+  <children xsi:type="_1:Action" name="begin" outgoing="//@children.6/@children.4"/>
+  <children xsi:type="B" value="Wakeup"/>
+  <children xsi:type="DIV">
+    <children xsi:type="_1:Transition" name="" source="//@children.0" target="//@children.1"/>
+    <children xsi:type="_1:Transition" name="Yes" source="//@children.1" target="//@children.2"/>
+    <children xsi:type="_1:Transition" name="Some Time Passes" source="//@children.2" target="//@children.0"/>
+    <children xsi:type="_1:Transition" name="No" source="//@children.1" target="//@children.3"/>
+    <children xsi:type="_1:Transition" name="start" source="//@children.4" target="//@children.0"/>
+  </children>
+</BODY>
