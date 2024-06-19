@@ -5,7 +5,7 @@ hide:
 
 # Flowchart to HTML
 
-In this worksheet, we will look at converting flowchart elements into HTML elements to practice different elements of the YAMTL language.
+In this worksheet, we will look at converting flowchart elements into HTML elements to practice different elements of the YAMTL language. This example has been [borrowed from the examples provided for the Epsilon Transformation Language (ETL)](https://eclipse.dev/epsilon/examples/) and adapted to showcase features of YAMTL.
 
 In the following subsections, you'll find:
 
