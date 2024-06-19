@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="activity_lang" nsURI="http://www.example.org/activity_and_tool_lang"
+    nsPrefix="activity_lang">
+  <eSubpackages name="ToolSpecification" nsURI="https://mde-network.com/toolSpec"
+      nsPrefix="t">
+    <eClassifiers xsi:type="ecore:EClass" name="ToolConfig">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="tools" upperBound="-1"
+          eType="#//ToolSpecification/Tool" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Tool">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          iD="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="homepage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="functions" upperBound="-1"
+          eType="#//ToolSpecification/ToolFunction" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="panelDefs" upperBound="-1"
+          eType="#//ToolSpecification/PanelDefinition" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ToolFunction">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          iD="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+          eType="#//ToolSpecification/Parameter" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="returnType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Parameter">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="instanceOf" eType="#//ToolSpecification/Parameter"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PanelDefinition">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          iD="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="panelClass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="icon" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="language" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="buttons" upperBound="-1"
+          eType="#//ToolSpecification/Button" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Button" abstract="true" eSuperTypes="#//ActivitySpecification/ButtonOrButtonRef"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ActionButton" eSuperTypes="#//ToolSpecification/Button">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="actionFunction" eType="#//ToolSpecification/ToolFunction"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HelpButton" eSuperTypes="#//ToolSpecification/Button">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="url" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="ActivitySpecification" nsURI="https://mde-network.com/activitySpec"
+      nsPrefix="a">
+    <eClassifiers xsi:type="ecore:EClass" name="ButtonOrButtonRef" abstract="true">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          iD="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="icon" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="hint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ButtonRef" eSuperTypes="#//ActivitySpecification/ButtonOrButtonRef">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="internalFunction" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="targetPanel" lowerBound="1"
+          eType="#//ActivitySpecification/Panel"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ref" eType="#//ToolSpecification/Button"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Panel">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          iD="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="file" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ref" lowerBound="1" eType="#//ToolSpecification/PanelDefinition"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="buttons" upperBound="-1"
+          eType="#//ActivitySpecification/ButtonOrButtonRef" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="refId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EditorDefinitionPanel" eSuperTypes="#//ActivitySpecification/Panel">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="editorActivity" eType="#//ActivitySpecification/Activity"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="editorPanel" eType="#//ActivitySpecification/Panel"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ActivityConfig">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="activities" upperBound="-1"
+          eType="#//ActivitySpecification/Activity" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CompositePanel" eSuperTypes="#//ActivitySpecification/Panel">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="childPanels" lowerBound="1"
+          upperBound="-1" eType="#//ActivitySpecification/Panel" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Action">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sourcePanel" lowerBound="1"
+          eType="#//ActivitySpecification/Panel"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sourceButton" lowerBound="1"
+          eType="#//ToolSpecification/Button"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="arguments" upperBound="-1"
+          eType="#//ActivitySpecification/Argument" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="output" lowerBound="1"
+          eType="#//ActivitySpecification/Panel"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="outputConsole" eType="#//ActivitySpecification/Panel"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="outputType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="LayoutRow">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="columns" lowerBound="1"
+          upperBound="-1" eType="#//ActivitySpecification/Panel"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ToolURL">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="urlPossiblyToRewrite"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Activity">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          iD="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="icon" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="panels" upperBound="-1"
+          eType="#//ActivitySpecification/Panel" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="layout" upperBound="-1"
+          eType="#//ActivitySpecification/LayoutRow" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="actions" upperBound="-1"
+          eType="#//ActivitySpecification/Action" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="tools" upperBound="-1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="toolURLs" upperBound="-1"
+          eType="#//ActivitySpecification/ToolURL" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Argument">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          iD="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>
