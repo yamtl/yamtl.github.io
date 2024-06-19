@@ -13,6 +13,7 @@ nav:
     - Multi-Model Transformations: 'examples/multi-model-transformations.md'
     - Flexible Models: 'examples/flexible-models.md'
     - Model Queries: 'examples/query-dsl.md'
+    - Analysis of Activity Configurations for the Education Platform: 'examples/education-platform-configuration-inspection.md'
   - Exercises:
     - Flowchart to HTML: 'exercises/flowchart-to-html-worksheet.md'
   - Release Notes: 'release-notes.md'
