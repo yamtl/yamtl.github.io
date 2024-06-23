@@ -4,11 +4,11 @@
 Pending: Added implicit fetch() in Groovy dialect for objects that can be resolved with matched rules that have one single `out` element.
 -->
 
-#### 1.0.4
+#### 1.0.4-1.0.5
 
 Added `YAMTLModuleGroovy`, which applies YAMTL Groovy extensions implicitly.
 
-#### 1.0.2-3
+#### 1.0.2-1.0.3
 
 Operations (both static and contextual) have their parameters included in the execution configuration, allowing them to be accessed within the operation's body.
 
