@@ -864,6 +864,7 @@ The `allInstances(<typeName>)` operation is used to create OCL-like queries in l
 
 Note that `out` domains cannot be queried with `allInstances()`. Output objects can only be fetched via the operator `fetch()`.
 
+<!--
 
 ### Implicit fetch()
 
@@ -877,7 +878,7 @@ When using the YAMTL Groovy dialect, `fetch()` is used implicitly when the input
 
 This implicit fetching mechanism simplifies the code by automatically handling the resolution of input objects through the appropriate matched rules.
 
-
+-->
 
 
 
