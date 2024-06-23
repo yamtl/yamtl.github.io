@@ -21,9 +21,8 @@ A YAMTL model transformation is defined as a class that specializes the `YAMTLMo
 === "Groovy"
 
     ```yamtl-groovy
-    class <name> extends YAMTLModule {
+    class <name> extends YAMTLModuleGroovy {
         public <name> (EPackage <pk1>, EPackage <pk2>) {
-            YAMTLGroovyExtensions_dynamicEMF.init(this)
             header().in(<in_domain_name1>,<pk1>).out(<in_domain_name2>,<pk2>)
             ruleStore([ /* rules here */ ])
             helperStore([  /* managed helpers here */ ])
@@ -163,7 +162,6 @@ To configure and execute a YAMTL module for implementing rule-based queries, use
     ```groovy
     def resource = BaseQuery.preloadMetamodel("<path_to_metamodel>")
     def query = new BaseQuery(resource.contents[0])
-    YAMTLGroovyExtensions.init(query)
     query.selectedExecutionPhases = ExecutionPhase.MATCH_ONLY
     query.loadInputModels(["<in_domain_name>": "<path_to_model>"])
     query.execute()
@@ -231,7 +229,6 @@ To configure and execute a YAMTL module for implementing an out-place transforma
     ```groovy
     def resource = YAMTLModule.preloadMetamodel("<path_to_metamodel>")
     def xform = new XForm(resource.contents[0])
-    YAMTLGroovyExtensions.init(xform)
     xform.loadInputModels(["<in_domain_name>": "<path_to_model>"])
     xform.execute()
     xform.saveOutputModels(["<out_domain_name": "<path_to_model>"])
@@ -316,7 +313,6 @@ To configure and execute a YAMTL module for implementing an in-place transformat
     ```groovy
     def resource = YAMTLModule.preloadMetamodel("<path_to_metamodel>")
     def xform = new XForm(resource.contents[0])
-    YAMTLGroovyExtensions.init(xform)
     xform.setInplace(true) // enables the in-place transformation semantics
     xform.setWithStagedExecution(false) // YAMTL to use one match at a time
     xform.enableUpdateExtent(false) // to be used with drop() and freeze()/unfreeze()
@@ -928,7 +924,6 @@ The code snippets below ilustrate how to execute a model transformation in incre
     ```groovy
     // CONFIGURATION
     def xform = new XForm()
-    YAMTLGroovyExtensions.init(this)		
     xform.adviseWithinThisNamespaceExpressions(<namespaceList>);
     xform.executionMode = ExecutionMode.INCREMENTAL
     xform.loadInputModels(["<in_domain_name>": "<path_to_model>"])
@@ -1003,7 +998,6 @@ Subsequently, the `xform.propagateDelta("<in_domain_name>")` statement facilitat
     ```groovy
     // CONFIGURATION
     def xform = new XForm()
-    YAMTLGroovyExtensions.init(this)		
     xform.adviseWithinThisNamespaceExpressions(<namespaceList>);
     xform.executionMode = ExecutionMode.INCREMENTAL
     xform.loadInputModels(["<in_domain_name>": "<path_to_model>"])

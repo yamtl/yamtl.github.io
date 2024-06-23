@@ -1,8 +1,12 @@
 # Release notes
 
+<!--
+Pending: Added implicit fetch() in Groovy dialect for objects that can be resolved with matched rules that have one single `out` element.
+-->
+
 #### 1.0.4
 
-Added implicit fetch() in Groovy dialect for objects that can be resolved with matched rules that have one single `out` element.
+Added `YAMTLModuleGroovy`, which applies YAMTL Groovy extensions implicitly.
 
 #### 1.0.2-3
 
