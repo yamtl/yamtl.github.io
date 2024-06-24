@@ -1,0 +1,236 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "yamtl",
+    "module": "yamtl.groovy",
+    "version": "1.0.7",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.5"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "yamtl.groovy-1.0.7.jar",
+          "url": "yamtl.groovy-1.0.7.jar",
+          "size": 34738,
+          "sha512": "79c292535807178d976ac2d50e226f3be2045fda6197fa363bd5a0a3ed84292bfe524de94597d25d01853c5c6ce0536a1679a43efce78936788c362a41518ace",
+          "sha256": "01ed1e8dcf2da08d4ea379a928c2588fc26a85716f9e559e7fccfedc35a21584",
+          "sha1": "fe7e08fa61ef3ba32e03c8ddf74e5657e2a617bc",
+          "md5": "bcc640ff75aa9b7acb848061fd7b3696"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.apache.groovy",
+          "module": "groovy-all",
+          "version": {
+            "requires": "4.0.15"
+          }
+        },
+        {
+          "group": "org.yaml",
+          "module": "snakeyaml",
+          "version": {
+            "requires": "2.2"
+          }
+        },
+        {
+          "group": "org.eclipse.emf",
+          "module": "org.eclipse.emf.ecore",
+          "version": {
+            "requires": "2.34.0"
+          }
+        },
+        {
+          "group": "org.eclipse.emfatic",
+          "module": "org.eclipse.emfatic.core",
+          "version": {
+            "requires": "1.1.0"
+          }
+        },
+        {
+          "group": "org.eclipse.emf",
+          "module": "org.eclipse.emf.common",
+          "version": {
+            "requires": "2.28.0"
+          }
+        },
+        {
+          "group": "org.eclipse.emf",
+          "module": "org.eclipse.emf.ecore.xmi",
+          "version": {
+            "requires": "2.35.0"
+          }
+        },
+        {
+          "group": "org.eclipse.emf",
+          "module": "org.eclipse.emf.ecore.change",
+          "version": {
+            "requires": "2.14.0"
+          }
+        },
+        {
+          "group": "org.eclipse.xtend",
+          "module": "org.eclipse.xtend.core",
+          "version": {
+            "requires": "2.30.0"
+          }
+        },
+        {
+          "group": "org.eclipse.xtend",
+          "module": "org.eclipse.xtend.lib",
+          "version": {
+            "requires": "2.30.0"
+          }
+        },
+        {
+          "group": "commons-io",
+          "module": "commons-io",
+          "version": {
+            "requires": "2.11.0"
+          }
+        },
+        {
+          "group": "net.sourceforge.plantuml",
+          "module": "plantuml-mit",
+          "version": {
+            "requires": "1.2023.12"
+          }
+        },
+        {
+          "group": "org.apache.commons",
+          "module": "commons-lang3",
+          "version": {
+            "requires": "3.12.0"
+          }
+        },
+        {
+          "group": "org.apache.commons",
+          "module": "commons-text",
+          "version": {
+            "requires": "1.10.0"
+          }
+        },
+        {
+          "group": "com.fasterxml.jackson.core",
+          "module": "jackson-core",
+          "version": {
+            "requires": "2.14.2"
+          }
+        },
+        {
+          "group": "com.fasterxml.jackson.dataformat",
+          "module": "jackson-dataformat-csv",
+          "version": {
+            "requires": "2.14.2"
+          }
+        },
+        {
+          "group": "com.fasterxml.jackson.dataformat",
+          "module": "jackson-dataformat-xml",
+          "version": {
+            "requires": "2.14.2"
+          }
+        },
+        {
+          "group": "com.fasterxml.jackson.core",
+          "module": "jackson-databind",
+          "version": {
+            "requires": "2.14.2"
+          }
+        },
+        {
+          "group": "org.springframework.boot",
+          "module": "spring-boot-starter-aop",
+          "version": {
+            "requires": "3.1.0"
+          }
+        },
+        {
+          "group": "org.aspectj",
+          "module": "aspectjweaver",
+          "version": {
+            "requires": "1.9.19"
+          }
+        },
+        {
+          "group": "org.apache.commons",
+          "module": "commons-collections4",
+          "version": {
+            "requires": "4.1"
+          }
+        },
+        {
+          "group": "yamtl",
+          "module": "yamtl",
+          "version": {
+            "requires": "1.0.7"
+          }
+        },
+        {
+          "group": "yamtl",
+          "module": "yamtl.flexible-models",
+          "version": {
+            "requires": "1.0.7"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "yamtl.groovy-1.0.7.jar",
+          "url": "yamtl.groovy-1.0.7.jar",
+          "size": 34738,
+          "sha512": "79c292535807178d976ac2d50e226f3be2045fda6197fa363bd5a0a3ed84292bfe524de94597d25d01853c5c6ce0536a1679a43efce78936788c362a41518ace",
+          "sha256": "01ed1e8dcf2da08d4ea379a928c2588fc26a85716f9e559e7fccfedc35a21584",
+          "sha1": "fe7e08fa61ef3ba32e03c8ddf74e5657e2a617bc",
+          "md5": "bcc640ff75aa9b7acb848061fd7b3696"
+        }
+      ]
+    },
+    {
+      "name": "shadowRuntimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "shadowed",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "yamtl.groovy-1.0.7-all.jar",
+          "url": "yamtl.groovy-1.0.7-all.jar",
+          "size": 34738,
+          "sha512": "9c8b38f98bcf7c53cda1c239c18ef631c0632e5836357d9185d9fa02dbf1bc6581e2bac6da1dbe7cd983beeb70ed50794a1a343c4db233a76993958852049faf",
+          "sha256": "bca5fffef581ad8c29a9aec3facbce362ddc0feb476b71ea10de31700eb22b68",
+          "sha1": "6599f4f271a5d89477c7027a35e2fc7aa7f2f51c",
+          "md5": "ea0aedf561d3e87d1b6b549491f46834"
+        }
+      ]
+    }
+  ]
+}
