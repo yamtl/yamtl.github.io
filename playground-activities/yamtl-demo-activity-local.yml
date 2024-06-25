@@ -1,0 +1,2130 @@
+activities:
+  - id: yamtl-cd2db-activity
+    title: CD2DB 
+    icon: yamtl
+    tools:
+      - http://127.0.0.1:8073/emf-tool.yml
+      - http://127.0.0.1:8500/yamtl-m2m.yml
+    tools-remote:
+      - https://yamtl.github.io/playground-interfaces/static.emf/emf-tool.yml
+      - https://yamtl.github.io/playground-interfaces/static.yamtlgroovy/yamtl-m2m.yml
+    layout:
+      area:
+        - - panel-yamtl
+          - smm-panel-composite
+          - tmm-panel-composite
+        - - panel-console
+          - smodel-panel-composite
+          - tmodel-panel-composite
+    actions:
+      - source: panel-yamtl
+        sourceButton: run-trafo-button
+        parameters:
+          trafoGroovy: panel-yamtl
+          inModel: panel-smodel
+          inMetamodel: panel-smm
+          outMetamodel: panel-tmm
+        output: panel-tmodel
+        outputType: code
+        outputConsole: panel-console
+      - source: panel-smm
+        sourceButton: emfatic2cd-button
+        parameters:
+          metamodel: panel-smm
+        output: panel-smm-diagram
+        outputType: puml
+      - source: panel-tmm
+        sourceButton: emfatic2cd-button
+        parameters:
+          metamodel: panel-tmm
+        output: panel-tmm-diagram
+        outputType: puml
+      - source: panel-smodel
+        sourceButton: xmi2od-button
+        parameters:
+          metamodel: panel-smm
+          model: panel-smodel
+        output: panel-smodel-diagram
+        outputType: puml
+      - source: panel-tmodel
+        sourceButton: xmi2od-button
+        parameters:
+          metamodel: panel-tmm
+          model: panel-tmodel
+        output: panel-tmodel-diagram
+        outputType: puml
+    panels:
+      - id: panel-yamtl
+        name: Transformation(YAMTL)
+        ref: yamtl
+        file: https://raw.githubusercontent.com/yamtl/examples/master/cd2db-groovy/src/main/java/cd2db/CD2DB_dynamic.groovy
+      - id: smm-panel-composite
+        name: Source Metamodel
+        ref: composite-panel
+        childPanels:
+          - id: panel-smm
+            name: EMFatic
+            ref: emfatic
+            file: https://raw.githubusercontent.com/yamtl/examples/master/cd2db-groovy/src/main/resources/metamodels/Class.emf
+          - id: panel-smm-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-smm
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-smm-diagram
+            hint: Toggle diagram
+      - id: tmm-panel-composite
+        name: Target Metamodel
+        ref: composite-panel
+        childPanels:
+          - id: panel-tmm
+            name: EMFatic
+            ref: emfatic
+            file: https://raw.githubusercontent.com/yamtl/examples/master/cd2db-groovy/src/main/resources/metamodels/Relational.emf
+          - id: panel-tmm-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-tmm
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-tmm-diagram
+            hint: Toggle diagram
+      - id: smodel-panel-composite
+        name: Source Model
+        ref: composite-panel
+        icon: editor
+        childPanels:
+          - id: panel-smodel
+            name: XMI
+            ref: xmi
+            file: https://raw.githubusercontent.com/yamtl/examples/master/cd2db-groovy/src/main/resources/models/correctness1/class.xmi
+          - id: panel-smodel-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-smodel
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-smodel-diagram
+            hint: Toggle diagram
+      - id: tmodel-panel-composite
+        name: Target Model
+        icon: editor
+        ref: composite-panel
+        childPanels:
+          - id: panel-tmodel
+            name: XMI
+            ref: xmi
+          - id: panel-tmodel-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-tmodel
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-tmodel-diagram
+            hint: Toggle diagram
+      - id: panel-console
+        name: Console
+        icon: console
+        ref: console
+  - id: yamtl-groovy-reverse-list
+    title: ReverseList 
+    icon: yamtl
+    tools:
+      - http://127.0.0.1:8073/emf-tool.yml
+      - http://127.0.0.1:8500/yamtl-m2m.yml
+    tools-remote:
+      - https://yamtl.github.io/playground-interfaces/static.emf/emf-tool.yml
+      - https://yamtl.github.io/playground-interfaces/static.yamtlgroovy/yamtl-m2m.yml
+    layout:
+      area:
+        - - panel-yamtl
+          - smm-panel-composite
+          - tmm-panel-composite
+        - - panel-console
+          - smodel-panel-composite
+          - tmodel-panel-composite
+    actions:
+      - source: panel-yamtl
+        sourceButton: run-trafo-button
+        parameters:
+          trafoGroovy: panel-yamtl
+          inModel: panel-smodel
+          inMetamodel: panel-smm
+          outMetamodel: panel-tmm
+        output: panel-tmodel
+        outputType: code
+        outputConsole: panel-console
+      - source: panel-smm
+        sourceButton: emfatic2cd-button
+        parameters:
+          metamodel: panel-smm
+        output: panel-smm-diagram
+        outputType: puml
+      - source: panel-tmm
+        sourceButton: emfatic2cd-button
+        parameters:
+          metamodel: panel-tmm
+        output: panel-tmm-diagram
+        outputType: puml
+      - source: panel-smodel
+        sourceButton: xmi2od-button
+        parameters:
+          metamodel: panel-smm
+          model: panel-smodel
+        output: panel-smodel-diagram
+        outputType: puml
+      - source: panel-tmodel
+        sourceButton: xmi2od-button
+        parameters:
+          metamodel: panel-tmm
+          model: panel-tmodel
+        output: panel-tmodel-diagram
+        outputType: puml
+    panels:
+      - id: panel-yamtl
+        name: Transformation(YAMTL)
+        ref: yamtl
+        file: https://raw.githubusercontent.com/yamtl/examples/master/yamtl-linkedlistreversal/src/main/groovy/linkedListReversal/ReverseLinkedList.groovy
+      - id: smm-panel-composite
+        name: Source Metamodel
+        ref: composite-panel
+        childPanels:
+          - id: panel-smm
+            name: EMFatic
+            ref: emfatic
+            file: https://raw.githubusercontent.com/yamtl/examples/master/yamtl-linkedlistreversal/model/LinkedList.emf
+          - id: panel-smm-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-smm
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-smm-diagram
+            hint: Toggle diagram
+      - id: tmm-panel-composite
+        name: Target Metamodel
+        ref: composite-panel
+        childPanels:
+          - id: panel-tmm
+            name: EMFatic
+            ref: emfatic
+            file: https://raw.githubusercontent.com/yamtl/examples/master/yamtl-linkedlistreversal/model/LinkedList.emf
+          - id: panel-tmm-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-tmm
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-tmm-diagram
+            hint: Toggle diagram
+      - id: smodel-panel-composite
+        name: Source Model
+        ref: composite-panel
+        icon: editor
+        childPanels:
+          - id: panel-smodel
+            name: XMI
+            ref: xmi
+            file: https://raw.githubusercontent.com/yamtl/examples/master/yamtl-linkedlistreversal/model/inputList.xmi
+          - id: panel-smodel-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-smodel
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-smodel-diagram
+            hint: Toggle diagram
+      - id: tmodel-panel-composite
+        name: Target Model
+        icon: editor
+        ref: composite-panel
+        childPanels:
+          - id: panel-tmodel
+            name: XMI
+            ref: xmi
+          - id: panel-tmodel-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-tmodel
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-tmodel-diagram
+            hint: Toggle diagram
+      - id: panel-console
+        name: Console
+        icon: console
+        ref: console
+  - id: yamtl-groovy-workflow2html-base
+    title: W2H Base 
+    icon: yamtl
+    tools:
+      - http://127.0.0.1:8073/emf-tool.yml
+      - http://127.0.0.1:8500/yamtl-m2m.yml
+    tools-remote:
+      - https://yamtl.github.io/playground-interfaces/static.emf/emf-tool.yml
+      - https://yamtl.github.io/playground-interfaces/static.yamtlgroovy/yamtl-m2m.yml
+    layout:
+      area:
+        - - panel-yamtl
+          - smm-panel-composite
+          - tmm-panel-composite
+        - - panel-console
+          - smodel-panel-composite
+          - tmodel-panel-composite
+    actions:
+      - source: panel-yamtl
+        sourceButton: run-trafo-button
+        parameters:
+          trafoGroovy: panel-yamtl
+          inModel: panel-smodel
+          inMetamodel: panel-smm
+          outMetamodel: panel-tmm
+        output: panel-tmodel
+        outputType: code
+        outputConsole: panel-console
+      - source: panel-smm
+        sourceButton: emfatic2cd-button
+        parameters:
+          metamodel: panel-smm
+        output: panel-smm-diagram
+        outputType: puml
+      - source: panel-tmm
+        sourceButton: emfatic2cd-button
+        parameters:
+          metamodel: panel-tmm
+        output: panel-tmm-diagram
+        outputType: puml
+      - source: panel-smodel
+        sourceButton: xmi2od-button
+        parameters:
+          metamodel: panel-smm
+          model: panel-smodel
+        output: panel-smodel-diagram
+        outputType: puml
+      - source: panel-tmodel
+        sourceButton: xmi2od-button
+        parameters:
+          metamodel: panel-tmm
+          model: panel-tmodel
+        output: panel-tmodel-diagram
+        outputType: puml
+    panels:
+      - id: panel-yamtl
+        name: Transformation(YAMTL)
+        ref: yamtl
+        file: https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML/src/main/groovy/flowchartToHtmlExamples/Base.groovy
+      - id: smm-panel-composite
+        name: Source Metamodel
+        ref: composite-panel
+        childPanels:
+          - id: panel-smm
+            name: EMFatic
+            ref: emfatic
+            file: https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML/model/flowchart.emf
+          - id: panel-smm-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-smm
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-smm-diagram
+            hint: Toggle diagram
+      - id: tmm-panel-composite
+        name: Target Metamodel
+        ref: composite-panel
+        childPanels:
+          - id: panel-tmm
+            name: EMFatic
+            ref: emfatic
+            file: https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML/model/html.emf
+          - id: panel-tmm-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-tmm
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-tmm-diagram
+            hint: Toggle diagram
+      - id: smodel-panel-composite
+        name: Source Model
+        ref: composite-panel
+        icon: editor
+        childPanels:
+          - id: panel-smodel
+            name: XMI
+            ref: xmi
+            file: https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML/model/wakeup.xmi
+          - id: panel-smodel-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-smodel
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-smodel-diagram
+            hint: Toggle diagram
+      - id: tmodel-panel-composite
+        name: Target Model
+        icon: editor
+        ref: composite-panel
+        childPanels:
+          - id: panel-tmodel
+            name: XMI
+            ref: xmi
+          - id: panel-tmodel-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-tmodel
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-tmodel-diagram
+            hint: Toggle diagram
+      - id: panel-console
+        name: Console
+        icon: console
+        ref: console
+  - id: yamtl-groovy-workflow2html-derivedWith
+    title: W2H DerivedWith
+    icon: yamtl
+    tools:
+      - http://127.0.0.1:8073/emf-tool.yml
+      - http://127.0.0.1:8500/yamtl-m2m.yml
+    tools-remote:
+      - https://yamtl.github.io/playground-interfaces/static.emf/emf-tool.yml
+      - https://yamtl.github.io/playground-interfaces/static.yamtlgroovy/yamtl-m2m.yml
+    layout:
+      area:
+        - - panel-yamtl
+          - smm-panel-composite
+          - tmm-panel-composite
+        - - panel-console
+          - smodel-panel-composite
+          - tmodel-panel-composite
+    actions:
+      - source: panel-yamtl
+        sourceButton: run-trafo-button
+        parameters:
+          trafoGroovy: panel-yamtl
+          inModel: panel-smodel
+          inMetamodel: panel-smm
+          outMetamodel: panel-tmm
+        output: panel-tmodel
+        outputType: code
+        outputConsole: panel-console
+      - source: panel-smm
+        sourceButton: emfatic2cd-button
+        parameters:
+          metamodel: panel-smm
+        output: panel-smm-diagram
+        outputType: puml
+      - source: panel-tmm
+        sourceButton: emfatic2cd-button
+        parameters:
+          metamodel: panel-tmm
+        output: panel-tmm-diagram
+        outputType: puml
+      - source: panel-smodel
+        sourceButton: xmi2od-button
+        parameters:
+          metamodel: panel-smm
+          model: panel-smodel
+        output: panel-smodel-diagram
+        outputType: puml
+      - source: panel-tmodel
+        sourceButton: xmi2od-button
+        parameters:
+          metamodel: panel-tmm
+          model: panel-tmodel
+        output: panel-tmodel-diagram
+        outputType: puml
+    panels:
+      - id: panel-yamtl
+        name: Transformation(YAMTL)
+        ref: yamtl
+        file: https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML/src/main/groovy/flowchartToHtmlExamples/DerivedWith.groovy
+      - id: smm-panel-composite
+        name: Source Metamodel
+        ref: composite-panel
+        childPanels:
+          - id: panel-smm
+            name: EMFatic
+            ref: emfatic
+            file: https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML/model/flowchart.emf
+          - id: panel-smm-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-smm
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-smm-diagram
+            hint: Toggle diagram
+      - id: tmm-panel-composite
+        name: Target Metamodel
+        ref: composite-panel
+        childPanels:
+          - id: panel-tmm
+            name: EMFatic
+            ref: emfatic
+            file: https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML/model/html.emf
+          - id: panel-tmm-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-tmm
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-tmm-diagram
+            hint: Toggle diagram
+      - id: smodel-panel-composite
+        name: Source Model
+        ref: composite-panel
+        icon: editor
+        childPanels:
+          - id: panel-smodel
+            name: XMI
+            ref: xmi
+            file: https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML/model/wakeup.xmi
+          - id: panel-smodel-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-smodel
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-smodel-diagram
+            hint: Toggle diagram
+      - id: tmodel-panel-composite
+        name: Target Model
+        icon: editor
+        ref: composite-panel
+        childPanels:
+          - id: panel-tmodel
+            name: XMI
+            ref: xmi
+          - id: panel-tmodel-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-tmodel
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-tmodel-diagram
+            hint: Toggle diagram
+      - id: panel-console
+        name: Console
+        icon: console
+        ref: console
+  - id: yamtl-groovy-workflow2html-endWith
+    title: W2H EndWith
+    icon: yamtl
+    tools:
+      - http://127.0.0.1:8073/emf-tool.yml
+      - http://127.0.0.1:8500/yamtl-m2m.yml
+    tools-remote:
+      - https://yamtl.github.io/playground-interfaces/static.emf/emf-tool.yml
+      - https://yamtl.github.io/playground-interfaces/static.yamtlgroovy/yamtl-m2m.yml
+    layout:
+      area:
+        - - panel-yamtl
+          - smm-panel-composite
+          - tmm-panel-composite
+        - - panel-console
+          - smodel-panel-composite
+          - tmodel-panel-composite
+    actions:
+      - source: panel-yamtl
+        sourceButton: run-trafo-button
+        parameters:
+          trafoGroovy: panel-yamtl
+          inModel: panel-smodel
+          inMetamodel: panel-smm
+          outMetamodel: panel-tmm
+        output: panel-tmodel
+        outputType: code
+        outputConsole: panel-console
+      - source: panel-smm
+        sourceButton: emfatic2cd-button
+        parameters:
+          metamodel: panel-smm
+        output: panel-smm-diagram
+        outputType: puml
+      - source: panel-tmm
+        sourceButton: emfatic2cd-button
+        parameters:
+          metamodel: panel-tmm
+        output: panel-tmm-diagram
+        outputType: puml
+      - source: panel-smodel
+        sourceButton: xmi2od-button
+        parameters:
+          metamodel: panel-smm
+          model: panel-smodel
+        output: panel-smodel-diagram
+        outputType: puml
+      - source: panel-tmodel
+        sourceButton: xmi2od-button
+        parameters:
+          metamodel: panel-tmm
+          model: panel-tmodel
+        output: panel-tmodel-diagram
+        outputType: puml
+    panels:
+      - id: panel-yamtl
+        name: Transformation(YAMTL)
+        ref: yamtl
+        file: https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML/src/main/groovy/flowchartToHtmlExamples/EndWith.groovy
+      - id: smm-panel-composite
+        name: Source Metamodel
+        ref: composite-panel
+        childPanels:
+          - id: panel-smm
+            name: EMFatic
+            ref: emfatic
+            file: https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML/model/flowchart.emf
+          - id: panel-smm-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-smm
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-smm-diagram
+            hint: Toggle diagram
+      - id: tmm-panel-composite
+        name: Target Metamodel
+        ref: composite-panel
+        childPanels:
+          - id: panel-tmm
+            name: EMFatic
+            ref: emfatic
+            file: https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML/model/html.emf
+          - id: panel-tmm-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-tmm
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-tmm-diagram
+            hint: Toggle diagram
+      - id: smodel-panel-composite
+        name: Source Model
+        ref: composite-panel
+        icon: editor
+        childPanels:
+          - id: panel-smodel
+            name: XMI
+            ref: xmi
+            file: https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML/model/wakeup.xmi
+          - id: panel-smodel-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-smodel
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-smodel-diagram
+            hint: Toggle diagram
+      - id: tmodel-panel-composite
+        name: Target Model
+        icon: editor
+        ref: composite-panel
+        childPanels:
+          - id: panel-tmodel
+            name: XMI
+            ref: xmi
+          - id: panel-tmodel-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-tmodel
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-tmodel-diagram
+            hint: Toggle diagram
+      - id: panel-console
+        name: Console
+        icon: console
+        ref: console
+  - id: yamtl-groovy-workflow2html-filter
+    title: W2H Filter 
+    icon: yamtl
+    tools:
+      - http://127.0.0.1:8073/emf-tool.yml
+      - http://127.0.0.1:8500/yamtl-m2m.yml
+    tools-remote:
+      - https://yamtl.github.io/playground-interfaces/static.emf/emf-tool.yml
+      - https://yamtl.github.io/playground-interfaces/static.yamtlgroovy/yamtl-m2m.yml
+    layout:
+      area:
+        - - panel-yamtl
+          - smm-panel-composite
+          - tmm-panel-composite
+        - - panel-console
+          - smodel-panel-composite
+          - tmodel-panel-composite
+    actions:
+      - source: panel-yamtl
+        sourceButton: run-trafo-button
+        parameters:
+          trafoGroovy: panel-yamtl
+          inModel: panel-smodel
+          inMetamodel: panel-smm
+          outMetamodel: panel-tmm
+        output: panel-tmodel
+        outputType: code
+        outputConsole: panel-console
+      - source: panel-smm
+        sourceButton: emfatic2cd-button
+        parameters:
+          metamodel: panel-smm
+        output: panel-smm-diagram
+        outputType: puml
+      - source: panel-tmm
+        sourceButton: emfatic2cd-button
+        parameters:
+          metamodel: panel-tmm
+        output: panel-tmm-diagram
+        outputType: puml
+      - source: panel-smodel
+        sourceButton: xmi2od-button
+        parameters:
+          metamodel: panel-smm
+          model: panel-smodel
+        output: panel-smodel-diagram
+        outputType: puml
+      - source: panel-tmodel
+        sourceButton: xmi2od-button
+        parameters:
+          metamodel: panel-tmm
+          model: panel-tmodel
+        output: panel-tmodel-diagram
+        outputType: puml
+    panels:
+      - id: panel-yamtl
+        name: Transformation(YAMTL)
+        ref: yamtl
+        file: https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML/src/main/groovy/flowchartToHtmlExamples/Filter.groovy
+      - id: smm-panel-composite
+        name: Source Metamodel
+        ref: composite-panel
+        childPanels:
+          - id: panel-smm
+            name: EMFatic
+            ref: emfatic
+            file: https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML/model/flowchart.emf
+          - id: panel-smm-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-smm
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-smm-diagram
+            hint: Toggle diagram
+      - id: tmm-panel-composite
+        name: Target Metamodel
+        ref: composite-panel
+        childPanels:
+          - id: panel-tmm
+            name: EMFatic
+            ref: emfatic
+            file: https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML/model/html.emf
+          - id: panel-tmm-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-tmm
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-tmm-diagram
+            hint: Toggle diagram
+      - id: smodel-panel-composite
+        name: Source Model
+        ref: composite-panel
+        icon: editor
+        childPanels:
+          - id: panel-smodel
+            name: XMI
+            ref: xmi
+            file: https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML/model/wakeup.xmi
+          - id: panel-smodel-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-smodel
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-smodel-diagram
+            hint: Toggle diagram
+      - id: tmodel-panel-composite
+        name: Target Model
+        icon: editor
+        ref: composite-panel
+        childPanels:
+          - id: panel-tmodel
+            name: XMI
+            ref: xmi
+          - id: panel-tmodel-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-tmodel
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-tmodel-diagram
+            hint: Toggle diagram
+      - id: panel-console
+        name: Console
+        icon: console
+        ref: console
+  - id: yamtl-groovy-workflow2html-inheritance
+    title: W2H Inheritance
+    icon: yamtl
+    tools:
+      - http://127.0.0.1:8073/emf-tool.yml
+      - http://127.0.0.1:8500/yamtl-m2m.yml
+    tools-remote:
+      - https://yamtl.github.io/playground-interfaces/static.emf/emf-tool.yml
+      - https://yamtl.github.io/playground-interfaces/static.yamtlgroovy/yamtl-m2m.yml
+    layout:
+      area:
+        - - panel-yamtl
+          - smm-panel-composite
+          - tmm-panel-composite
+        - - panel-console
+          - smodel-panel-composite
+          - tmodel-panel-composite
+    actions:
+      - source: panel-yamtl
+        sourceButton: run-trafo-button
+        parameters:
+          trafoGroovy: panel-yamtl
+          inModel: panel-smodel
+          inMetamodel: panel-smm
+          outMetamodel: panel-tmm
+        output: panel-tmodel
+        outputType: code
+        outputConsole: panel-console
+      - source: panel-smm
+        sourceButton: emfatic2cd-button
+        parameters:
+          metamodel: panel-smm
+        output: panel-smm-diagram
+        outputType: puml
+      - source: panel-tmm
+        sourceButton: emfatic2cd-button
+        parameters:
+          metamodel: panel-tmm
+        output: panel-tmm-diagram
+        outputType: puml
+      - source: panel-smodel
+        sourceButton: xmi2od-button
+        parameters:
+          metamodel: panel-smm
+          model: panel-smodel
+        output: panel-smodel-diagram
+        outputType: puml
+      - source: panel-tmodel
+        sourceButton: xmi2od-button
+        parameters:
+          metamodel: panel-tmm
+          model: panel-tmodel
+        output: panel-tmodel-diagram
+        outputType: puml
+    panels:
+      - id: panel-yamtl
+        name: Transformation(YAMTL)
+        ref: yamtl
+        file: https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML/src/main/groovy/flowchartToHtmlExamples/Inheritance.groovy
+      - id: smm-panel-composite
+        name: Source Metamodel
+        ref: composite-panel
+        childPanels:
+          - id: panel-smm
+            name: EMFatic
+            ref: emfatic
+            file: https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML/model/flowchart.emf
+          - id: panel-smm-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-smm
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-smm-diagram
+            hint: Toggle diagram
+      - id: tmm-panel-composite
+        name: Target Metamodel
+        ref: composite-panel
+        childPanels:
+          - id: panel-tmm
+            name: EMFatic
+            ref: emfatic
+            file: https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML/model/html.emf
+          - id: panel-tmm-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-tmm
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-tmm-diagram
+            hint: Toggle diagram
+      - id: smodel-panel-composite
+        name: Source Model
+        ref: composite-panel
+        icon: editor
+        childPanels:
+          - id: panel-smodel
+            name: XMI
+            ref: xmi
+            file: https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML/model/wakeup_with_subflow.xmi
+          - id: panel-smodel-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-smodel
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-smodel-diagram
+            hint: Toggle diagram
+      - id: tmodel-panel-composite
+        name: Target Model
+        icon: editor
+        ref: composite-panel
+        childPanels:
+          - id: panel-tmodel
+            name: XMI
+            ref: xmi
+          - id: panel-tmodel-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-tmodel
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-tmodel-diagram
+            hint: Toggle diagram
+      - id: panel-console
+        name: Console
+        icon: console
+        ref: console
+  - id: yamtl-groovy-workflow2html-lazyExample
+    title: W2H LazyExample
+    icon: yamtl
+    tools:
+      - http://127.0.0.1:8073/emf-tool.yml
+      - http://127.0.0.1:8500/yamtl-m2m.yml
+    tools-remote:
+      - https://yamtl.github.io/playground-interfaces/static.emf/emf-tool.yml
+      - https://yamtl.github.io/playground-interfaces/static.yamtlgroovy/yamtl-m2m.yml
+    layout:
+      area:
+        - - panel-yamtl
+          - smm-panel-composite
+          - tmm-panel-composite
+        - - panel-console
+          - smodel-panel-composite
+          - tmodel-panel-composite
+    actions:
+      - source: panel-yamtl
+        sourceButton: run-trafo-button
+        parameters:
+          trafoGroovy: panel-yamtl
+          inModel: panel-smodel
+          inMetamodel: panel-smm
+          outMetamodel: panel-tmm
+        output: panel-tmodel
+        outputType: code
+        outputConsole: panel-console
+      - source: panel-smm
+        sourceButton: emfatic2cd-button
+        parameters:
+          metamodel: panel-smm
+        output: panel-smm-diagram
+        outputType: puml
+      - source: panel-tmm
+        sourceButton: emfatic2cd-button
+        parameters:
+          metamodel: panel-tmm
+        output: panel-tmm-diagram
+        outputType: puml
+      - source: panel-smodel
+        sourceButton: xmi2od-button
+        parameters:
+          metamodel: panel-smm
+          model: panel-smodel
+        output: panel-smodel-diagram
+        outputType: puml
+      - source: panel-tmodel
+        sourceButton: xmi2od-button
+        parameters:
+          metamodel: panel-tmm
+          model: panel-tmodel
+        output: panel-tmodel-diagram
+        outputType: puml
+    panels:
+      - id: panel-yamtl
+        name: Transformation(YAMTL)
+        ref: yamtl
+        file: https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML/src/main/groovy/flowchartToHtmlExamples/LazyExample.groovy
+      - id: smm-panel-composite
+        name: Source Metamodel
+        ref: composite-panel
+        childPanels:
+          - id: panel-smm
+            name: EMFatic
+            ref: emfatic
+            file: https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML/model/flowchart.emf
+          - id: panel-smm-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-smm
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-smm-diagram
+            hint: Toggle diagram
+      - id: tmm-panel-composite
+        name: Target Metamodel
+        ref: composite-panel
+        childPanels:
+          - id: panel-tmm
+            name: EMFatic
+            ref: emfatic
+            file: https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML/model/html.emf
+          - id: panel-tmm-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-tmm
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-tmm-diagram
+            hint: Toggle diagram
+      - id: smodel-panel-composite
+        name: Source Model
+        ref: composite-panel
+        icon: editor
+        childPanels:
+          - id: panel-smodel
+            name: XMI
+            ref: xmi
+            file: https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML/model/wakeup.xmi
+          - id: panel-smodel-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-smodel
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-smodel-diagram
+            hint: Toggle diagram
+      - id: tmodel-panel-composite
+        name: Target Model
+        icon: editor
+        ref: composite-panel
+        childPanels:
+          - id: panel-tmodel
+            name: XMI
+            ref: xmi
+          - id: panel-tmodel-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-tmodel
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-tmodel-diagram
+            hint: Toggle diagram
+      - id: panel-console
+        name: Console
+        icon: console
+        ref: console
+  - id: yamtl-groovy-workflow2html-multipleSources
+    title: W2H MultipleSources
+    icon: yamtl
+    tools:
+      - http://127.0.0.1:8073/emf-tool.yml
+      - http://127.0.0.1:8500/yamtl-m2m.yml
+    tools-remote:
+      - https://yamtl.github.io/playground-interfaces/static.emf/emf-tool.yml
+      - https://yamtl.github.io/playground-interfaces/static.yamtlgroovy/yamtl-m2m.yml
+    layout:
+      area:
+        - - panel-yamtl
+          - smm-panel-composite
+          - tmm-panel-composite
+        - - panel-console
+          - smodel-panel-composite
+          - tmodel-panel-composite
+    actions:
+      - source: panel-yamtl
+        sourceButton: run-trafo-button
+        parameters:
+          trafoGroovy: panel-yamtl
+          inModel: panel-smodel
+          inMetamodel: panel-smm
+          outMetamodel: panel-tmm
+        output: panel-tmodel
+        outputType: code
+        outputConsole: panel-console
+      - source: panel-smm
+        sourceButton: emfatic2cd-button
+        parameters:
+          metamodel: panel-smm
+        output: panel-smm-diagram
+        outputType: puml
+      - source: panel-tmm
+        sourceButton: emfatic2cd-button
+        parameters:
+          metamodel: panel-tmm
+        output: panel-tmm-diagram
+        outputType: puml
+      - source: panel-smodel
+        sourceButton: xmi2od-button
+        parameters:
+          metamodel: panel-smm
+          model: panel-smodel
+        output: panel-smodel-diagram
+        outputType: puml
+      - source: panel-tmodel
+        sourceButton: xmi2od-button
+        parameters:
+          metamodel: panel-tmm
+          model: panel-tmodel
+        output: panel-tmodel-diagram
+        outputType: puml
+    panels:
+      - id: panel-yamtl
+        name: Transformation(YAMTL)
+        ref: yamtl
+        file: https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML/src/main/groovy/flowchartToHtmlExamples/MultipleSources.groovy
+      - id: smm-panel-composite
+        name: Source Metamodel
+        ref: composite-panel
+        childPanels:
+          - id: panel-smm
+            name: EMFatic
+            ref: emfatic
+            file: https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML/model/flowchart.emf
+          - id: panel-smm-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-smm
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-smm-diagram
+            hint: Toggle diagram
+      - id: tmm-panel-composite
+        name: Target Metamodel
+        ref: composite-panel
+        childPanels:
+          - id: panel-tmm
+            name: EMFatic
+            ref: emfatic
+            file: https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML/model/html.emf
+          - id: panel-tmm-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-tmm
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-tmm-diagram
+            hint: Toggle diagram
+      - id: smodel-panel-composite
+        name: Source Model
+        ref: composite-panel
+        icon: editor
+        childPanels:
+          - id: panel-smodel
+            name: XMI
+            ref: xmi
+            file: https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML/model/wakeup.xmi
+          - id: panel-smodel-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-smodel
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-smodel-diagram
+            hint: Toggle diagram
+      - id: tmodel-panel-composite
+        name: Target Model
+        icon: editor
+        ref: composite-panel
+        childPanels:
+          - id: panel-tmodel
+            name: XMI
+            ref: xmi
+          - id: panel-tmodel-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-tmodel
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-tmodel-diagram
+            hint: Toggle diagram
+      - id: panel-console
+        name: Console
+        icon: console
+        ref: console
+  - id: yamtl-groovy-workflow2html-multipleTargets
+    title: W2H MultipleTargets 
+    icon: yamtl
+    tools:
+      - http://127.0.0.1:8073/emf-tool.yml
+      - http://127.0.0.1:8500/yamtl-m2m.yml
+    tools-remote:
+      - https://yamtl.github.io/playground-interfaces/static.emf/emf-tool.yml
+      - https://yamtl.github.io/playground-interfaces/static.yamtlgroovy/yamtl-m2m.yml
+    layout:
+      area:
+        - - panel-yamtl
+          - smm-panel-composite
+          - tmm-panel-composite
+        - - panel-console
+          - smodel-panel-composite
+          - tmodel-panel-composite
+    actions:
+      - source: panel-yamtl
+        sourceButton: run-trafo-button
+        parameters:
+          trafoGroovy: panel-yamtl
+          inModel: panel-smodel
+          inMetamodel: panel-smm
+          outMetamodel: panel-tmm
+        output: panel-tmodel
+        outputType: code
+        outputConsole: panel-console
+      - source: panel-smm
+        sourceButton: emfatic2cd-button
+        parameters:
+          metamodel: panel-smm
+        output: panel-smm-diagram
+        outputType: puml
+      - source: panel-tmm
+        sourceButton: emfatic2cd-button
+        parameters:
+          metamodel: panel-tmm
+        output: panel-tmm-diagram
+        outputType: puml
+      - source: panel-smodel
+        sourceButton: xmi2od-button
+        parameters:
+          metamodel: panel-smm
+          model: panel-smodel
+        output: panel-smodel-diagram
+        outputType: puml
+      - source: panel-tmodel
+        sourceButton: xmi2od-button
+        parameters:
+          metamodel: panel-tmm
+          model: panel-tmodel
+        output: panel-tmodel-diagram
+        outputType: puml
+    panels:
+      - id: panel-yamtl
+        name: Transformation(YAMTL)
+        ref: yamtl
+        file: https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML/src/main/groovy/flowchartToHtmlExamples/MultipleTargets.groovy
+      - id: smm-panel-composite
+        name: Source Metamodel
+        ref: composite-panel
+        childPanels:
+          - id: panel-smm
+            name: EMFatic
+            ref: emfatic
+            file: https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML/model/flowchart.emf
+          - id: panel-smm-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-smm
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-smm-diagram
+            hint: Toggle diagram
+      - id: tmm-panel-composite
+        name: Target Metamodel
+        ref: composite-panel
+        childPanels:
+          - id: panel-tmm
+            name: EMFatic
+            ref: emfatic
+            file: https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML/model/html.emf
+          - id: panel-tmm-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-tmm
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-tmm-diagram
+            hint: Toggle diagram
+      - id: smodel-panel-composite
+        name: Source Model
+        ref: composite-panel
+        icon: editor
+        childPanels:
+          - id: panel-smodel
+            name: XMI
+            ref: xmi
+            file: https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML/model/wakeup.xmi
+          - id: panel-smodel-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-smodel
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-smodel-diagram
+            hint: Toggle diagram
+      - id: tmodel-panel-composite
+        name: Target Model
+        icon: editor
+        ref: composite-panel
+        childPanels:
+          - id: panel-tmodel
+            name: XMI
+            ref: xmi
+          - id: panel-tmodel-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-tmodel
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-tmodel-diagram
+            hint: Toggle diagram
+      - id: panel-console
+        name: Console
+        icon: console
+        ref: console
+  - id: yamtl-groovy-workflow2html-override
+    title: W2H Override
+    icon: yamtl
+    tools:
+      - http://127.0.0.1:8073/emf-tool.yml
+      - http://127.0.0.1:8500/yamtl-m2m.yml
+    tools-remote:
+      - https://yamtl.github.io/playground-interfaces/static.emf/emf-tool.yml
+      - https://yamtl.github.io/playground-interfaces/static.yamtlgroovy/yamtl-m2m.yml
+    layout:
+      area:
+        - - panel-yamtl
+          - smm-panel-composite
+          - tmm-panel-composite
+        - - panel-console
+          - smodel-panel-composite
+          - tmodel-panel-composite
+    actions:
+      - source: panel-yamtl
+        sourceButton: run-trafo-button
+        parameters:
+          trafoGroovy: panel-yamtl
+          inModel: panel-smodel
+          inMetamodel: panel-smm
+          outMetamodel: panel-tmm
+        output: panel-tmodel
+        outputType: code
+        outputConsole: panel-console
+      - source: panel-smm
+        sourceButton: emfatic2cd-button
+        parameters:
+          metamodel: panel-smm
+        output: panel-smm-diagram
+        outputType: puml
+      - source: panel-tmm
+        sourceButton: emfatic2cd-button
+        parameters:
+          metamodel: panel-tmm
+        output: panel-tmm-diagram
+        outputType: puml
+      - source: panel-smodel
+        sourceButton: xmi2od-button
+        parameters:
+          metamodel: panel-smm
+          model: panel-smodel
+        output: panel-smodel-diagram
+        outputType: puml
+      - source: panel-tmodel
+        sourceButton: xmi2od-button
+        parameters:
+          metamodel: panel-tmm
+          model: panel-tmodel
+        output: panel-tmodel-diagram
+        outputType: puml
+    panels:
+      - id: panel-yamtl
+        name: Transformation(YAMTL)
+        ref: yamtl
+        file: https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML/src/main/groovy/flowchartToHtmlExamples/Override.groovy
+      - id: smm-panel-composite
+        name: Source Metamodel
+        ref: composite-panel
+        childPanels:
+          - id: panel-smm
+            name: EMFatic
+            ref: emfatic
+            file: https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML/model/flowchart.emf
+          - id: panel-smm-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-smm
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-smm-diagram
+            hint: Toggle diagram
+      - id: tmm-panel-composite
+        name: Target Metamodel
+        ref: composite-panel
+        childPanels:
+          - id: panel-tmm
+            name: EMFatic
+            ref: emfatic
+            file: https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML/model/html.emf
+          - id: panel-tmm-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-tmm
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-tmm-diagram
+            hint: Toggle diagram
+      - id: smodel-panel-composite
+        name: Source Model
+        ref: composite-panel
+        icon: editor
+        childPanels:
+          - id: panel-smodel
+            name: XMI
+            ref: xmi
+            file: https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML/model/wakeup_with_subflow.xmi
+          - id: panel-smodel-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-smodel
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-smodel-diagram
+            hint: Toggle diagram
+      - id: tmodel-panel-composite
+        name: Target Model
+        icon: editor
+        ref: composite-panel
+        childPanels:
+          - id: panel-tmodel
+            name: XMI
+            ref: xmi
+          - id: panel-tmodel-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-tmodel
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-tmodel-diagram
+            hint: Toggle diagram
+      - id: panel-console
+        name: Console
+        icon: console
+        ref: console
+  - id: yamtl-groovy-workflow2html-priority
+    title: W2H Priority 
+    icon: yamtl
+    tools:
+      - http://127.0.0.1:8073/emf-tool.yml
+      - http://127.0.0.1:8500/yamtl-m2m.yml
+    tools-remote:
+      - https://yamtl.github.io/playground-interfaces/static.emf/emf-tool.yml
+      - https://yamtl.github.io/playground-interfaces/static.yamtlgroovy/yamtl-m2m.yml
+    layout:
+      area:
+        - - panel-yamtl
+          - smm-panel-composite
+          - tmm-panel-composite
+        - - panel-console
+          - smodel-panel-composite
+          - tmodel-panel-composite
+    actions:
+      - source: panel-yamtl
+        sourceButton: run-trafo-button
+        parameters:
+          trafoGroovy: panel-yamtl
+          inModel: panel-smodel
+          inMetamodel: panel-smm
+          outMetamodel: panel-tmm
+        output: panel-tmodel
+        outputType: code
+        outputConsole: panel-console
+      - source: panel-smm
+        sourceButton: emfatic2cd-button
+        parameters:
+          metamodel: panel-smm
+        output: panel-smm-diagram
+        outputType: puml
+      - source: panel-tmm
+        sourceButton: emfatic2cd-button
+        parameters:
+          metamodel: panel-tmm
+        output: panel-tmm-diagram
+        outputType: puml
+      - source: panel-smodel
+        sourceButton: xmi2od-button
+        parameters:
+          metamodel: panel-smm
+          model: panel-smodel
+        output: panel-smodel-diagram
+        outputType: puml
+      - source: panel-tmodel
+        sourceButton: xmi2od-button
+        parameters:
+          metamodel: panel-tmm
+          model: panel-tmodel
+        output: panel-tmodel-diagram
+        outputType: puml
+    panels:
+      - id: panel-yamtl
+        name: Transformation(YAMTL)
+        ref: yamtl
+        file: https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML/src/main/groovy/flowchartToHtmlExamples/Priority.groovy
+      - id: smm-panel-composite
+        name: Source Metamodel
+        ref: composite-panel
+        childPanels:
+          - id: panel-smm
+            name: EMFatic
+            ref: emfatic
+            file: https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML/model/flowchart.emf
+          - id: panel-smm-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-smm
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-smm-diagram
+            hint: Toggle diagram
+      - id: tmm-panel-composite
+        name: Target Metamodel
+        ref: composite-panel
+        childPanels:
+          - id: panel-tmm
+            name: EMFatic
+            ref: emfatic
+            file: https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML/model/html.emf
+          - id: panel-tmm-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-tmm
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-tmm-diagram
+            hint: Toggle diagram
+      - id: smodel-panel-composite
+        name: Source Model
+        ref: composite-panel
+        icon: editor
+        childPanels:
+          - id: panel-smodel
+            name: XMI
+            ref: xmi
+            file: https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML/model/wakeup.xmi
+          - id: panel-smodel-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-smodel
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-smodel-diagram
+            hint: Toggle diagram
+      - id: tmodel-panel-composite
+        name: Target Model
+        icon: editor
+        ref: composite-panel
+        childPanels:
+          - id: panel-tmodel
+            name: XMI
+            ref: xmi
+          - id: panel-tmodel-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-tmodel
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-tmodel-diagram
+            hint: Toggle diagram
+      - id: panel-console
+        name: Console
+        icon: console
+        ref: console
+  - id: yamtl-groovy-workflow2html-toMany
+    title: W2H ToMany
+    icon: yamtl
+    tools:
+      - http://127.0.0.1:8073/emf-tool.yml
+      - http://127.0.0.1:8500/yamtl-m2m.yml
+    tools-remote:
+      - https://yamtl.github.io/playground-interfaces/static.emf/emf-tool.yml
+      - https://yamtl.github.io/playground-interfaces/static.yamtlgroovy/yamtl-m2m.yml
+    layout:
+      area:
+        - - panel-yamtl
+          - smm-panel-composite
+          - tmm-panel-composite
+        - - panel-console
+          - smodel-panel-composite
+          - tmodel-panel-composite
+    actions:
+      - source: panel-yamtl
+        sourceButton: run-trafo-button
+        parameters:
+          trafoGroovy: panel-yamtl
+          inModel: panel-smodel
+          inMetamodel: panel-smm
+          outMetamodel: panel-tmm
+        output: panel-tmodel
+        outputType: code
+        outputConsole: panel-console
+      - source: panel-smm
+        sourceButton: emfatic2cd-button
+        parameters:
+          metamodel: panel-smm
+        output: panel-smm-diagram
+        outputType: puml
+      - source: panel-tmm
+        sourceButton: emfatic2cd-button
+        parameters:
+          metamodel: panel-tmm
+        output: panel-tmm-diagram
+        outputType: puml
+      - source: panel-smodel
+        sourceButton: xmi2od-button
+        parameters:
+          metamodel: panel-smm
+          model: panel-smodel
+        output: panel-smodel-diagram
+        outputType: puml
+      - source: panel-tmodel
+        sourceButton: xmi2od-button
+        parameters:
+          metamodel: panel-tmm
+          model: panel-tmodel
+        output: panel-tmodel-diagram
+        outputType: puml
+    panels:
+      - id: panel-yamtl
+        name: Transformation(YAMTL)
+        ref: yamtl
+        file: https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML/src/main/groovy/flowchartToHtmlExamples/ToManyCap.groovy
+      - id: smm-panel-composite
+        name: Source Metamodel
+        ref: composite-panel
+        childPanels:
+          - id: panel-smm
+            name: EMFatic
+            ref: emfatic
+            file: https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML/model/flowchart.emf
+          - id: panel-smm-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-smm
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-smm-diagram
+            hint: Toggle diagram
+      - id: tmm-panel-composite
+        name: Target Metamodel
+        ref: composite-panel
+        childPanels:
+          - id: panel-tmm
+            name: EMFatic
+            ref: emfatic
+            file: https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML/model/html.emf
+          - id: panel-tmm-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-tmm
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-tmm-diagram
+            hint: Toggle diagram
+      - id: smodel-panel-composite
+        name: Source Model
+        ref: composite-panel
+        icon: editor
+        childPanels:
+          - id: panel-smodel
+            name: XMI
+            ref: xmi
+            file: https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML/model/wakeup.xmi
+          - id: panel-smodel-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-smodel
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-smodel-diagram
+            hint: Toggle diagram
+      - id: tmodel-panel-composite
+        name: Target Model
+        icon: editor
+        ref: composite-panel
+        childPanels:
+          - id: panel-tmodel
+            name: XMI
+            ref: xmi
+          - id: panel-tmodel-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-tmodel
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-tmodel-diagram
+            hint: Toggle diagram
+      - id: panel-console
+        name: Console
+        icon: console
+        ref: console
+  - id: yamtl-groovy-workflow2html-transient
+    title: W2H Transient
+    icon: yamtl
+    tools:
+      - http://127.0.0.1:8073/emf-tool.yml
+      - http://127.0.0.1:8500/yamtl-m2m.yml
+    tools-remote:
+      - https://yamtl.github.io/playground-interfaces/static.emf/emf-tool.yml
+      - https://yamtl.github.io/playground-interfaces/static.yamtlgroovy/yamtl-m2m.yml
+    layout:
+      area:
+        - - panel-yamtl
+          - smm-panel-composite
+          - tmm-panel-composite
+        - - panel-console
+          - smodel-panel-composite
+          - tmodel-panel-composite
+    actions:
+      - source: panel-yamtl
+        sourceButton: run-trafo-button
+        parameters:
+          trafoGroovy: panel-yamtl
+          inModel: panel-smodel
+          inMetamodel: panel-smm
+          outMetamodel: panel-tmm
+        output: panel-tmodel
+        outputType: code
+        outputConsole: panel-console
+      - source: panel-smm
+        sourceButton: emfatic2cd-button
+        parameters:
+          metamodel: panel-smm
+        output: panel-smm-diagram
+        outputType: puml
+      - source: panel-tmm
+        sourceButton: emfatic2cd-button
+        parameters:
+          metamodel: panel-tmm
+        output: panel-tmm-diagram
+        outputType: puml
+      - source: panel-smodel
+        sourceButton: xmi2od-button
+        parameters:
+          metamodel: panel-smm
+          model: panel-smodel
+        output: panel-smodel-diagram
+        outputType: puml
+      - source: panel-tmodel
+        sourceButton: xmi2od-button
+        parameters:
+          metamodel: panel-tmm
+          model: panel-tmodel
+        output: panel-tmodel-diagram
+        outputType: puml
+    panels:
+      - id: panel-yamtl
+        name: Transformation(YAMTL)
+        ref: yamtl
+        file: https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML/src/main/groovy/flowchartToHtmlExamples/Transient.groovy
+      - id: smm-panel-composite
+        name: Source Metamodel
+        ref: composite-panel
+        childPanels:
+          - id: panel-smm
+            name: EMFatic
+            ref: emfatic
+            file: https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML/model/flowchart.emf
+          - id: panel-smm-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-smm
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-smm-diagram
+            hint: Toggle diagram
+      - id: tmm-panel-composite
+        name: Target Metamodel
+        ref: composite-panel
+        childPanels:
+          - id: panel-tmm
+            name: EMFatic
+            ref: emfatic
+            file: https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML/model/html.emf
+          - id: panel-tmm-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-tmm
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-tmm-diagram
+            hint: Toggle diagram
+      - id: smodel-panel-composite
+        name: Source Model
+        ref: composite-panel
+        icon: editor
+        childPanels:
+          - id: panel-smodel
+            name: XMI
+            ref: xmi
+            file: https://raw.githubusercontent.com/yamtl/examples/master/FlowchartToHTML/model/wakeup.xmi
+          - id: panel-smodel-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-smodel
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-smodel-diagram
+            hint: Toggle diagram
+      - id: tmodel-panel-composite
+        name: Target Model
+        icon: editor
+        ref: composite-panel
+        childPanels:
+          - id: panel-tmodel
+            name: XMI
+            ref: xmi
+          - id: panel-tmodel-diagram
+            name: Diagram
+            ref: plantuml
+        buttons:
+          - id: show-editor-button
+            icon: editor
+            internal: toggle
+            targetPanel: panel-tmodel
+            hint: Toggle editor
+          - id: show-diagram-button
+            icon: diagram
+            internal: toggle
+            targetPanel: panel-tmodel-diagram
+            hint: Toggle diagram
+      - id: panel-console
+        name: Console
+        icon: console
+        ref: console
+
