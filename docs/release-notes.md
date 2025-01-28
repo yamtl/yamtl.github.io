@@ -4,6 +4,11 @@
 Pending: Added implicit fetch() in Groovy dialect for objects that can be resolved with matched rules that have one single `out` element.
 -->
 
+#### 1.0.8 
+
+FIX:
+* serializing to XML when there is a list of records
+
 #### 1.0.4-1.0.7
 
 Added `YAMTLModuleGroovy`, which applies YAMTL Groovy extensions implicitly.
