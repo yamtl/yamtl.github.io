@@ -4,6 +4,14 @@
 Pending: Added implicit fetch() in Groovy dialect for objects that can be resolved with matched rules that have one single `out` element.
 -->
 
+#### 1.1.6
+
+Harmonization of versions of YAMTL with EMFSyncer. 
+
+EMFSyncer:
+* metrics for completeness and soundness of the synchronization
+
+
 #### 1.0.8 
 
 FIX:
