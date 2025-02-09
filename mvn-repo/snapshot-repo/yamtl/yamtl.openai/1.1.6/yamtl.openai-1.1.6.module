@@ -27,11 +27,11 @@
         {
           "name": "yamtl.openai-1.1.6.jar",
           "url": "yamtl.openai-1.1.6.jar",
-          "size": 53843,
-          "sha512": "9924d80e56d20f9ba0daedb20530b7d0d04f463507eec88fd4b53c84ef601e44754c8706342b6c6d2f2cb3ef7fd18b2bd2ec92af30307f966b2ad0568c3c2671",
-          "sha256": "28d5cc902178c3c8cd45023d1402f41fe05f3b833d692412df0ac1a0bde33d46",
-          "sha1": "a31bdb4b31c4b801deeab21c954330304daee863",
-          "md5": "67f282e033edf2686f6aa5e7fcfaccaf"
+          "size": 70178,
+          "sha512": "35489fa14b7495fa46f20fd1cf175d34d546bf01f585b4605c022650d7c9e5c76269573eb7ecc30f7228e03ff7a066d983088ec8bc2b1305bdbd1e19fd44dbd1",
+          "sha256": "bc8f5c7aae61ae8db13230ec52f2912b8f942c79d8d169b58c73ea050788eeb5",
+          "sha1": "be7ddaf49c49e9d3e89ca3912371537978a72091",
+          "md5": "6aa730be9c7df1c96930d169bf56d954"
         }
       ]
     },
@@ -235,6 +235,13 @@
           }
         },
         {
+          "group": "org.apache.commons",
+          "module": "commons-math3",
+          "version": {
+            "requires": "3.6.1"
+          }
+        },
+        {
           "group": "com.openai",
           "module": "openai-java",
           "version": {
@@ -260,11 +267,11 @@
         {
           "name": "yamtl.openai-1.1.6.jar",
           "url": "yamtl.openai-1.1.6.jar",
-          "size": 53843,
-          "sha512": "9924d80e56d20f9ba0daedb20530b7d0d04f463507eec88fd4b53c84ef601e44754c8706342b6c6d2f2cb3ef7fd18b2bd2ec92af30307f966b2ad0568c3c2671",
-          "sha256": "28d5cc902178c3c8cd45023d1402f41fe05f3b833d692412df0ac1a0bde33d46",
-          "sha1": "a31bdb4b31c4b801deeab21c954330304daee863",
-          "md5": "67f282e033edf2686f6aa5e7fcfaccaf"
+          "size": 70178,
+          "sha512": "35489fa14b7495fa46f20fd1cf175d34d546bf01f585b4605c022650d7c9e5c76269573eb7ecc30f7228e03ff7a066d983088ec8bc2b1305bdbd1e19fd44dbd1",
+          "sha256": "bc8f5c7aae61ae8db13230ec52f2912b8f942c79d8d169b58c73ea050788eeb5",
+          "sha1": "be7ddaf49c49e9d3e89ca3912371537978a72091",
+          "md5": "6aa730be9c7df1c96930d169bf56d954"
         }
       ]
     },
@@ -280,11 +287,11 @@
         {
           "name": "yamtl.openai-1.1.6-all.jar",
           "url": "yamtl.openai-1.1.6-all.jar",
-          "size": 53843,
-          "sha512": "e5fee05dfdf9319b4a434e1a58617c2c88a55ba8c553f9d5d1c25f7a29a132c1e4d5befa0d571e96c51d3d30d447b03807312345a8c8c0e917899ff18154f062",
-          "sha256": "9a4c220c2258f24f8c039679ba5bc3183539e472c2f9717c9ae53daefeb2a423",
-          "sha1": "62573c47a5b2774d3ba568c7ceb1636c005670ef",
-          "md5": "b9ec2f938a0e00c8b8fdecf089289ab7"
+          "size": 70178,
+          "sha512": "676c101b31544101c21835535dbbb0fad94c5cab161cb7e41794b95d8714a644ac70bc69eb99f6d5db5c9b911dea15e25de521229c2e2b7f4303321fe21af5b4",
+          "sha256": "7768745a3e6c8585ea93bcd721fad2a1ada0ec1ff4e2b8ec95762ff2ceb1e3ed",
+          "sha1": "1108ba104c754325dc6bbe040cda0a4118e1c0d7",
+          "md5": "8bb7244b6745714c102443b20443c612"
         }
       ]
     }
