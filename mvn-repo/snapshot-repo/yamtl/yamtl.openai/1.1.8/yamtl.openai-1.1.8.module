@@ -1,0 +1,299 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "yamtl",
+    "module": "yamtl.openai",
+    "version": "1.1.8",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.5"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "yamtl.openai-1.1.8.jar",
+          "url": "yamtl.openai-1.1.8.jar",
+          "size": 368275,
+          "sha512": "508c8f709e227d9070af785dc066a6dc5c07a7190547124a8f9af4a33d07a5776e2e674003382a2b849220a7ea304a06546229c951f2603e50c2b4dac180c73d",
+          "sha256": "775e24a74bc061740ab560da2842c74aac388b5d084ef3bc2a95dd2ebaa2b7ad",
+          "sha1": "9a2e88255247010be095ea16225863c0702b964e",
+          "md5": "80b90f4f39107adf7d6ce1f88bad1d7d"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.apache.groovy",
+          "module": "groovy-all",
+          "version": {
+            "requires": "4.0.15"
+          }
+        },
+        {
+          "group": "org.yaml",
+          "module": "snakeyaml",
+          "version": {
+            "requires": "2.2"
+          }
+        },
+        {
+          "group": "org.eclipse.emf",
+          "module": "org.eclipse.emf.ecore",
+          "version": {
+            "requires": "2.34.0"
+          }
+        },
+        {
+          "group": "org.eclipse.emfatic",
+          "module": "org.eclipse.emfatic.core",
+          "version": {
+            "requires": "1.1.0"
+          }
+        },
+        {
+          "group": "org.eclipse.emf",
+          "module": "org.eclipse.emf.common",
+          "version": {
+            "requires": "2.28.0"
+          }
+        },
+        {
+          "group": "org.eclipse.emf",
+          "module": "org.eclipse.emf.ecore.xmi",
+          "version": {
+            "requires": "2.35.0"
+          }
+        },
+        {
+          "group": "org.eclipse.emf",
+          "module": "org.eclipse.emf.ecore.change",
+          "version": {
+            "requires": "2.14.0"
+          }
+        },
+        {
+          "group": "org.eclipse.xtend",
+          "module": "org.eclipse.xtend.core",
+          "version": {
+            "requires": "2.30.0"
+          }
+        },
+        {
+          "group": "org.eclipse.xtend",
+          "module": "org.eclipse.xtend.lib",
+          "version": {
+            "requires": "2.30.0"
+          }
+        },
+        {
+          "group": "commons-io",
+          "module": "commons-io",
+          "version": {
+            "requires": "2.11.0"
+          }
+        },
+        {
+          "group": "net.sourceforge.plantuml",
+          "module": "plantuml-mit",
+          "version": {
+            "requires": "1.2023.12"
+          }
+        },
+        {
+          "group": "org.apache.commons",
+          "module": "commons-lang3",
+          "version": {
+            "requires": "3.12.0"
+          }
+        },
+        {
+          "group": "org.apache.commons",
+          "module": "commons-text",
+          "version": {
+            "requires": "1.10.0"
+          }
+        },
+        {
+          "group": "com.fasterxml.jackson.core",
+          "module": "jackson-core",
+          "version": {
+            "requires": "2.14.2"
+          }
+        },
+        {
+          "group": "com.fasterxml.jackson.dataformat",
+          "module": "jackson-dataformat-csv",
+          "version": {
+            "requires": "2.14.2"
+          }
+        },
+        {
+          "group": "com.fasterxml.jackson.dataformat",
+          "module": "jackson-dataformat-xml",
+          "version": {
+            "requires": "2.14.2"
+          }
+        },
+        {
+          "group": "com.fasterxml.jackson.core",
+          "module": "jackson-databind",
+          "version": {
+            "requires": "2.14.2"
+          }
+        },
+        {
+          "group": "org.springframework.boot",
+          "module": "spring-boot-starter-aop",
+          "version": {
+            "requires": "3.1.0"
+          }
+        },
+        {
+          "group": "org.aspectj",
+          "module": "aspectjweaver",
+          "version": {
+            "requires": "1.9.19"
+          }
+        },
+        {
+          "group": "org.apache.commons",
+          "module": "commons-collections4",
+          "version": {
+            "requires": "4.1"
+          }
+        },
+        {
+          "group": "yamtl",
+          "module": "yamtl",
+          "version": {
+            "requires": "1.1.8"
+          }
+        },
+        {
+          "group": "yamtl",
+          "module": "yamtl.flexible-models",
+          "version": {
+            "requires": "1.1.8"
+          }
+        },
+        {
+          "group": "yamtl",
+          "module": "yamtl.groovy",
+          "version": {
+            "requires": "1.1.8"
+          }
+        },
+        {
+          "group": "yamtl",
+          "module": "emf-syncer.subtyping",
+          "version": {
+            "requires": "1.1.8"
+          }
+        },
+        {
+          "group": "org.apache.groovy",
+          "module": "groovy",
+          "version": {
+            "requires": "4.0.15"
+          }
+        },
+        {
+          "group": "org.apache.groovy",
+          "module": "groovy-json",
+          "version": {
+            "requires": "4.0.15"
+          }
+        },
+        {
+          "group": "org.apache.groovy",
+          "module": "groovy-xml",
+          "version": {
+            "requires": "4.0.15"
+          }
+        },
+        {
+          "group": "org.apache.commons",
+          "module": "commons-math3",
+          "version": {
+            "requires": "3.6.1"
+          }
+        },
+        {
+          "group": "com.openai",
+          "module": "openai-java",
+          "version": {
+            "requires": "0.20.0"
+          }
+        },
+        {
+          "group": "com.squareup.okhttp3",
+          "module": "okhttp",
+          "version": {
+            "requires": "4.9.3"
+          }
+        },
+        {
+          "group": "org.apache.httpcomponents.client5",
+          "module": "httpclient5",
+          "version": {
+            "requires": "5.2"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "yamtl.openai-1.1.8.jar",
+          "url": "yamtl.openai-1.1.8.jar",
+          "size": 368275,
+          "sha512": "508c8f709e227d9070af785dc066a6dc5c07a7190547124a8f9af4a33d07a5776e2e674003382a2b849220a7ea304a06546229c951f2603e50c2b4dac180c73d",
+          "sha256": "775e24a74bc061740ab560da2842c74aac388b5d084ef3bc2a95dd2ebaa2b7ad",
+          "sha1": "9a2e88255247010be095ea16225863c0702b964e",
+          "md5": "80b90f4f39107adf7d6ce1f88bad1d7d"
+        }
+      ]
+    },
+    {
+      "name": "shadowRuntimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "shadowed",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "yamtl.openai-1.1.8-all.jar",
+          "url": "yamtl.openai-1.1.8-all.jar",
+          "size": 368275,
+          "sha512": "0301f8046ed884d5afcea55ee1d4cc76f9ad514ebf7fb77e9badd3856c55cede51cdd98938b7d9d48935766204a2ba5c46666fe1a01a94a4c3e3371660f58c47",
+          "sha256": "1d57b29b71d29be051a07b062e5231be34ef5ec951488cd82f73def9f513ea79",
+          "sha1": "c0287eb8e59ab85d85786c5328f3b831b8390ce0",
+          "md5": "ee02463c0bae30738c7c46679222b529"
+        }
+      ]
+    }
+  ]
+}
